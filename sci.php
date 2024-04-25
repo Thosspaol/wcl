@@ -36,6 +36,9 @@
 
 <body>
 
+
+
+  <!-- ======= Header/Navbar ======= -->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container">
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,7 +100,7 @@
     </div>
 
     </div>
-  </nav>
+  </nav><!-- End Header/Navbar -->
 
   <main id="main">
 
@@ -107,139 +110,94 @@
         <div class="row">
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
-              <h1 class="title-single">ติดต่อเรา</h1>
+              <h1 class="title-single">กลุ่มสาระการเรียนรู้</h1>
+              <p>วิทยาศาสตร์และเทคโนโลยี</p>              
             </div>
           </div>
         </div>
       </div>
     </section><!-- End Intro Single-->
 
-    <!-- ======= Contact Single ======= -->
-    <section class="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="contact-map box">
-              <div id="map" class="contact-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248319.07655795247!2d99.95683278643409!3d13.474986684310677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2d40de015592b%3A0x21473ef52c4a1f7!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4LiK4LmI4Lit4LiH4Lil4Lih!5e0!3m2!1sth!2sth!4v1698258293364!5m2!1sth!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- ======= Property Grid ======= -->
+    <table border="0" cellpadding="4" cellspacing="1" style="margin-left: auto; margin-right: auto;" width="450">
+      <tbody>
+        <tr>
+          <td>
+            <div>
+              <div style="text-align: center;">
+                <img src="assets/img/ครูวิทย์.jpg" style="width: 170px; height: 216px;" /><br />
+                <br />
+                <strong>นางสุดารัตน์ วรวลัญช์</strong><br />
+                <p>หัวหน้ากลุ่มสาระการเรียนรู้วิทยาศาสตร์และเทคโนโลยี</p>
               </div>
+              <div style="text-align: center;">
+                &nbsp;</div>
             </div>
-          </div>
-          <div class="col-sm-12 section-t8">
-            <div class="row">
-              <div class="col-md-7">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <input type="text" name="name" class="form-control form-control-lg form-control-a" placeholder="Your Name" required>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="Your Email" required>
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <input type="text" name="subject" class="form-control form-control-lg form-control-a" placeholder="Subject" required>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <textarea name="message" class="form-control" name="message" cols="45" rows="8" placeholder="Message" required></textarea>
-                      </div>
-                    </div>
-                    <div class="col-md-12 my-3">
-                      <div class="mb-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                      </div>
-                    </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div>
+      <table border="0" cellpadding="1" cellspacing="1" width="100%">
+        <tbody>
+          <tr style="text-align: center;">
+            <td style="vertical-align: bottom;">
+              <div>
+                &nbsp;</div>
+              <div>
+                <img src="assets/img/agent-6.jpg" style="width: 160px; height: 216px;" />
+              </div>
+              <div>
+                &nbsp;</div>
+              <div>
+                <strong>นายนัทภพย์ พูนสวัสดิ์</strong>
+              </div>
+              <div>
+                รองหัวหน้ากลุ่มสาระการเรียนรู้วิทยาศาสตร์และเทคโนโลยี</div>
+              <div>
+                &nbsp;</div>
+            </td>
+            <td style="vertical-align: bottom;">
+              <div>
+                <img src="assets/img/agent-2.jpg" style="width: 160px; height: 216px;" />
+              </div>
+              <div>
+                &nbsp;</div>
+              <div>
+                <div>
+                  <strong>นายเชาวดี ด่านทอง</strong>
+                </div>                
+                <div>
+                  &nbsp;</div>
+              </div>
+            </td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="vertical-align: bottom;">
+              <p>
+                <img src="assets/img/author-1.jpg" style="width: 160px; height: 216px;" />
+              </p>
+              <p>
+                <b>นายยสพร โชคดี</b>              
+              </p>
+            </td>
+            <td style="text-align: center; vertical-align: bottom; width: 50%;">
+              <div>
+                <img src="assets/img/agent-7.jpg" style="width: 160px; height: 216px;" />
+              </div>
+              <div>
+                &nbsp;</div>
+              <div>
+                <b>นางเนวรัตน์ บุญมี</b>                
+              </div>  
+        </tbody>
+      </table>
+    </div>
 
-                    <div class="col-md-12 text-center">
-                      <button type="submit" class="btn btn-a">Send Message</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="col-md-5 section-md-t3">
-                <div class="icon-box section-b2">
-                  <div class="icon-box-icon">
-                    <span class="bi bi-envelope"></span>
-                  </div>
-                  <div class="icon-box-content table-cell">
-                    <div class="icon-box-title">
-                      <h4 class="icon-title">ติดต่อ</h4>
-                    </div>
-                    <div class="icon-box-content">
-                      <p class="mb-1">Email.
-                        <span class="color-a">...@gmail.com</span>
-                      </p>
-                      <p class="mb-1">Phone.
-                        <span class="color-a">0 3471 8435</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="icon-box section-b2">
-                  <div class="icon-box-icon">
-                    <span class="bi bi-geo-alt"></span>
-                  </div>
-                  <div class="icon-box-content table-cell">
-                    <div class="icon-box-title">
-                      <h4 class="icon-title">ที่อยู่</h4>
-                    </div>
-                    <div class="icon-box-content">
-                      <p class="mb-1">
-                        หมู่ที่ 6 บ้านลมทวน ตำบลบ้านปรก อำเภอเมืองสมุทรสงคราม จังหวัดสมุทรสงคราม 75000
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="icon-box">
-                  <div class="icon-box-icon">
-                    <span class="bi bi-share"></span>
-                  </div>
-                  <div class="icon-box-content table-cell">
-                    <div class="icon-box-title">
-                      <h4 class="icon-title">Social networks</h4>
-                    </div>
-                    <div class="icon-box-content">
-                      <div class="socials-footer">
-                        <ul class="list-inline">
-                          <li class="list-inline-item">
-                            <a href="https://www.facebook.com/watchonglomschool.tammachote.9/photos" class="link-one">
-                              <i class="bi bi-facebook" aria-hidden="true"></i>
-                            </a>
-                          </li>
-                          <li class="list-inline-item">
-                            <a href="#" class="link-one">
-                              <i class="bi bi-twitter" aria-hidden="true"></i>
-                            </a>
-                          </li>
-                          <li class="list-inline-item">
-                            <a href="#" class="link-one">
-                              <i class="bi bi-instagram" aria-hidden="true"></i>
-                            </a>
-                          </li>
-                          <li class="list-inline-item">
-                            <a href="#" class="link-one">
-                              <i class="bi bi-linkedin" aria-hidden="true"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Contact Single-->
+
+    </div>
+    </div><!-- End Property Grid Single-->
 
   </main><!-- End #main -->
 

@@ -137,8 +137,8 @@
       <a href="#">
         Submit
       </a>
-      <a class="b btn-right" href="singup.php">
-        Signup</a>
+      <!-- <a class="b btn-right" href="singup.php">
+        Signup</a> -->
 
     </form>
   </div>

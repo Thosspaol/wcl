@@ -67,7 +67,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dorupdown" aria-haspopup="true" aria-expanded="false">กลุ่มสาระการเรียนรู้</a>
             <div class="dropdown-menu">
-              <a href="#" class="dropdown-item">วิทยาศาสตร์และเทคโนโลยี</a>
+              <a href="sci.php" class="dropdown-item">วิทยาศาสตร์และเทคโนโลยี</a>
               <a href="#" class="dropdown-item">คณิตศาสตร์</a>
               <a href="#" class="dropdown-item">ภาษาไทย</a>
               <a href="#" class="dropdown-item">สังคมศึกษา ศาสนาและวัฒนธรรม</a>
@@ -93,11 +93,11 @@
       </div>
       <div class="btn-group ml-auto">
         <a class="btn btn-success" href="login.php">เข้าสู่ระบบ</a>
-</div>
+      </div>
       <!-- <button class="iteam ">
             <a class="nav-link " href="contact.html">เข้าสู่ระบบ</a>
           </button> -->
-</div>
+    </div>
 
     </div>
   </nav><!-- End Header/Navbar -->
@@ -112,18 +112,6 @@
             <div class="title-single-box">
               <h1 class="title-single">คณะผู้บริหาร</h1>
             </div>
-          </div>
-          <div class="col-md-12 col-lg-4">
-            <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                  <a href="index.php">คณะผู้บริหาร</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">
-                  Watchonglomschool Tammachote
-                </li>
-              </ol>
-            </nav>
           </div>
         </div>
       </div>
@@ -157,7 +145,7 @@
               <div>
                 &nbsp;</div>
               <div>
-                <img  src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
+                <img src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
               </div>
               <div>
                 &nbsp;</div>
@@ -171,7 +159,7 @@
             </td>
             <td style="vertical-align: bottom;">
               <div>
-                <img  src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
+                <img src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
               </div>
               <div>
                 &nbsp;</div>
@@ -189,7 +177,7 @@
           <tr style="text-align: center;">
             <td style="vertical-align: bottom;">
               <p>
-                <img  src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
+                <img src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
               </p>
               <p>
                 <b>นางอมริน คุ้มจัด</b><br />
@@ -198,7 +186,7 @@
             </td>
             <td style="text-align: center; vertical-align: bottom; width: 50%;">
               <div>
-                <img  src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
+                <img src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
               </div>
               <div>
                 &nbsp;</div>
@@ -215,7 +203,7 @@
               <div style="text-align: center;">
                 &nbsp;</div>
               <div style="text-align: center;">
-                <img  src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
+                <img src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
               </div>
               <div style="text-align: center;">
                 &nbsp;</div>
