@@ -60,17 +60,29 @@
             <div class="dropdown-menu">
               <a class="dropdown-item " href="property-single.php">ประวัติโรงเรียน</a>
               <a class="dropdown-item " href="blog-single.php">วิสัยทัศน์/พันธกิจ</a>
-              <a class="dropdown-item" href="property-grid.php">คณะผู้บริหาร</a>
+              <a class="dropdown-item " href="property-grid.php">คณะผู้บริหาร</a>
+            </div>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link " href="property-grid.php">กลุ่มสาระการเรียนรู้</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dorupdown" aria-haspopup="true" aria-expanded="false">กลุ่มสาระการเรียนรู้</a>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">วิทยาศาสตร์และเทคโนโลยี</a>
+              <a href="#" class="dropdown-item">คณิตศาสตร์</a>
+              <a href="#" class="dropdown-item">ภาษาไทย</a>
+              <a href="#" class="dropdown-item">สังคมศึกษา ศาสนาและวัฒนธรรม</a>
+              <a href="#" class="dropdown-item">ภาษาต่างประเทศ</a>
+              <a href="#" class="dropdown-item">ศิลปะ</a>
+              <a href="#" class="dropdown-item">สุขศึกษาและพละศึกษา</a>
+              <a href="#" class="dropdown-item">การงานอาชีพ</a>
+              <a href="#" class="dropdown-item">กิจกรรมพัฒนาผู้เรียน</a>
+            </div>
           </li>
 
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">นักเรียน</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item " href="property-single.html">ตารางสอน</a>
+              <a class="dropdown-item " href="timetable2022_subgroups_days_vertical.html">ตารางสอน</a>
               <a class="dropdown-item " href="blog-single.html">ตารางสอบ</a>
             </div>
           </li> -->
@@ -79,8 +91,13 @@
           </li>
         </ul>
       </div>
-
-      <a href="#" class="btn btn-success">เข้าสู่ระบบ</a>
+      <div class="btn-group ml-auto">
+        <a class="btn btn-success" href="login.php">เข้าสู่ระบบ</a>
+</div>
+      <!-- <button class="iteam ">
+            <a class="nav-link " href="contact.html">เข้าสู่ระบบ</a>
+          </button> -->
+</div>
 
     </div>
   </nav><!-- End Header/Navbar -->

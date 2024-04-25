@@ -2158,3 +2158,54 @@ footer .copyright-footer {
 footer .credits {
   font-size: 14px;
 }
+.item {
+  background-color: #007bff; /* สีพื้นหลังของปุ่ม */
+  border: none; /* ลบเส้นขอบ */
+  border-radius: 5px; /* กำหนดรูปร่างขอบ */
+  padding: 10px 20px; /* ขนาดของแนวคำของปุ่ม */
+  cursor: pointer; /* เปลี่ยนรูปแบบเคอร์เซอร์เป็นมือ */
+}
+
+.item a {
+  text-decoration: none; /* ลบขีดเส้นใต้ข้อความลิงก์ */
+  color: #fff; /* สีข้อความลิงก์ */
+}
+
+.item:hover {
+  background-color: #0056b3; /* สีพื้นหลังเมื่อเมาส์ผ่านไป */
+}
+.login-box form .bt {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    margin-left: 173px;
+  }
+
+  .login-box .bt:hover {
+    background: #DAA520;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #FF4500,
+  }
+  .login-box .bt span {
+    position: absolute;
+    display: block;
+  }
+  .testimonials-box {
+text-align: center; /* จัดให้เนื้อหาตรงกลาง */
+}
+
+.testimonial-img iframe {
+width: 300px; /* ปรับขนาดแผนที่ให้เล็กลง */
+height: 225px; /* ปรับขนาดแผนที่ให้เล็กลง */
+margin: auto; /* จัดให้แผนที่ตรงกลาง */
+display: block; /* แสดงแผนที่เป็นบล็อก */
+}

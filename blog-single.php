@@ -36,33 +36,7 @@
 
 <body>
 
-  <!-- ======= Property Search Section ======= -->
-  <div class="click-closed"></div>
-  <!--/ Form Search Star /-->
-  <div class="box-collapse">
-    <div class="title-box-d">
-      <h3 class="title-d">Search</h3>
-    </div>
-    <span class="close-box-collapse right-boxed bi bi-x"></span>
-    <div class="box-collapse-wrap form">
-      <form class="form-a">
-        <div class="row">
-          <div class="col-md-12 mb-2">
-            <div class="form-group">
-              <label class="pb-2" for="Type">Keyword</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
-            </div>
-          </div>
-          <div class="col-md-12">
-            <button type="submit" class="btn btn-b">Search</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div><!-- End Property Search Section -->>
-
-  <!-- ======= Header/Navbar ======= -->
-  <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+<nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container">
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span></span>
@@ -75,42 +49,55 @@
         <ul class="navbar-nav">
 
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">หน้าแรก</a>
+            <a class="nav-link active" href="index.php">หน้าแรก</a>
           </li>
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">รู้จักโรงเรียน</a>
             <div class="dropdown-menu">
               <a class="dropdown-item " href="property-single.php">ประวัติโรงเรียน</a>
-              <a class="dropdown-item " href="blog-single.html">วิสัยทัศน์/พันธกิจ</a>
-              <a class="dropdown-item " href="agents-grid.html">อัตลักษณ์ประจำโรงเรียน</a>
-              <a class="dropdown-item " href="agent-single.html">เพลงประจำโรงเรียน</a>
+              <a class="dropdown-item " href="blog-single.php">วิสัยทัศน์/พันธกิจ</a>
+              <a class="dropdown-item " href="property-grid.php">คณะผู้บริหาร</a>
             </div>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link " href="property-grid.php">ผู้บริหารและบุคลากร</a>
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">นักเรียน</a>
+            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dorupdown" aria-haspopup="true" aria-expanded="false">กลุ่มสาระการเรียนรู้</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item " href="property-single.html">ตารางสอน</a>
-              <a class="dropdown-item " href="blog-single.html">ตารางสอบ</a>
+              <a href="#" class="dropdown-item">วิทยาศาสตร์และเทคโนโลยี</a>
+              <a href="#" class="dropdown-item">คณิตศาสตร์</a>
+              <a href="#" class="dropdown-item">ภาษาไทย</a>
+              <a href="#" class="dropdown-item">สังคมศึกษา ศาสนาและวัฒนธรรม</a>
+              <a href="#" class="dropdown-item">ภาษาต่างประเทศ</a>
+              <a href="#" class="dropdown-item">ศิลปะ</a>
+              <a href="#" class="dropdown-item">สุขศึกษาและพละศึกษา</a>
+              <a href="#" class="dropdown-item">การงานอาชีพ</a>
+              <a href="#" class="dropdown-item">กิจกรรมพัฒนาผู้เรียน</a>
             </div>
           </li>
+
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">นักเรียน</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item " href="timetable2022_subgroups_days_vertical.html">ตารางสอน</a>
+              <a class="dropdown-item " href="blog-single.html">ตารางสอบ</a>
+            </div>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link " href="contact.php">ติดต่อเรา</a>
           </li>
         </ul>
       </div>
-
-      <button type="button" class="btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
-        <i class="bi bi-search"></i>
-      </button>
+      <div class="btn-group ml-auto">
+        <a class="btn btn-success" href="login.php">เข้าสู่ระบบ</a>
+</div>
+      <!-- <button class="iteam ">
+            <a class="nav-link " href="contact.html">เข้าสู่ระบบ</a>
+          </button> -->
+</div>
 
     </div>
-  </nav><!-- End Header/Navbar -->
+  </nav>
 
   <main id="main">
 

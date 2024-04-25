@@ -32,60 +32,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  <style>
-  .item {
-    background-color: #007bff; /* สีพื้นหลังของปุ่ม */
-    border: none; /* ลบเส้นขอบ */
-    border-radius: 5px; /* กำหนดรูปร่างขอบ */
-    padding: 10px 20px; /* ขนาดของแนวคำของปุ่ม */
-    cursor: pointer; /* เปลี่ยนรูปแบบเคอร์เซอร์เป็นมือ */
-  }
 
-  .item a {
-    text-decoration: none; /* ลบขีดเส้นใต้ข้อความลิงก์ */
-    color: #fff; /* สีข้อความลิงก์ */
-  }
-
-  .item:hover {
-    background-color: #0056b3; /* สีพื้นหลังเมื่อเมาส์ผ่านไป */
-  }
-  .login-box form .bt {
-      position: relative;
-      display: inline-block;
-      padding: 10px 20px;
-      color: black;
-      font-size: 16px;
-      text-decoration: none;
-      text-transform: uppercase;
-      overflow: hidden;
-      transition: .5s;
-      margin-top: 40px;
-      letter-spacing: 4px;
-      margin-left: 173px;
-    }
-
-    .login-box .bt:hover {
-      background: #DAA520;
-      color: black;
-      border-radius: 5px;
-      box-shadow: 0 0 5px #FF4500,
-    }
-    .login-box .bt span {
-      position: absolute;
-      display: block;
-    }
-    .testimonials-box {
-  text-align: center; /* จัดให้เนื้อหาตรงกลาง */
-}
-
-.testimonial-img iframe {
-  width: 300px; /* ปรับขนาดแผนที่ให้เล็กลง */
-  height: 225px; /* ปรับขนาดแผนที่ให้เล็กลง */
-  margin: auto; /* จัดให้แผนที่ตรงกลาง */
-  display: block; /* แสดงแผนที่เป็นบล็อก */
-}
-
-</style>
   
 </head>
 
@@ -120,17 +67,28 @@
             </div>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link " href="property-grid.php">กลุ่มสาระการเรียนรู้</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dorupdown" aria-haspopup="true" aria-expanded="false">กลุ่มสาระการเรียนรู้</a>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">วิทยาศาสตร์และเทคโนโลยี</a>
+              <a href="#" class="dropdown-item">คณิตศาสตร์</a>
+              <a href="#" class="dropdown-item">ภาษาไทย</a>
+              <a href="#" class="dropdown-item">สังคมศึกษา ศาสนาและวัฒนธรรม</a>
+              <a href="#" class="dropdown-item">ภาษาต่างประเทศ</a>
+              <a href="#" class="dropdown-item">ศิลปะ</a>
+              <a href="#" class="dropdown-item">สุขศึกษาและพละศึกษา</a>
+              <a href="#" class="dropdown-item">การงานอาชีพ</a>
+              <a href="#" class="dropdown-item">กิจกรรมพัฒนาผู้เรียน</a>
+            </div>
           </li>
 
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">นักเรียน</a>
             <div class="dropdown-menu">
               <a class="dropdown-item " href="timetable2022_subgroups_days_vertical.html">ตารางสอน</a>
               <a class="dropdown-item " href="blog-single.html">ตารางสอบ</a>
             </div>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link " href="contact.php">ติดต่อเรา</a>
           </li>
