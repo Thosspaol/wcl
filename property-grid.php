@@ -36,30 +36,7 @@
 
 <body>
 
-  <!-- ======= Property Search Section ======= -->
-  <div class="click-closed"></div>
-  <!--/ Form Search Star /-->
-  <div class="box-collapse">
-    <div class="title-box-d">
-      <h3 class="title-d">Search</h3>
-    </div>
-    <span class="close-box-collapse right-boxed bi bi-x"></span>
-    <div class="box-collapse-wrap form">
-      <form class="form-a">
-        <div class="row">
-          <div class="col-md-12 mb-2">
-            <div class="form-group">
-              <label class="pb-2" for="Type">Keyword</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
-            </div>
-          </div>
-          <div class="col-md-12">
-            <button type="submit" class="btn btn-b">Search</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div><!-- End Property Search Section -->>
+
 
   <!-- ======= Header/Navbar ======= -->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
@@ -83,31 +60,27 @@
             <div class="dropdown-menu">
               <a class="dropdown-item " href="property-single.php">ประวัติโรงเรียน</a>
               <a class="dropdown-item " href="blog-single.php">วิสัยทัศน์/พันธกิจ</a>
-              <a class="dropdown-item " href="agents-grid.html">อัตลักษณ์ประจำโรงเรียน</a>
-              <a class="dropdown-item " href="agent-single.html">เพลงประจำโรงเรียน</a>
-            </div>
+              <a class="dropdown-item" href="property-grid.php">คณะผู้บริหาร</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="property-grid.php">ผู้บริหารและบุคลากร</a>
+            <a class="nav-link " href="property-grid.php">กลุ่มสาระการเรียนรู้</a>
           </li>
 
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">นักเรียน</a>
             <div class="dropdown-menu">
               <a class="dropdown-item " href="property-single.html">ตารางสอน</a>
               <a class="dropdown-item " href="blog-single.html">ตารางสอบ</a>
             </div>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link " href="contact.php">ติดต่อเรา</a>
           </li>
         </ul>
       </div>
 
-      <button type="button" class="btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
-        <i class="bi bi-search"></i>
-      </button>
+      <a href="#" class="btn btn-success">เข้าสู่ระบบ</a>
 
     </div>
   </nav><!-- End Header/Navbar -->
@@ -120,17 +93,17 @@
         <div class="row">
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
-              <h1 class="title-single">ผู้บริหารและบุคลากร</h1>
+              <h1 class="title-single">คณะผู้บริหาร</h1>
             </div>
           </div>
           <div class="col-md-12 col-lg-4">
             <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
               <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                  <a href="index.php">หน้าแรก</a>
+                  <a href="index.php">คณะผู้บริหาร</a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                Watchonglomschool Tammachote
+                  Watchonglomschool Tammachote
                 </li>
               </ol>
             </nav>
@@ -140,333 +113,108 @@
     </section><!-- End Intro Single-->
 
     <!-- ======= Property Grid ======= -->
-    <section class="property-grid grid">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="grid-option">
-              <form>
-                <select class="custom-select">
-                  <option selected>All</option>
-                  <option value="1">New to Old</option>
-                  <option value="2">For Rent</option>
-                  <option value="3">For Sale</option>
-                </select>
-              </form>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-box-a card-shadow">
-              <div class="img-box-a">
-                <img src="assets/img/property-1.jpg" alt="" class="img-a img-fluid">
+    <table border="0" cellpadding="4" cellspacing="1" style="margin-left: auto; margin-right: auto;" width="450">
+      <tbody>
+        <tr>
+          <td>
+            <div>
+              <div style="text-align: center;">
+                <img src="assets/img/ผู้อำนวยการ.jpg" style="width: 170px; height: 216px;" /><br />
+                <br />
+                <strong>นายรัฐวัฒน์ ปรียานนท์</strong><br />
+                <p>ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</p>
               </div>
-              <div class="card-overlay">
-                <div class="card-overlay-a-content">
-                  <div class="card-header-a">
-                    <h2 class="card-title-a">
-                      <a href="#">204 Mount
-                        <br /> Olive Road Two</a>
-                    </h2>
-                  </div>
-                  <div class="card-body-a">
-                    <div class="price-box d-flex">
-                      <span class="price-a">rent | $ 12.000</span>
-                    </div>
-                    <a href="property-single.html" class="link-a">Click here to view
-                      <span class="bi bi-chevron-right"></span>
-                    </a>
-                  </div>
-                  <div class="card-footer-a">
-                    <ul class="card-info d-flex justify-content-around">
-                      <li>
-                        <h4 class="card-info-title">Area</h4>
-                        <span>340m
-                          <sup>2</sup>
-                        </span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Beds</h4>
-                        <span>2</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Baths</h4>
-                        <span>4</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Garages</h4>
-                        <span>1</span>
-                      </li>
-                    </ul>
-                  </div>
+              <div style="text-align: center;">
+                &nbsp;</div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <div>
+      <table border="0" cellpadding="1" cellspacing="1" width="100%">
+        <tbody>
+          <tr style="text-align: center;">
+            <td style="vertical-align: bottom;">
+              <div>
+                &nbsp;</div>
+              <div>
+                <img  src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
+              </div>
+              <div>
+                &nbsp;</div>
+              <div>
+                <strong>นางมีเงิน เพิ่มพูน</strong>
+              </div>
+              <div>
+                รองผู้อำนวยการกลุ่มบริหารวิชาการ</div>
+              <div>
+                &nbsp;</div>
+            </td>
+            <td style="vertical-align: bottom;">
+              <div>
+                <img  src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
+              </div>
+              <div>
+                &nbsp;</div>
+              <div>
+                <div>
+                  <strong>นางสาวสุชาวดี ทับทอง</strong>
                 </div>
+                <div>
+                  รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์</div>
+                <div>
+                  &nbsp;</div>
               </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-box-a card-shadow">
-              <div class="img-box-a">
-                <img src="assets/img/property-3.jpg" alt="" class="img-a img-fluid">
+            </td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="vertical-align: bottom;">
+              <p>
+                <img  src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
+              </p>
+              <p>
+                <b>นางอมริน คุ้มจัด</b><br />
+                รองผู้อำนวยการกลุ่มบริหารทั่วไป
+              </p>
+            </td>
+            <td style="text-align: center; vertical-align: bottom; width: 50%;">
+              <div>
+                <img  src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
               </div>
-              <div class="card-overlay">
-                <div class="card-overlay-a-content">
-                  <div class="card-header-a">
-                    <h2 class="card-title-a">
-                      <a href="#">204 Mount
-                        <br /> Olive Road Two</a>
-                    </h2>
-                  </div>
-                  <div class="card-body-a">
-                    <div class="price-box d-flex">
-                      <span class="price-a">rent | $ 12.000</span>
-                    </div>
-                    <a href="property-single.html" class="link-a">Click here to view
-                      <span class="bi bi-chevron-right"></span>
-                    </a>
-                  </div>
-                  <div class="card-footer-a">
-                    <ul class="card-info d-flex justify-content-around">
-                      <li>
-                        <h4 class="card-info-title">Area</h4>
-                        <span>340m
-                          <sup>2</sup>
-                        </span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Beds</h4>
-                        <span>2</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Baths</h4>
-                        <span>4</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Garages</h4>
-                        <span>1</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+              <div>
+                &nbsp;</div>
+              <div>
+                <b>นางนงรัตน์ ขอเดชะ</b><br />
+                รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน
               </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-box-a card-shadow">
-              <div class="img-box-a">
-                <img src="assets/img/property-6.jpg" alt="" class="img-a img-fluid">
+              <div>
+                &nbsp;</div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="vertical-align: bottom;">
+              <div style="text-align: center;">
+                &nbsp;</div>
+              <div style="text-align: center;">
+                <img  src="assets/img/อาจารย์.jpg" style="width: 160px; height: 216px;" />
               </div>
-              <div class="card-overlay">
-                <div class="card-overlay-a-content">
-                  <div class="card-header-a">
-                    <h2 class="card-title-a">
-                      <a href="#">204 Mount
-                        <br /> Olive Road Two</a>
-                    </h2>
-                  </div>
-                  <div class="card-body-a">
-                    <div class="price-box d-flex">
-                      <span class="price-a">rent | $ 12.000</span>
-                    </div>
-                    <a href="property-single.html" class="link-a">Click here to view
-                      <span class="bi bi-chevron-right"></span>
-                    </a>
-                  </div>
-                  <div class="card-footer-a">
-                    <ul class="card-info d-flex justify-content-around">
-                      <li>
-                        <h4 class="card-info-title">Area</h4>
-                        <span>340m
-                          <sup>2</sup>
-                        </span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Beds</h4>
-                        <span>2</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Baths</h4>
-                        <span>4</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Garages</h4>
-                        <span>1</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+              <div style="text-align: center;">
+                &nbsp;</div>
+              <div style="text-align: center;">
+                <strong>นางสาววิภาภรน์ รูปงาม</strong><br />
+                ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา
               </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-box-a card-shadow">
-              <div class="img-box-a">
-                <img src="assets/img/property-7.jpg" alt="" class="img-a img-fluid">
-              </div>
-              <div class="card-overlay">
-                <div class="card-overlay-a-content">
-                  <div class="card-header-a">
-                    <h2 class="card-title-a">
-                      <a href="#">204 Mount
-                        <br /> Olive Road Two</a>
-                    </h2>
-                  </div>
-                  <div class="card-body-a">
-                    <div class="price-box d-flex">
-                      <span class="price-a">rent | $ 12.000</span>
-                    </div>
-                    <a href="property-single.html" class="link-a">Click here to view
-                      <span class="bi bi-chevron-right"></span>
-                    </a>
-                  </div>
-                  <div class="card-footer-a">
-                    <ul class="card-info d-flex justify-content-around">
-                      <li>
-                        <h4 class="card-info-title">Area</h4>
-                        <span>340m
-                          <sup>2</sup>
-                        </span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Beds</h4>
-                        <span>2</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Baths</h4>
-                        <span>4</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Garages</h4>
-                        <span>1</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-box-a card-shadow">
-              <div class="img-box-a">
-                <img src="assets/img/property-8.jpg" alt="" class="img-a img-fluid">
-              </div>
-              <div class="card-overlay">
-                <div class="card-overlay-a-content">
-                  <div class="card-header-a">
-                    <h2 class="card-title-a">
-                      <a href="#">204 Mount
-                        <br /> Olive Road Two</a>
-                    </h2>
-                  </div>
-                  <div class="card-body-a">
-                    <div class="price-box d-flex">
-                      <span class="price-a">rent | $ 12.000</span>
-                    </div>
-                    <a href="property-single.html" class="link-a">Click here to view
-                      <span class="bi bi-chevron-right"></span>
-                    </a>
-                  </div>
-                  <div class="card-footer-a">
-                    <ul class="card-info d-flex justify-content-around">
-                      <li>
-                        <h4 class="card-info-title">Area</h4>
-                        <span>340m
-                          <sup>2</sup>
-                        </span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Beds</h4>
-                        <span>2</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Baths</h4>
-                        <span>4</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Garages</h4>
-                        <span>1</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card-box-a card-shadow">
-              <div class="img-box-a">
-                <img src="assets/img/property-10.jpg" alt="" class="img-a img-fluid">
-              </div>
-              <div class="card-overlay">
-                <div class="card-overlay-a-content">
-                  <div class="card-header-a">
-                    <h2 class="card-title-a">
-                      <a href="#">204 Mount
-                        <br /> Olive Road Two</a>
-                    </h2>
-                  </div>
-                  <div class="card-body-a">
-                    <div class="price-box d-flex">
-                      <span class="price-a">rent | $ 12.000</span>
-                    </div>
-                    <a href="property-single.html" class="link-a">Click here to view
-                      <span class="bi bi-chevron-right"></span>
-                    </a>
-                  </div>
-                  <div class="card-footer-a">
-                    <ul class="card-info d-flex justify-content-around">
-                      <li>
-                        <h4 class="card-info-title">Area</h4>
-                        <span>340m
-                          <sup>2</sup>
-                        </span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Beds</h4>
-                        <span>2</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Baths</h4>
-                        <span>4</span>
-                      </li>
-                      <li>
-                        <h4 class="card-info-title">Garages</h4>
-                        <span>1</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <nav class="pagination-a">
-              <ul class="pagination justify-content-end">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1">
-                    <span class="bi bi-chevron-left"></span>
-                  </a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item active">
-                  <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item">
-                  <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item next">
-                  <a class="page-link" href="#">
-                    <span class="bi bi-chevron-right"></span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </section><!-- End Property Grid Single-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    </div>
+    </div><!-- End Property Grid Single-->
 
   </main><!-- End #main -->
 
