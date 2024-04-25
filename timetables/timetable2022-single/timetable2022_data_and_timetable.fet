@@ -1,0 +1,1485 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<fet version="6.9.7">
+
+<Mode>Official</Mode>
+
+<Institution_Name>ตารางสอนโรงเรียนวัดช่องลมธรรมโชติ ปีการศึกษา 2566 ภาคเรียนที่ 2</Institution_Name>
+
+<Comments>Default comments</Comments>
+
+<Days_List>
+<Number_of_Days>5</Number_of_Days>
+<Day>
+	<Name>Monday</Name>
+</Day>
+<Day>
+	<Name>Tuesday</Name>
+</Day>
+<Day>
+	<Name>Wednesday</Name>
+</Day>
+<Day>
+	<Name>Thursday</Name>
+</Day>
+<Day>
+	<Name>Friday</Name>
+</Day>
+</Days_List>
+
+<Hours_List>
+<Number_of_Hours>8</Number_of_Hours>
+<Hour>
+	<Name>08:30-09:20</Name>
+</Hour>
+<Hour>
+	<Name>09:20-10:10</Name>
+</Hour>
+<Hour>
+	<Name>10:10-11:00</Name>
+</Hour>
+<Hour>
+	<Name>11:00-11:50</Name>
+</Hour>
+<Hour>
+	<Name>11:50-12:40</Name>
+</Hour>
+<Hour>
+	<Name>12:40-13:30</Name>
+</Hour>
+<Hour>
+	<Name>13:30-14:20</Name>
+</Hour>
+<Hour>
+	<Name>14:20-15:10</Name>
+</Hour>
+</Hours_List>
+
+<Subjects_List>
+<Subject>
+	<Name>ค22112 คณิตศาสตร์</Name>
+	<Comments></Comments>
+</Subject>
+<Subject>
+	<Name>ง22101 การงานอาชีพ</Name>
+	<Comments></Comments>
+</Subject>
+<Subject>
+	<Name>ท22102 ภาษาไทย</Name>
+	<Comments></Comments>
+</Subject>
+<Subject>
+	<Name>พ22104 พละศึกษา</Name>
+	<Comments></Comments>
+</Subject>
+<Subject>
+	<Name>ว22102 วิทยาศาสตร์</Name>
+	<Comments></Comments>
+</Subject>
+<Subject>
+	<Name>อ22102 ภาษาอังกฤษ</Name>
+	<Comments></Comments>
+</Subject>
+</Subjects_List>
+
+<Activity_Tags_List>
+</Activity_Tags_List>
+
+<Teachers_List>
+<Teacher>
+	<Name>ครูระเบียบ วอทอง</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>ครูช่อทิพย์ อาลากุล</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>ครูปุณณดา เล็กสราวุธ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>ครูจุไรรัตน์ พันธเสน</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>ครูนิวัช ทองชุม</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>ครูสุดารัตน์ วรวลัญช์</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>ครูสมชาย พูลสวัสดิ์</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+<Teacher>
+	<Name>ครูทิพปภา ไชยเทพ</Name>
+	<Target_Number_of_Hours>0</Target_Number_of_Hours>
+	<Qualified_Subjects>
+	</Qualified_Subjects>
+	<Comments></Comments>
+</Teacher>
+</Teachers_List>
+
+<Students_List>
+<Year>
+	<Name>ประถมศึกษาตอนต้น</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
+	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->
+	<Number_of_Categories>0</Number_of_Categories>
+	<Separator> </Separator>
+	<Group>
+		<Name>ป.1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>ป.2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>ป.3</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+</Year>
+<Year>
+	<Name>ประถมศึกษาตอนปลาย</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
+	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->
+	<Number_of_Categories>0</Number_of_Categories>
+	<Separator> </Separator>
+	<Group>
+		<Name>ป.4</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>ป.5</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>ป.6</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+</Year>
+<Year>
+	<Name>อนุบาล</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
+	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->
+	<Number_of_Categories>0</Number_of_Categories>
+	<Separator> </Separator>
+	<Group>
+		<Name>อ.1</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+	<Group>
+		<Name>อ.2</Name>
+		<Number_of_Students>0</Number_of_Students>
+		<Comments></Comments>
+	</Group>
+</Year>
+<Year>
+	<Name>เตรียมอนุบาล</Name>
+	<Number_of_Students>0</Number_of_Students>
+	<Comments></Comments>
+	<!-- The information regarding categories, divisions of each category, and separator is only used in the divide year automatically by categories dialog. -->
+	<Number_of_Categories>0</Number_of_Categories>
+	<Separator> </Separator>
+</Year>
+</Students_List>
+
+<Activities_List>
+<Activity>
+	<Teacher>ครูระเบียบ วอทอง</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>1</Id>
+	<Activity_Group_Id>1</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูระเบียบ วอทอง</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>2</Id>
+	<Activity_Group_Id>1</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูระเบียบ วอทอง</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>3</Id>
+	<Activity_Group_Id>1</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูระเบียบ วอทอง</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>4</Id>
+	<Activity_Group_Id>4</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูระเบียบ วอทอง</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>5</Id>
+	<Activity_Group_Id>4</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูระเบียบ วอทอง</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>6</Id>
+	<Activity_Group_Id>4</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูระเบียบ วอทอง</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.3</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>7</Id>
+	<Activity_Group_Id>7</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูระเบียบ วอทอง</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.3</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>8</Id>
+	<Activity_Group_Id>7</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูระเบียบ วอทอง</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.3</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>9</Id>
+	<Activity_Group_Id>7</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูช่อทิพย์ อาลากุล</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>10</Id>
+	<Activity_Group_Id>10</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูช่อทิพย์ อาลากุล</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>11</Id>
+	<Activity_Group_Id>10</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูช่อทิพย์ อาลากุล</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>12</Id>
+	<Activity_Group_Id>10</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูช่อทิพย์ อาลากุล</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>13</Id>
+	<Activity_Group_Id>13</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูช่อทิพย์ อาลากุล</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>14</Id>
+	<Activity_Group_Id>13</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูช่อทิพย์ อาลากุล</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>15</Id>
+	<Activity_Group_Id>13</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูช่อทิพย์ อาลากุล</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.3</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>16</Id>
+	<Activity_Group_Id>16</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูช่อทิพย์ อาลากุล</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.3</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>17</Id>
+	<Activity_Group_Id>16</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูช่อทิพย์ อาลากุล</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.3</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>18</Id>
+	<Activity_Group_Id>16</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูปุณณดา เล็กสราวุธ</Teacher>
+	<Subject>ง22101 การงานอาชีพ</Subject>
+	<Students>ป.1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>19</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูปุณณดา เล็กสราวุธ</Teacher>
+	<Subject>ง22101 การงานอาชีพ</Subject>
+	<Students>ป.2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>20</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูปุณณดา เล็กสราวุธ</Teacher>
+	<Subject>ง22101 การงานอาชีพ</Subject>
+	<Students>ป.3</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>21</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูปุณณดา เล็กสราวุธ</Teacher>
+	<Subject>ง22101 การงานอาชีพ</Subject>
+	<Students>ป.4</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>22</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูปุณณดา เล็กสราวุธ</Teacher>
+	<Subject>ง22101 การงานอาชีพ</Subject>
+	<Students>ป.5</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>23</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูปุณณดา เล็กสราวุธ</Teacher>
+	<Subject>ง22101 การงานอาชีพ</Subject>
+	<Students>ป.6</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>24</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูนิวัช ทองชุม</Teacher>
+	<Subject>อ22102 ภาษาอังกฤษ</Subject>
+	<Students>ป.1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>25</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูนิวัช ทองชุม</Teacher>
+	<Subject>อ22102 ภาษาอังกฤษ</Subject>
+	<Students>ป.2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>26</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูนิวัช ทองชุม</Teacher>
+	<Subject>อ22102 ภาษาอังกฤษ</Subject>
+	<Students>ป.3</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>27</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสุดารัตน์ วรวลัญช์</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.4</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>28</Id>
+	<Activity_Group_Id>28</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสุดารัตน์ วรวลัญช์</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.4</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>29</Id>
+	<Activity_Group_Id>28</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสุดารัตน์ วรวลัญช์</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.4</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>30</Id>
+	<Activity_Group_Id>28</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสุดารัตน์ วรวลัญช์</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.5</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>31</Id>
+	<Activity_Group_Id>31</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสุดารัตน์ วรวลัญช์</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.5</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>32</Id>
+	<Activity_Group_Id>31</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสุดารัตน์ วรวลัญช์</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.5</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>33</Id>
+	<Activity_Group_Id>31</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสุดารัตน์ วรวลัญช์</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.6</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>34</Id>
+	<Activity_Group_Id>34</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสุดารัตน์ วรวลัญช์</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.6</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>35</Id>
+	<Activity_Group_Id>34</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสุดารัตน์ วรวลัญช์</Teacher>
+	<Subject>ว22102 วิทยาศาสตร์</Subject>
+	<Students>ป.6</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>36</Id>
+	<Activity_Group_Id>34</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสมชาย พูลสวัสดิ์</Teacher>
+	<Subject>พ22104 พละศึกษา</Subject>
+	<Students>ป.1</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>37</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสมชาย พูลสวัสดิ์</Teacher>
+	<Subject>พ22104 พละศึกษา</Subject>
+	<Students>ป.2</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>38</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสมชาย พูลสวัสดิ์</Teacher>
+	<Subject>พ22104 พละศึกษา</Subject>
+	<Students>ป.3</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>39</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสมชาย พูลสวัสดิ์</Teacher>
+	<Subject>พ22104 พละศึกษา</Subject>
+	<Students>ป.4</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>40</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสมชาย พูลสวัสดิ์</Teacher>
+	<Subject>พ22104 พละศึกษา</Subject>
+	<Students>ป.5</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>41</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูสมชาย พูลสวัสดิ์</Teacher>
+	<Subject>พ22104 พละศึกษา</Subject>
+	<Students>ป.6</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>42</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูทิพปภา ไชยเทพ</Teacher>
+	<Subject>อ22102 ภาษาอังกฤษ</Subject>
+	<Students>ป.4</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>43</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูทิพปภา ไชยเทพ</Teacher>
+	<Subject>อ22102 ภาษาอังกฤษ</Subject>
+	<Students>ป.5</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>44</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูทิพปภา ไชยเทพ</Teacher>
+	<Subject>อ22102 ภาษาอังกฤษ</Subject>
+	<Students>ป.6</Students>
+	<Duration>1</Duration>
+	<Total_Duration>1</Total_Duration>
+	<Id>45</Id>
+	<Activity_Group_Id>0</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูจุไรรัตน์ พันธเสน</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.4</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>46</Id>
+	<Activity_Group_Id>46</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูจุไรรัตน์ พันธเสน</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.4</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>47</Id>
+	<Activity_Group_Id>46</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูจุไรรัตน์ พันธเสน</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.4</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>48</Id>
+	<Activity_Group_Id>46</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูจุไรรัตน์ พันธเสน</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.5</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>49</Id>
+	<Activity_Group_Id>49</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูจุไรรัตน์ พันธเสน</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.5</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>50</Id>
+	<Activity_Group_Id>49</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูจุไรรัตน์ พันธเสน</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.5</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>51</Id>
+	<Activity_Group_Id>49</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูจุไรรัตน์ พันธเสน</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.6</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>52</Id>
+	<Activity_Group_Id>52</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูจุไรรัตน์ พันธเสน</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.6</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>53</Id>
+	<Activity_Group_Id>52</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+<Activity>
+	<Teacher>ครูจุไรรัตน์ พันธเสน</Teacher>
+	<Subject>ค22112 คณิตศาสตร์</Subject>
+	<Students>ป.6</Students>
+	<Duration>1</Duration>
+	<Total_Duration>3</Total_Duration>
+	<Id>54</Id>
+	<Activity_Group_Id>52</Activity_Group_Id>
+	<Active>true</Active>
+	<Comments></Comments>
+</Activity>
+</Activities_List>
+
+<Buildings_List>
+</Buildings_List>
+
+<Rooms_List>
+</Rooms_List>
+
+<Time_Constraints_List>
+<ConstraintBasicCompulsoryTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBasicCompulsoryTime>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>1</Activity_Id>
+	<Activity_Id>2</Activity_Id>
+	<Activity_Id>3</Activity_Id>
+	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>4</Activity_Id>
+	<Activity_Id>5</Activity_Id>
+	<Activity_Id>6</Activity_Id>
+	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>7</Activity_Id>
+	<Activity_Id>8</Activity_Id>
+	<Activity_Id>9</Activity_Id>
+	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>10</Activity_Id>
+	<Activity_Id>11</Activity_Id>
+	<Activity_Id>12</Activity_Id>
+	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>13</Activity_Id>
+	<Activity_Id>14</Activity_Id>
+	<Activity_Id>15</Activity_Id>
+	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>16</Activity_Id>
+	<Activity_Id>17</Activity_Id>
+	<Activity_Id>18</Activity_Id>
+	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>28</Activity_Id>
+	<Activity_Id>29</Activity_Id>
+	<Activity_Id>30</Activity_Id>
+	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>31</Activity_Id>
+	<Activity_Id>32</Activity_Id>
+	<Activity_Id>33</Activity_Id>
+	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>34</Activity_Id>
+	<Activity_Id>35</Activity_Id>
+	<Activity_Id>36</Activity_Id>
+	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>46</Activity_Id>
+	<Activity_Id>47</Activity_Id>
+	<Activity_Id>48</Activity_Id>
+	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>49</Activity_Id>
+	<Activity_Id>50</Activity_Id>
+	<Activity_Id>51</Activity_Id>
+	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintMinDaysBetweenActivities>
+	<Weight_Percentage>95</Weight_Percentage>
+	<Consecutive_If_Same_Day>true</Consecutive_If_Same_Day>
+	<Number_of_Activities>3</Number_of_Activities>
+	<Activity_Id>52</Activity_Id>
+	<Activity_Id>53</Activity_Id>
+	<Activity_Id>54</Activity_Id>
+	<MinDays>1</MinDays>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintMinDaysBetweenActivities>
+<ConstraintBreakTimes>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Number_of_Break_Times>5</Number_of_Break_Times>
+	<Break_Time>
+		<Day>Monday</Day>
+		<Hour>11:50-12:40</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Tuesday</Day>
+		<Hour>11:50-12:40</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Wednesday</Day>
+		<Hour>11:50-12:40</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Thursday</Day>
+		<Hour>11:50-12:40</Hour>
+	</Break_Time>
+	<Break_Time>
+		<Day>Friday</Day>
+		<Hour>11:50-12:40</Hour>
+	</Break_Time>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBreakTimes>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>1</Activity_Id>
+	<Preferred_Day>Tuesday</Preferred_Day>
+	<Preferred_Hour>09:20-10:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>2</Activity_Id>
+	<Preferred_Day>Friday</Preferred_Day>
+	<Preferred_Hour>08:30-09:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>3</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>14:20-15:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>4</Activity_Id>
+	<Preferred_Day>Tuesday</Preferred_Day>
+	<Preferred_Hour>08:30-09:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>5</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>13:30-14:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>6</Activity_Id>
+	<Preferred_Day>Thursday</Preferred_Day>
+	<Preferred_Hour>08:30-09:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>7</Activity_Id>
+	<Preferred_Day>Tuesday</Preferred_Day>
+	<Preferred_Hour>12:40-13:30</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>8</Activity_Id>
+	<Preferred_Day>Monday</Preferred_Day>
+	<Preferred_Hour>08:30-09:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>9</Activity_Id>
+	<Preferred_Day>Friday</Preferred_Day>
+	<Preferred_Hour>10:10-11:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>10</Activity_Id>
+	<Preferred_Day>Friday</Preferred_Day>
+	<Preferred_Hour>11:00-11:50</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>11</Activity_Id>
+	<Preferred_Day>Monday</Preferred_Day>
+	<Preferred_Hour>10:10-11:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>12</Activity_Id>
+	<Preferred_Day>Tuesday</Preferred_Day>
+	<Preferred_Hour>12:40-13:30</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>13</Activity_Id>
+	<Preferred_Day>Friday</Preferred_Day>
+	<Preferred_Hour>14:20-15:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>14</Activity_Id>
+	<Preferred_Day>Monday</Preferred_Day>
+	<Preferred_Hour>13:30-14:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>15</Activity_Id>
+	<Preferred_Day>Thursday</Preferred_Day>
+	<Preferred_Hour>14:20-15:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>16</Activity_Id>
+	<Preferred_Day>Tuesday</Preferred_Day>
+	<Preferred_Hour>09:20-10:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>17</Activity_Id>
+	<Preferred_Day>Thursday</Preferred_Day>
+	<Preferred_Hour>10:10-11:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>18</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>08:30-09:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>19</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>13:30-14:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>20</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>10:10-11:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>21</Activity_Id>
+	<Preferred_Day>Monday</Preferred_Day>
+	<Preferred_Hour>14:20-15:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>22</Activity_Id>
+	<Preferred_Day>Friday</Preferred_Day>
+	<Preferred_Hour>14:20-15:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>23</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>08:30-09:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>24</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>11:00-11:50</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>25</Activity_Id>
+	<Preferred_Day>Thursday</Preferred_Day>
+	<Preferred_Hour>09:20-10:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>26</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>12:40-13:30</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>27</Activity_Id>
+	<Preferred_Day>Monday</Preferred_Day>
+	<Preferred_Hour>12:40-13:30</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>28</Activity_Id>
+	<Preferred_Day>Monday</Preferred_Day>
+	<Preferred_Hour>13:30-14:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>29</Activity_Id>
+	<Preferred_Day>Tuesday</Preferred_Day>
+	<Preferred_Hour>09:20-10:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>30</Activity_Id>
+	<Preferred_Day>Thursday</Preferred_Day>
+	<Preferred_Hour>10:10-11:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>31</Activity_Id>
+	<Preferred_Day>Thursday</Preferred_Day>
+	<Preferred_Hour>14:20-15:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>32</Activity_Id>
+	<Preferred_Day>Monday</Preferred_Day>
+	<Preferred_Hour>11:00-11:50</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>33</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>13:30-14:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>34</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>09:20-10:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>35</Activity_Id>
+	<Preferred_Day>Friday</Preferred_Day>
+	<Preferred_Hour>09:20-10:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>36</Activity_Id>
+	<Preferred_Day>Tuesday</Preferred_Day>
+	<Preferred_Hour>12:40-13:30</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>37</Activity_Id>
+	<Preferred_Day>Thursday</Preferred_Day>
+	<Preferred_Hour>08:30-09:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>38</Activity_Id>
+	<Preferred_Day>Thursday</Preferred_Day>
+	<Preferred_Hour>11:00-11:50</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>39</Activity_Id>
+	<Preferred_Day>Thursday</Preferred_Day>
+	<Preferred_Hour>09:20-10:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>40</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>09:20-10:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>41</Activity_Id>
+	<Preferred_Day>Thursday</Preferred_Day>
+	<Preferred_Hour>13:30-14:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>42</Activity_Id>
+	<Preferred_Day>Monday</Preferred_Day>
+	<Preferred_Hour>14:20-15:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>43</Activity_Id>
+	<Preferred_Day>Friday</Preferred_Day>
+	<Preferred_Hour>11:00-11:50</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>44</Activity_Id>
+	<Preferred_Day>Tuesday</Preferred_Day>
+	<Preferred_Hour>11:00-11:50</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>45</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>10:10-11:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>46</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>10:10-11:00</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>47</Activity_Id>
+	<Preferred_Day>Thursday</Preferred_Day>
+	<Preferred_Hour>11:00-11:50</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>48</Activity_Id>
+	<Preferred_Day>Friday</Preferred_Day>
+	<Preferred_Hour>12:40-13:30</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>49</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>11:00-11:50</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>50</Activity_Id>
+	<Preferred_Day>Thursday</Preferred_Day>
+	<Preferred_Hour>12:40-13:30</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>51</Activity_Id>
+	<Preferred_Day>Tuesday</Preferred_Day>
+	<Preferred_Hour>12:40-13:30</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>52</Activity_Id>
+	<Preferred_Day>Wednesday</Preferred_Day>
+	<Preferred_Hour>14:20-15:10</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>53</Activity_Id>
+	<Preferred_Day>Friday</Preferred_Day>
+	<Preferred_Hour>11:00-11:50</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+<ConstraintActivityPreferredStartingTime>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Activity_Id>54</Activity_Id>
+	<Preferred_Day>Tuesday</Preferred_Day>
+	<Preferred_Hour>13:30-14:20</Preferred_Hour>
+	<Permanently_Locked>false</Permanently_Locked>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintActivityPreferredStartingTime>
+</Time_Constraints_List>
+
+<Space_Constraints_List>
+<ConstraintBasicCompulsorySpace>
+	<Weight_Percentage>100</Weight_Percentage>
+	<Active>true</Active>
+	<Comments></Comments>
+</ConstraintBasicCompulsorySpace>
+</Space_Constraints_List>
+
+</fet>

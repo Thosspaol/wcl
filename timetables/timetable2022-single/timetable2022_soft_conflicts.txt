@@ -1,0 +1,10 @@
+﻿Soft conflicts of timetable2022.fet
+Generated with FET 6.9.7 on 10/19/23 3:41 PM
+
+Number of broken soft constraints: 0
+Total soft conflicts: 0
+
+Soft conflicts list (in decreasing order):
+
+
+End of file.
