@@ -70,7 +70,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dorupdown" aria-haspopup="true" aria-expanded="false">กลุ่มสาระการเรียนรู้</a>
             <div class="dropdown-menu">
-              <a href="#" class="dropdown-item">วิทยาศาสตร์และเทคโนโลยี</a>
+              <a href="sci.php" class="dropdown-item">วิทยาศาสตร์และเทคโนโลยี</a>
               <a href="#" class="dropdown-item">คณิตศาสตร์</a>
               <a href="#" class="dropdown-item">ภาษาไทย</a>
               <a href="#" class="dropdown-item">สังคมศึกษา ศาสนาและวัฒนธรรม</a>

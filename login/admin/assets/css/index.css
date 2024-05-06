@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Sarabun:wght@100&display=swap');
+*{
+    box-sizing: border-box;
+}
+html,
+            body {
+                min-height: 150vh;
+                justify-content: center;
+                background: linear-gradient(120deg,#3e5151,#DECBA4);
+                font-family: 'Sarabun', sans-serif; /* เพิ่ม font-family สำหรับภาษาไทย */
+                color: #fff; /* เปลี่ยนสีตัวอักษรเป็นขาว */
+            }
+            .container {
+                margin-top: 50px;
+                max-width: 1200px;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                color: #000; /* เปลี่ยนสีตัวอักษรใน container เป็นสีดำ */
+            }
+            h1 {
+                text-align: center;
+                color: #fff;
+                flex: 1 1 100%;
+                box-sizing: border-box;
+                place-content: stretch center;
+                align-items: stretch;
+                max-width: 90%;
+                margin-top: 60px;
+                font-size: 38px;
+            }
+            label {
+                font-weight: 700;
+                color: #000; /* เปลี่ยนสีตัวอักษร label เป็นสีดำ */
+                font-size: 20px;
+                font-style: normal;
+            }
+            form {
+                margin-top: 20px;
+            }
+            /* เพิ่มความสวยงามให้กับปุ่มลงทะเบียน */
+            button {
+                width: 20%;
+                padding: 15px;
+                background: linear-gradient(120deg,#3e5151,#DECBA4);
+                color: #fff;
+                font-size: 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                margin: 0;
+                margin-left: 37%;
+            }
+    
+            button:hover {
+                background: linear-gradient(120deg,#3e5151,#DECBA4);
+                
+            }
+            p{
+                font-size: 14px;
+                margin-top: 20px;
+                box-sizing: border-box;
+                font-family: sans-serif;
+                font-style:initial;
+                font-family: 'Sarabun', sans-seri;
+                color: #797979;
+            }  
+            input[type="checkbox"]{
+                cursor: pointer;
+                margin: 2;
+                height: 20px;
+                position: relative;
+                top: 0;
+                width: 22px;
+                transition: 180ms linear;
+                left: 40%;
+            }
+            p1{
+               margin-left: 40%;
+                color: #000;
+                flex: 1 1 100%;
+                box-sizing: border-box;
+                place-content: stretch center;
+                align-items: stretch;
+                max-width: 90%;
+                font-size: 22px;
+                font-weight: bold;
+                line-height: 1;
+            }
+            .button{
+                width: 20%;
+                padding: 15px;
+                background: linear-gradient(120deg,#3e5151,#DECBA4);
+                color: #fff;
+                font-size: 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                margin: 0;
+                margin-left: 37%;
+            }
+            .button:hover {
+                background: linear-gradient(120deg,#3e5151,#DECBA4);
+            }

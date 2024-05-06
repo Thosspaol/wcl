@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   
-    <title>Walcome Senate</title>
+    <title>โรงเรียนวัดช่องลมธรรมโชติ</title>
 </head>
 <body>
     <div class="bg"></div>
@@ -38,8 +38,8 @@
                     <div class="card-body">
                         <form action="process_login.php" method="POST">
                             <div class="form-group">
-                                <label for="email_account">อีเมล <font style="color: red; margin-left: 1px">*</font></label>
-                                <input class="form-control" name="email_account" type="email" placeholder="อีเมล" required>
+                                <label for="id_account">วันเ/เดือน/ปีเกิด <font style="color: red; margin-left: 1px">ตัวอย่าง 07072544 *</font></label>
+                                <input class="form-control" name="birthday" type="text" placeholder="วัน/เดือน/ปีเกิด" required>
                             </div>
                             <div class="form-group">
                                 <label for="password_account">รหัสผ่าน <font style="color: red; margin-left: 1px">*</font></label>
@@ -52,7 +52,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary btn-block"><i class='fas fa-sign-in-alt'></i> เข้าสู่ระบบ</button><br>
                         </form>      
-                        <p>ยังไม่มีบัญชี ? <a href="form_register.php">สร้างบัญชีใหม่</a></p>
+                       <p>หากไม่มีข้อมูลโปรดติดต่อเจ้าหน้าที่ <a href="../index.php">ย้อนกลับ</a></p>
                     </div>
                 </div>
             </div>

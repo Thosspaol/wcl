@@ -1,0 +1,45 @@
+
+body, html {
+    height: 100%;
+    font-family: 'Mali', cursive !important;
+    font-size: 0.95rem !important;
+}
+.bg {
+    background: rgb(112, 2, 24);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    clip-path: polygon(0 0, 55% 0, 45% 100%, 0% 100%);
+}
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { 
+    border-radius: 20px; 
+    font-weight: 100px;
+}
+.toggle.ios .toggle-handle { 
+    border-radius: 20px; 
+}
+.toggle-on.btn {
+    padding-right: 19px;
+    font-weight: 100 !important;
+}
+.btn {
+    font-size: inherit !important;
+}
+.img-responsive{
+    display: block;
+    margin: 0 auto;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    height: auto;
+    max-width: 100%;
+}
+.form-group{
+    margin: 0 0 30px;
+    padding: 0;
+    color: black;
+    border-width: 5px 7px;
+    font-weight:  bold; 
+  }
