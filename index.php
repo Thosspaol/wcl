@@ -33,12 +33,12 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-  
+
 </head>
 
 <body>
 
-  
+
 
 
   <!-- ======= Header/Navbar ======= -->
@@ -95,12 +95,12 @@
         </ul>
       </div>
       <div class="btn-group ml-auto">
-        <a class="btn btn-success" href="login.php">เข้าสู่ระบบ</a>
-</div>
+        <a class="btn btn-success" href="login/form_login.php">เข้าสู่ระบบ</a>
+      </div>
       <!-- <button class="iteam ">
             <a class="nav-link " href="contact.html">เข้าสู่ระบบ</a>
           </button> -->
-</div>
+    </div>
 
     </div>
   </nav><!-- End Header/Navbar -->
@@ -123,7 +123,7 @@
                     </p>
                     <h1 class="intro-title mb-4 ">
                       <span class="color-b">(Day camp) </span>
-                      <br> กิจกรรมเข้าค่ายและเดินทางไกลลูกเสือสำรอง 
+                      <br> กิจกรรมเข้าค่ายและเดินทางไกลลูกเสือสำรอง
                     </h1>
                     <p class="intro-subtitle intro-price">
                       <a href="#"><span class="price-a">ดูเพิ่มเติม</span></a>
@@ -147,7 +147,7 @@
                       <br> 21 กุมภาพันธ์ 2022
                     </p>
                     <h1 class="intro-title mb-4">
-                        กิจกรรมศึกษาเรียนรู้เกี่ยวกับเมืองแม่กลอง
+                      กิจกรรมศึกษาเรียนรู้เกี่ยวกับเมืองแม่กลอง
                     </h1>
                     <p class="intro-subtitle intro-price">
                       <a href="#"><span class="price-a">ดูเพิ่มเติม</span></a>
@@ -188,103 +188,103 @@
   </div><br><!-- End Intro Section -->
 
   <main id="main">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="title-wrap d-flex justify-content-between">
-              <div class="title-box">
-                <h2 class="title-a">ข่าวรับสมัคร</h2>
-              </div>
-              <div class="title-link">
-                <a href="property-grid.html">ดูทั้งหมด
-                  <span class="bi bi-chevron-right"></span>
-                </a>
-              </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">ข่าวรับสมัคร</h2>
+            </div>
+            <div class="title-link">
+              <a href="property-grid.html">ดูทั้งหมด
+                <span class="bi bi-chevron-right"></span>
+              </a>
             </div>
           </div>
         </div>
-        <div id="property-carousel" class="swiper">
-          <div class="swiper-wrapper">
-            <div class="carousel-item-b me-5">
-              <div class="card-box-a card-shadow">
-                <div class="img-box-a">
-                  <img src="assets/img/รับสมัคร-1.jpg" alt="" class="img-a img-fluid" width="960" height="665">
-                </div>
-                <div class="card-overlay">
-                  <div class="card-overlay-a-content">
-                    <div class="card-header-a">
-                      <h2 class="card-title-a">
-                        <a href="property-single.html">ข่าวรับสมัคร ประจำปี 2565</a>
-                      </h2>
-                    </div>
-                    <div class="card-body-a">
-                      <a href="#" class="link-a">ดูเพิ่มเติม
-                        <span class="bi bi-chevron-right"></span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End carousel item -->
-
-            <div class="carousel-item-b">
-              <div class="card-box-a card-shadow">
-                <div class="img-box-a">
-                  <img src="assets/img/รับสมัคร-2.jpg" alt="" class="img-a img-fluid" width="960" height="665">
-                </div>
-                <div class="card-overlay">
-                  <div class="card-overlay-a-content">
-                    <div class="card-header-a">
-                      <h2 class="card-title-a">
-                        <a href="property-single.html">ข่าวรับสมัคร ประจำปี 2564</a>
-                      </h2>
-                    </div>
-                    <div class="card-body-a">
-                      <a href="property-single.html" class="link-a">ดูเพิ่มเติม
-                        <span class="bi bi-chevron-right"></span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-    </section> 
-            <!-- End carousel item -->
-
-          </div>
-        </div>
-        <!-- <div class="propery-carousel-pagination carousel-pagination"></div> -->
-
       </div>
+      <div id="property-carousel" class="swiper">
+        <div class="swiper-wrapper">
+          <div class="carousel-item-b me-5">
+            <div class="card-box-a card-shadow">
+              <div class="img-box-a">
+                <img src="assets/img/รับสมัคร-1.jpg" alt="" class="img-a img-fluid" width="960" height="665">
+              </div>
+              <div class="card-overlay">
+                <div class="card-overlay-a-content">
+                  <div class="card-header-a">
+                    <h2 class="card-title-a">
+                      <a href="property-single.html">ข่าวรับสมัคร ประจำปี 2565</a>
+                    </h2>
+                  </div>
+                  <div class="card-body-a">
+                    <a href="#" class="link-a">ดูเพิ่มเติม
+                      <span class="bi bi-chevron-right"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End carousel item -->
+
+          <div class="carousel-item-b">
+            <div class="card-box-a card-shadow">
+              <div class="img-box-a">
+                <img src="assets/img/รับสมัคร-2.jpg" alt="" class="img-a img-fluid" width="960" height="665">
+              </div>
+              <div class="card-overlay">
+                <div class="card-overlay-a-content">
+                  <div class="card-header-a">
+                    <h2 class="card-title-a">
+                      <a href="property-single.html">ข่าวรับสมัคร ประจำปี 2564</a>
+                    </h2>
+                  </div>
+                  <div class="card-body-a">
+                    <a href="property-single.html" class="link-a">ดูเพิ่มเติม
+                      <span class="bi bi-chevron-right"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      </section>
+      <!-- End carousel item -->
+
+    </div>
+    </div>
+    <!-- <div class="propery-carousel-pagination carousel-pagination"></div> -->
+
+    </div>
 
     <!-- ======= Agents Section ======= -->
     <section class="section-agents section-t8">
-  <div class="container">
-    <div class="col-md-12">
-      <div class="title-wrap d-flex justify-content-between">
-        <div class="title-box">
-          <h2 class="title-a">ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</h2>
-        </div>
-      </div>
-    </div>
-    <div class="row align-items-center">
-      <div class="col-md-3">
-        <div class="card-box-d">
-          <div class="card-img-d">
-            <img src="assets/img/ผู้อำนวยการ.jpg" alt="" class="img-d img-fluid">
+      <div class="container">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</h2>
+            </div>
           </div>
         </div>
+        <div class="row align-items-center">
+          <div class="col-md-3">
+            <div class="card-box-d">
+              <div class="card-img-d">
+                <img src="assets/img/ผู้อำนวยการ.jpg" alt="" class="img-d img-fluid">
+              </div>
+            </div>
+          </div>
+        </div><br>
+        <div class="col-md-3 d-flex flex-column justify-content-start">
+          <h2>นายรัฐวัฒน์ ปรียานนท์</h2>
+          <h6>ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</h6>
+        </div>
       </div>
-    </div><br>
-    <div class="col-md-3 d-flex flex-column justify-content-start">
-      <h2>นายรัฐวัฒน์ ปรียานนท์</h2>
-      <h6>ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</h6>
-    </div>
-  </div>
-</section>
+    </section>
 
 
     <!-- ======= Latest News Section ======= -->
@@ -412,48 +412,49 @@
     </section><!-- End Latest News Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    
+
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <section class="section-footer">
-  <div id="testimonial-carousel" class="swiper">
-            <div class="carousel-item-a swiper-slide">
-              <div class="testimonials-box">
-                <div class="row">
-                  <div class="col-md-6">
-                  
-                    <div class="testimonial-author-box">
-                      <img src="assets/img/โลโก้วัดช่องลม.png" alt="" class="testimonial-avatar">
-                      <h5 class="testimonial-author">โรงเรียนวัดช่องลม(ธรรมโชติ)</h5>
-                    </div><br>
-                    <div class="testimonials-content">
-                      <p>
-                       ที่อยู่
-                       <br>หมู่ที่ 6 บ้านลมทวน ตำบลบ้านปรก อำเภอเมืองสมุทรสงคราม จังหวัดสมุทรสงคราม 75000
-                       <br>โทรศัพท์ 0 3471 8435
-                      </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="testimonial-img">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.872781295272!2d99.9813547!3d13.420200800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2d40de015592b%3A0x21473ef52c4a1f7!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4LiK4LmI4Lit4LiH4Lil4Lih!5e0!3m2!1sth!2sth!4v1698252319963!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                      </div>
-                  </div>
-                </div>
+    <div id="testimonial-carousel" class="swiper">
+      <div class="carousel-item-a swiper-slide">
+        <div class="testimonials-box">
+          <div class="row">
+            <div class="col-md-6">
+
+              <div class="testimonial-author-box">
+                <img src="assets/img/โลโก้วัดช่องลม.png" alt="" class="testimonial-avatar">
+                <h5 class="testimonial-author">โรงเรียนวัดช่องลม(ธรรมโชติ)</h5>
+              </div><br>
+              <div class="testimonials-content">
+                <p>
+                  ที่อยู่
+                  <br>หมู่ที่ 6 บ้านลมทวน ตำบลบ้านปรก อำเภอเมืองสมุทรสงคราม จังหวัดสมุทรสงคราม 75000
+                  <br>โทรศัพท์ 0 3471 8435
+                </p>
               </div>
-            </div><!-- End carousel item -->   
+            </div>
+            <div class="col-md-6">
+              <div class="testimonial-img">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.872781295272!2d99.9813547!3d13.420200800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2d40de015592b%3A0x21473ef52c4a1f7!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4LiK4LmI4Lit4LiH4Lil4Lih!5e0!3m2!1sth!2sth!4v1698252319963!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="testimonial-carousel-pagination carousel-pagination"></div>
+      </div><!-- End carousel item -->
+    </div>
+    <div class="testimonial-carousel-pagination carousel-pagination"></div>
 
-      </div>
+    </div>
   </section>
-   
-  
 
-  
 
+
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
