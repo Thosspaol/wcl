@@ -43,7 +43,7 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="index.php">โรงเรียน<span class="color-b">วัดช่องลมธรรมโชติ</span></a>
+      <a class="navbar-brand text-brand" href="index.php">โรงเรียนวัดช่องลมธรรมโชติ</a>
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
@@ -118,127 +118,53 @@
     <section class="contact">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12">
-            <div class="contact-map box">
-              <div id="map" class="contact-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248319.07655795247!2d99.95683278643409!3d13.474986684310677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2d40de015592b%3A0x21473ef52c4a1f7!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4LiK4LmI4Lit4LiH4Lil4Lih!5e0!3m2!1sth!2sth!4v1698258293364!5m2!1sth!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="col-md-6">
+            <div class="icon-box section-b2">
+              <div class="icon-box-icon">
+                <span class="bi bi-envelope"></span>
+              </div>
+              <div class="icon-box-content table-cell">
+                <div class="icon-box-title">
+                  <h4 class="icon-title">ติดต่อ</h4>
+                </div>
+                <div class="icon-box-content">
+                  <p class="mb-1">อีเมล
+                    <span class="color-a">...@gmail.com</span>
+                  </p>
+                  <p class="mb-1">โทร
+                    <span class="color-a">0 3471 8435</span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-12 section-t8">
-            <div class="row">
-              <div class="col-md-7">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <input type="text" name="name" class="form-control form-control-lg form-control-a" placeholder="Your Name" required>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <div class="form-group">
-                        <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="Your Email" required>
-                      </div>
-                    </div>
-                    <div class="col-md-12 mb-3">
-                      <div class="form-group">
-                        <input type="text" name="subject" class="form-control form-control-lg form-control-a" placeholder="Subject" required>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <textarea name="message" class="form-control" name="message" cols="45" rows="8" placeholder="Message" required></textarea>
-                      </div>
-                    </div>
-                    <div class="col-md-12 my-3">
-                      <div class="mb-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                      </div>
-                    </div>
 
-                    <div class="col-md-12 text-center">
-                      <button type="submit" class="btn btn-a">Send Message</button>
-                    </div>
-                  </div>
-                </form>
+          <div class="col-md-6">
+            <div class="icon-box section-b2">
+              <div class="icon-box-icon">
+                <span class="bi bi-geo-alt"></span>
               </div>
-              <div class="col-md-5 section-md-t3">
-                <div class="icon-box section-b2">
-                  <div class="icon-box-icon">
-                    <span class="bi bi-envelope"></span>
-                  </div>
-                  <div class="icon-box-content table-cell">
-                    <div class="icon-box-title">
-                      <h4 class="icon-title">ติดต่อ</h4>
-                    </div>
-                    <div class="icon-box-content">
-                      <p class="mb-1">Email.
-                        <span class="color-a">...@gmail.com</span>
-                      </p>
-                      <p class="mb-1">Phone.
-                        <span class="color-a">0 3471 8435</span>
-                      </p>
-                    </div>
-                  </div>
+              <div class="icon-box-content table-cell">
+                <div class="icon-box-title">
+                  <h4 class="icon-title">ที่อยู่</h4>
                 </div>
-                <div class="icon-box section-b2">
-                  <div class="icon-box-icon">
-                    <span class="bi bi-geo-alt"></span>
-                  </div>
-                  <div class="icon-box-content table-cell">
-                    <div class="icon-box-title">
-                      <h4 class="icon-title">ที่อยู่</h4>
-                    </div>
-                    <div class="icon-box-content">
-                      <p class="mb-1">
-                        หมู่ที่ 6 บ้านลมทวน ตำบลบ้านปรก อำเภอเมืองสมุทรสงคราม จังหวัดสมุทรสงคราม 75000
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="icon-box">
-                  <div class="icon-box-icon">
-                    <span class="bi bi-share"></span>
-                  </div>
-                  <div class="icon-box-content table-cell">
-                    <div class="icon-box-title">
-                      <h4 class="icon-title">Social networks</h4>
-                    </div>
-                    <div class="icon-box-content">
-                      <div class="socials-footer">
-                        <ul class="list-inline">
-                          <li class="list-inline-item">
-                            <a href="https://www.facebook.com/watchonglomschool.tammachote.9/photos" class="link-one">
-                              <i class="bi bi-facebook" aria-hidden="true"></i>
-                            </a>
-                          </li>
-                          <li class="list-inline-item">
-                            <a href="#" class="link-one">
-                              <i class="bi bi-twitter" aria-hidden="true"></i>
-                            </a>
-                          </li>
-                          <li class="list-inline-item">
-                            <a href="#" class="link-one">
-                              <i class="bi bi-instagram" aria-hidden="true"></i>
-                            </a>
-                          </li>
-                          <li class="list-inline-item">
-                            <a href="#" class="link-one">
-                              <i class="bi bi-linkedin" aria-hidden="true"></i>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
+                <div class="icon-box-content">
+                  <p class="mb-1">
+                    หมู่ที่ 6 บ้านลมทวน ตำบลบ้านปรก อำเภอเมืองสมุทรสงคราม จังหวัดสมุทรสงคราม 75000
+                  </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+
+        <div class="col-sm-12">
+          <div class="contact-map box">
+            <div id="map" class="contact-map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248319.07655795247!2d99.95683278643409!3d13.474986684310677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2d40de015592b%3A0x21473ef52c4a1f7!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4LiK4LmI4Lit4LiH4Lil4Lih!5e0!3m2!1sth!2sth!4v1698258293364!5m2!1sth!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
     </section><!-- End Contact Single-->
 
   </main><!-- End #main -->

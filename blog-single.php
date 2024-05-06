@@ -43,7 +43,7 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="index.php">โรงเรียน<span class="color-b">วัดช่องลมธรรมโชติ</span></a>
+      <a class="navbar-brand text-brand" href="index.php">โรงเรียนวัดช่องลมธรรมโชติ</a>
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">

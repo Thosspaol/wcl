@@ -49,7 +49,7 @@
         <span></span>
         <span></span>
       </button>
-      <a class="navbar-brand text-brand" href="index.php">โรงเรียน<span class="color-b">วัดช่องลมธรรมโชติ</span></a>
+      <a class="navbar-brand text-brand" href="index.php">โรงเรียนวัดช่องลมธรรมโชติ</a>
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
@@ -422,13 +422,12 @@
             <div class="carousel-item-a swiper-slide">
               <div class="testimonials-box">
                 <div class="row">
-                  <div class="col-sm-12 col-md-6">
-                    <div class="testimonial-img">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.872781295272!2d99.9813547!3d13.420200800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2d40de015592b%3A0x21473ef52c4a1f7!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4LiK4LmI4Lit4LiH4Lil4Lih!5e0!3m2!1sth!2sth!4v1698252319963!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                  </div>
-                  <div class="col-sm-12 col-md-3">
+                  <div class="col-md-6">
                   
+                    <div class="testimonial-author-box">
+                      <img src="assets/img/โลโก้วัดช่องลม.png" alt="" class="testimonial-avatar">
+                      <h5 class="testimonial-author">โรงเรียนวัดช่องลม(ธรรมโชติ)</h5>
+                    </div><br>
                     <div class="testimonials-content">
                       <p>
                        ที่อยู่
@@ -436,10 +435,11 @@
                        <br>โทรศัพท์ 0 3471 8435
                       </p>
                     </div>
-                    <div class="testimonial-author-box">
-                      <img src="assets/img/โลโก้วัดช่องลม.png" alt="" class="testimonial-avatar">
-                      <h5 class="testimonial-author">โรงเรียนวัดช่องลม(ธรรมโชติ)</h5>
-                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="testimonial-img">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3880.872781295272!2d99.9813547!3d13.420200800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2d40de015592b%3A0x21473ef52c4a1f7!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4LiK4LmI4Lit4LiH4Lil4Lih!5e0!3m2!1sth!2sth!4v1698252319963!5m2!1sth!2sth" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                      </div>
                   </div>
                 </div>
               </div>
