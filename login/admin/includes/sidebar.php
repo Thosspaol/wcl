@@ -33,7 +33,7 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//ถ�
             <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
     </ul>
-    <p>ระบบขอมีบัตรอนุญาตสำหรับบุคคลในวงงานสมาชิกวุฒิสภา</p>
+    <p>โรงเรียนวัดช่องลมธรรมโชติ</p>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
         <a class="nav-link"  href="../../form_login.php"><i class="fas fa-solid fa-power-off"></i> ออกจากระบบ</a>
@@ -43,7 +43,7 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//ถ�
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="../admin.php" class="brand-link">
-        <img src="../img/senate1.png" 
+        <img src="../../images_account/โลโก้วัดช่องลม.png" 
              alt="Admin Logo" 
              class="brand-image img-circle elevation-3">
         <span class="brand-text font-weight-light">ผู้ดูแลระบบ</span>
