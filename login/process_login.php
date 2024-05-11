@@ -20,9 +20,9 @@ if (!empty($_POST['birthday']) and !empty($_POST['password_account'])) {
         $result_check_account = mysqli_fetch_assoc($call_back_check_account);
         $stored_hash = $result_check_account['password_account'];
         //t1
-        if($result_check_account['role_account'] == 'users'){
+        if($result_check_account['role_account'] == 'personnel'){
             $_SESSION['id_account']=$result_check_account['id_account'];
-            $_SESSION['role_account']='users';
+            $_SESSION['role_account']='personnel';
             // กระโดดไปยังหน้าของผู้ใช้ที่ล็อกอินแล้ว
             echo "<script>
                 $(document).ready(function() {
@@ -40,6 +40,21 @@ if (!empty($_POST['birthday']) and !empty($_POST['password_account'])) {
             $_SESSION['id_account']=$result_check_account['id_account'];
             $_SESSION['role_account']='admin';
             // กระโดดไปยังหน้าของผู้ดูแลระบบที่ล็อกอินแล้ว
+            echo "<script>
+            $(document).ready(function() {
+                Swal.fire({
+                    title: 'เข้าสู่ระบบสำเร็จ!!',
+                    text: 'SENATE',
+                    icon: 'success',
+                    timer: 5000,
+                    showConfirmButton: false
+                });
+            })
+        </script>";
+        header("refresh:1.5; url=admin/dashboard/home.php");   
+        } elseif($result_check_account['$role_account' == 'student']){
+            $_SESSION['id_account'] = $result_check_account['$id_account'];
+            $_SESSION['$role_account'] ='student';
             echo "<script>
             $(document).ready(function() {
                 Swal.fire({

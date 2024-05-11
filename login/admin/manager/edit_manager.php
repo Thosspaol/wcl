@@ -83,31 +83,121 @@ $row = mysqli_fetch_assoc($result);
                                                 <input type="text" name="birthday" class="form-control" value="<?php echo $row["birthday"];?>"readonly>
                                             </div>
                                             <div class="form-group col-sm-4">
-                                                <label for="status">สถานะ</label>
+                                                <label for="status">สถานะ</label>                                                
                                                 <?php
-                                                if($row["role_account"] === 'users'){
+                                                if($row["role_account"] === 'person'){
                                                     echo"<select name = 'role_account' id= '' class = form-select>
-                                                    <option value = 'users' selected>users</option>
+                                                    <option value = 'person' selected>person</option>
                                                     <option value = 'admin'>admin</option>
+                                                    <option value = 'student'>student</option>
                                                     </select>";
                                                 }elseif($row["role_account"] === 'admin'){
                                                     echo "<select name = 'role_account' id='' class = form-select>
-                                                    <option value = 'admin' selected>admin</option>
-                                                    <option value = 'users'>users</option>
+                                                    <option value = 'admin' select>admin</option>
+                                                    <option value = 'student'>student</option>
+                                                    <option value = 'person'>person</option>
                                                     </select>";
-                                                }
+                                                }elseif($row["role_account"] === 'student'){
+                                                    echo"<select name = 'role_account' id='' class = form-select>
+                                                    <option value = 'student' select>student</option>
+                                                    <option value = 'person'>person</option>
+                                                    <option value = 'admin'>admin</option>
+                                                    </select>";
+                                                }                                                                                                    
                                                 ?>                                              
+                                            </div>
+                                            <div class="form-group col-sm-4">
+                                                <label for="id_card">เลขบัตรประชาชน</label>
+                                                <input type="text" name="id_card" class="form-control" value="<?php echo $row["id_card"];?>" readonly>
+                                                
                                             </div>
                                             
                                                 
-                                                    <div class="form-group col-sm-4">
-                                                        <label for="image_account">รูปถ่าย</label>
-                                                        <input type="text" name="images_account" class="form-control" value="<?php echo $row["images_account"];?>"readonly>
-                                                    </div>
-                                                
-                                            
-                                            <button type="submit" class="btn btn-success btn-block"><i class='fas fa-save'></i> บันทึกข้อมูล</button>
                                         </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-sm-6">
+                                                <label for="image_account">รูปถ่าย</label>
+                                                <input type="text" name="images_account" class="form-control" value="<?php echo $row["images_account"];?>"readonly>
+                                            </div>               
+                                            <div class="form-group col-sm-6">
+                                                <label for="level">ระดับชั้น</label>
+                                                <?php
+                                                if($row["level"] === '-'){
+                                                    echo"<select name = 'level' id= '' class = form-select>
+                                                    <option value = '-' selected>บุคคลากร</option>
+                                                    <option value = 'ป.1'>ป.1</option>
+                                                    <option value = 'ป.2'>ป.2</option>
+                                                    <option value = 'ป.3'>ป.3</option>
+                                                    <option value = 'ป.4'>ป.4</option>
+                                                    <option value = 'ป.5'>ป.5</option>
+                                                    <option value = 'ป.6'>ป.6</option>
+                                                    </select>";
+                                                }elseif($row["level"] === 'ป.1'){
+                                                    echo"<select name = 'level' id= '' class = form-select>
+                                                    <option value = 'ป.1'select>ป.1</option>
+                                                    <option value = 'ป.2'>ป.2</option>
+                                                    <option value = 'ป.3'>ป.3</option>
+                                                    <option value = 'ป.4'>ป.4</option>
+                                                    <option value = 'ป.5'>ป.5</option>
+                                                    <option value = 'ป.6'>ป.6</option>
+                                                    <option value = '-' >บุคคลากร</option>
+                                                    </select>";
+                                                }elseif($row["level"] === 'ป.2'){
+                                                    echo"<select name = 'level' id= '' class = form-select>
+                                                    <option value = 'ป.2'selected>ป.2</option>
+                                                    <option value = 'ป.1'>ป.1</option>                                                    
+                                                    <option value = 'ป.3'>ป.3</option>
+                                                    <option value = 'ป.4'>ป.4</option>
+                                                    <option value = 'ป.5'>ป.5</option>
+                                                    <option value = 'ป.6'>ป.6</option>
+                                                    <option value = '-' >บุคคลากร</option>                                                    
+                                                    </select>";
+                                                }elseif($row["level"] === 'ป.3'){
+                                                    echo"<select name = 'level' id= '' class = form-select>
+                                                    <option value = 'ป.3'selected>ป.3</option>
+                                                    <option value = 'ป.1'>ป.1</option>
+                                                    <option value = 'ป.2'>ป.2</option>
+                                                    <option value = 'ป.4'>ป.4</option>
+                                                    <option value = 'ป.5'>ป.5</option>
+                                                    <option value = 'ป.6'>ป.6</option>
+                                                    <option value = '-' >บุคคลากร</option>                                                    
+                                                    </select>";
+                                                }elseif($row["level"] === 'ป.4'){
+                                                    echo"<select name = 'level' id= '' class = form-select>
+                                                    <option value = 'ป.4'selected>ป.4</option>
+                                                    <option value = 'ป.1'>ป.1</option>
+                                                    <option value = 'ป.2'>ป.2</option>
+                                                    <option value = 'ป.3'>ป.3</option>
+                                                    <option value = 'ป.5'>ป.5</option>
+                                                    <option value = 'ป.6'>ป.6</option>
+                                                    <option value = '-'>บุคคลากร</option>
+                                                    </select>";
+                                                }elseif($row["level"] === 'ป.5'){
+                                                    echo"<select name = 'level' id= '' class = form-select>
+                                                    <option value = 'ป.5'selected>ป.5</option>
+                                                    <option value = 'ป.1'>ป.1</option>
+                                                    <option value = 'ป.2'>ป.2</option>
+                                                    <option value = 'ป.3'>ป.3</option>
+                                                    <option value = 'ป.4'>ป.4</option>
+                                                    <option value = 'ป.6'>ป.6</option>                                                    
+                                                    <option value = '-' >บุคคลากร</option>                                                    
+                                                    </select>";
+                                                }elseif($row["level"] === 'ป.6'){
+                                                    echo"<select name = 'level' id= '' class = form-select>
+                                                    <option value = 'ป.6'selected>ป.6</option>
+                                                    <option value = 'ป.1'>ป.1</option>
+                                                    <option value = 'ป.2'>ป.2</option>
+                                                    <option value = 'ป.3'>ป.3</option>
+                                                    <option value = 'ป.4'>ป.4</option>
+                                                    <option value = 'ป.5'>ป.5</option>                                                
+                                                    <option value = '-' >บุคคลากร</option>                                                    
+                                                    </select>";
+                                                }                                                                                                                                                                                     
+                                                ?>          
+                                            </div>                     
+                                        </div>
+                                
+                                <button type="submit" class="btn btn-success btn-block"><i class='fas fa-save'></i> บันทึกข้อมูล</button>
                                 </div>
                             </form>
                         </div>

@@ -73,26 +73,44 @@ $open_connect = 1;
                                         </div>
                                     </div>
                                     <div class="form-row">
-                                        <div class="form-group col-sm-6">
+                                        <div class="form-group col-sm-4">
                                             <label for="birthday">วัน/เดือน/ปีเกิด</label>
-                                            <input type="text" name="birthday" class="form-control" placeholder="วัน/เดือน/ปีเกิด" required>
+                                            <input type="text" name="birthday" class="form-control" placeholder="วัน/เดือน/ปีเกิด" required  pattern="[0-9]{8}" title="ใส่วันเดือนปีเกิดให้ครบ 8 หลัก">
                                         </div>
-                                        <div class="form-group col-sm-6">
+                                        <div class="form-group col-sm-4">
+                                            <label for="id_card">เลขบัตรประชาชน</label>
+                                            <input type="text" name="id_card" class="form-control" placeholder="เลขบัตรประชาชน" required pattern="[0-9]{13}" title="ใส่เลขบัตรประชาชนให้ครบ 13 หลัก">
+                                        </div>
+                                        <div class="form-group col-sm-4">
                                             <label for="role_account">สถานะ</label>
                                             <select name="role_account" id="status" class="form-select" required>
                                                 <option value disabled selected>สถานะผู้ใช้</option>
-                                                <option value="users">ผู้ใช้งาน</option>
+                                                <option value="personnel">บุคคลากร</option>
                                                 <option value="admin">เจ้าหน้าที่</option>
+                                                <option value="student">นักเรียน</option>
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="form-row">
-                                        <div class="form-group col-sm-6">
+                                        <div class="form-group col-sm-4">
+                                            <label for="level">ระดับชั้น</label>
+                                            <select name="level" id="level" class="form-select" required>
+                                                <option value disabled selected>ระดับชั้น</option>
+                                                <option value="-">บุคคลากรทั้วไป</option>
+                                                <option value="ป.1">ป.1</option>
+                                                <option value="ป.2">ป.2</option>
+                                                <option value="ป.3">ป.3</option>
+                                                <option value="ป.4">ป.4</option>
+                                                <option value="ป.5">ป.5</option>
+                                                <option value="ป.6">ป.6</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-4">
                                             <label for="password_account">รหัสผ่าน</label>
                                             <input type="password" name="password_account1" class="form-control" placeholder="รหัสผ่าน" required>
                                         </div>
-                                        <div class="form-group col sm-6">
+                                        <div class="form-group col-sm-4">
                                             <label for="password_account2">ยืนยันรหัสผ่าน</label>
                                             <input type="password" name="password_account2" class="form-control" placeholder="ยืนยันรหัสผ่าน" required>
                                         </div>
