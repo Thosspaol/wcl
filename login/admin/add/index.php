@@ -60,29 +60,29 @@ $open_connect = 1;
                                 <div class="card-body">
                                     <div class="form-row">
                                         <div class="form-group col-sm-4">
-                                            <label for="pre">คำนำหน้า</label>
+                                            <label for="pre">คำนำหน้า <font style = "color: red; margin-left: 1px">*</font></label>
                                             <input type="text" name="pre" class="form-control" placeholder="คำนำหน้า" required>
                                         </div>
                                         <div class="form-group col-sm-4">
-                                            <label for="firstname">ชื่อ</label>
+                                            <label for="firstname">ชื่อ <font style = "color: red; margin-left: 1px">*</font></label>
                                             <input type="text" name="firstname" class="form-control" placeholder="ชื่อ" required>
                                         </div>
                                         <div class="form-group col-sm-4">
-                                            <label for="lastname">นามสกุล</label>
+                                            <label for="lastname">นามสกุล <font style = "color: red; margin-left: 1px">*</font></label>
                                             <input type="text" name="lastname" class="form-control" placeholder="นามสกุล" required>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-sm-4">
-                                            <label for="birthday">วัน/เดือน/ปีเกิด</label>
+                                            <label for="birthday">วัน/เดือน/ปีเกิด <font style = "color: red; margin-left: 1px">* ตัวอย่างเช่น 07072544 *</font></label>
                                             <input type="text" name="birthday" class="form-control" placeholder="วัน/เดือน/ปีเกิด" required  pattern="[0-9]{8}" title="ใส่วันเดือนปีเกิดให้ครบ 8 หลัก">
                                         </div>
                                         <div class="form-group col-sm-4">
-                                            <label for="id_card">เลขบัตรประชาชน</label>
+                                            <label for="id_card">เลขบัตรประชาชน<font style = "color: red; margin-left: 1px">* ถ้าไม่มี 00000 13 หลัก *</font></label>
                                             <input type="text" name="id_card" class="form-control" placeholder="เลขบัตรประชาชน" required pattern="[0-9]{13}" title="ใส่เลขบัตรประชาชนให้ครบ 13 หลัก">
                                         </div>
                                         <div class="form-group col-sm-4">
-                                            <label for="role_account">สถานะ</label>
+                                            <label for="role_account">สถานะ <font style = "color: red; margin-left: 1px">*</font></label>
                                             <select name="role_account" id="status" class="form-select" required>
                                                 <option value disabled selected>สถานะผู้ใช้</option>
                                                 <option value="personnel">บุคคลากร</option>
@@ -94,7 +94,7 @@ $open_connect = 1;
 
                                     <div class="form-row">
                                         <div class="form-group col-sm-4">
-                                            <label for="level">ระดับชั้น</label>
+                                            <label for="level">ระดับชั้น <font style = "color: red; margin-left: 1px">*</font></label>
                                             <select name="level" id="level" class="form-select" required>
                                                 <option value disabled selected>ระดับชั้น</option>
                                                 <option value="-">บุคคลากรทั้วไป</option>
@@ -107,11 +107,11 @@ $open_connect = 1;
                                             </select>
                                         </div>
                                         <div class="form-group col-sm-4">
-                                            <label for="password_account">รหัสผ่าน</label>
+                                            <label for="password_account">รหัสผ่าน <font style = "color: red; margin-left: 1px">*</font></label>
                                             <input type="password" name="password_account1" class="form-control" placeholder="รหัสผ่าน" required>
                                         </div>
                                         <div class="form-group col-sm-4">
-                                            <label for="password_account2">ยืนยันรหัสผ่าน</label>
+                                            <label for="password_account2">ยืนยันรหัสผ่าน <font style = "color: red; margin-left: 1px">*</font></label>
                                             <input type="password" name="password_account2" class="form-control" placeholder="ยืนยันรหัสผ่าน" required>
                                         </div>
                                     </div>

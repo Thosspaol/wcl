@@ -60,7 +60,7 @@ $row = mysqli_fetch_assoc($result);
                                 <h3 class="card-title" style="line-height:2.1 rem;">แก้ไขข้อมูล</h3>
                                 <a href="../dashboard/home.php" class="btn btn-primary float-right"><i class='fas fa-arrow-left'></i> กลับ</a>
                             </div><br>
-                            <form action="updete_manager.php" method="post" enctype="multipart/form-data">
+                            <form action="update_manager.php" method="post" enctype="multipart/form-data">
                                 <div class="card-body">
                                     <div class="form-row">
                                         <input type="hidden" name="id_account" value="<?php echo $row["id_account"];?>">

@@ -38,7 +38,7 @@
                     <div class="card-body">
                         <form action="process_login.php" method="POST">
                             <div class="form-group">
-                                <label for="id_account">วันเ/เดือน/ปีเกิด <font style="color: red; margin-left: 1px">ตัวอย่าง 07072544 *</font></label>
+                                <label for="id_account">วันเ/เดือน/ปีเกิด <font style="color: red; margin-left: 1px">* ตัวอย่าง 07072544 *</font></label>
                                 <input class="form-control" name="birthday" type="text" placeholder="วัน/เดือน/ปีเกิด" required>
                             </div>
                             <div class="form-group">

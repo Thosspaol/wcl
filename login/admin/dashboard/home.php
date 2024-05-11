@@ -53,7 +53,7 @@ $finishCount = 0;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Senate</title>
+    <title>หน้าหลัก | Watchonglom</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css">
        <!-- Favicons -->
        
@@ -91,6 +91,22 @@ $finishCount = 0;
                 </div>
             </div>
             <!-- Main content -->
+            <div class="content">
+            <div class="container-fluid">
+                <div class="row">                
+                    <div class="col-12 col-md-3">
+                        <div class="card">
+                            <form id="formData">
+                                    <a href="../add/index.php"  title="เพิ่มบุคคลากร">
+                                     <img alt="เพิ่มบุคคลากร" class="img-responsive ls-is-cached lazyloaded"   src="../img/เพิ่ม.png"  style="max-width: 75%; height: auto;" >                                                                 
+                                    </a>    
+                            </form>
+                        </div>
+                    </div>
+
+                        </div>
+                        </div>
+                    </div>
            
         </div>
     </div>
