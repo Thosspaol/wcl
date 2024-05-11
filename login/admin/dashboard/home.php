@@ -97,8 +97,8 @@ $finishCount = 0;
                     <div class="col-12 col-md-3">
                         <div class="card">
                             <form id="formData">
-                                    <a href="../add/index.php"  title="เพิ่มบุคคลากร">
-                                     <img alt="เพิ่มบุคคลากร" class="img-responsive ls-is-cached lazyloaded"   src="../img/เพิ่ม.png"  style="max-width: 75%; height: auto;" >                                                                 
+                                    <a href="../add/index.php"  title="เพิ่มบุคลากร">
+                                     <img alt="เพิ่มบุคลากร" class="img-responsive ls-is-cached lazyloaded"   src="../img/เพิ่ม.png"  style="max-width: 75%; height: auto;" >                                                                 
                                     </a>    
                             </form>
                         </div>

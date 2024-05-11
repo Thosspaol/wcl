@@ -20,9 +20,9 @@ if (!empty($_POST['birthday']) and !empty($_POST['password_account'])) {
         $result_check_account = mysqli_fetch_assoc($call_back_check_account);
         $stored_hash = $result_check_account['password_account'];
         //t1
-        if($result_check_account['role_account'] == 'personnel'){
+        if($result_check_account['role_account'] == 'person'){
             $_SESSION['id_account']=$result_check_account['id_account'];
-            $_SESSION['role_account']='personnel';
+            $_SESSION['role_account']='person';
             // กระโดดไปยังหน้าของผู้ใช้ที่ล็อกอินแล้ว
             echo "<script>
                 $(document).ready(function() {
@@ -35,7 +35,7 @@ if (!empty($_POST['birthday']) and !empty($_POST['password_account'])) {
                     });
                 })
             </script>";
-            header("refresh:1.5; url=user/dashboard/home.php");   
+            header("refresh:1.5; url=person/dashboard/home.php");   
         } elseif($result_check_account['role_account'] == 'admin'){
             $_SESSION['id_account']=$result_check_account['id_account'];
             $_SESSION['role_account']='admin';

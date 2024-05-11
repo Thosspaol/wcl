@@ -63,7 +63,7 @@ try {
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title" style="line-height:2.1 rem;">รายชื่อบุคคลากร</h3>
+                                    <h3 class="card-title" style="line-height:2.1 rem;">รายชื่อบุคลากร</h3>
                                     <a href="../add/index.php" class="btn btn-success float-right"><i class="fas fa-plus"></i> เพิ่มบุคลากร</a>
                                 </div>
                                 <div class="card-body">
