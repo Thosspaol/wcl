@@ -47,15 +47,15 @@ require('../../connect.php');
                     </script>";
                     header("refresh:2.5; url=form_register.php"); //มีผู้ใช้อีเมลนี้แล้ว
                          }else{
-                            //  $length = random_int(97, 128);
-                            //  $salt_account = bin2hex(random_bytes($length)); //สร้างค่าเกลือ
-                            //  $password_account1 = $password_account1 . $salt_account; //เอารหัสผ่านต่อกับค่าเกลือ
-                            //  $algo = PASSWORD_ARGON2ID;
-                            //  $options = [
-                            //     'cost' => PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
-                            //     'time_cost' => PASSWORD_ARGON2_DEFAULT_TIME_COST,
-                            //     'threads' => PASSWORD_ARGON2_DEFAULT_THREADS
-                            //  ];
+                             $length = random_int(97, 128);
+                             $salt_account = bin2hex(random_bytes($length)); //สร้างค่าเกลือ
+                             $password_account1 = $password_account1 . $salt_account; //เอารหัสผ่านต่อกับค่าเกลือ
+                             $algo = PASSWORD_ARGON2ID;
+                             $options = [
+                                'cost' => PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
+                                'time_cost' => PASSWORD_ARGON2_DEFAULT_TIME_COST,
+                                'threads' => PASSWORD_ARGON2_DEFAULT_THREADS
+                             ];
                 
                              $password_account = $password_account1; //นำรหัสผ่านที่ต่อกับค่าเกลือแล้ว เข้ารหัสด้วยวิธี ARGON2ID
                              $query_create_account = "INSERT INTO account VALUES (NULL, '$pre','$firstname','$lastname','$id_card', '$email_account', '$password_account', 'users', 'default_images_account.jpg',0 , 0, NULL)";
