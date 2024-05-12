@@ -79,8 +79,26 @@ if (isset($_POST['btn_add']) && $_POST['btn_add'] != "") {
 </head>
 
 <body class="hold-transition sidebar-mini">
+    <div class="wrapper">
 
-    <br>
+    <?php include_once('../includes/sidebar.php') ?>
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h5 class="m-0 text-dark">ตารางเรียน</h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item active">เจ้าหน้าที่</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main content -->
+        <br>
     <br>
     <div class="wrap-form">
         <form action="" method="post" accept-charset="utf-8">
@@ -184,6 +202,10 @@ if (isset($_POST['btn_add']) && $_POST['btn_add'] != "") {
         </form>
     </div>
 
+    </div>
+    </div>
+
+   
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"></script>
