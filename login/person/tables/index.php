@@ -40,7 +40,7 @@ if (isset($_POST['btn_add']) && $_POST['btn_add'] != "") {
     schedule_repeatday='" . $p_schedule_repeatday . "'
     ";
     $mysqli->query($sql);
-    header("Location:form_schedule.php");
+    header("Location:index.php");
     exit;
 }
 ?>
@@ -103,11 +103,11 @@ if (isset($_POST['btn_add']) && $_POST['btn_add'] != "") {
     <div class="wrap-form">
         <form action="" method="post" accept-charset="utf-8">
             <div class="form-group row">
-                <label for="schedule_title" class="col-sm-2 col-form-label text-right">หัวข้อ</label>
+                <label for="schedule_title" class="col-sm-2 col-form-label text-right">หัวข้อราย วิชา</label>
                 <div class="col-12 col-sm-8">
                     <input type="text" class="form-control" name="schedule_title" autocomplete="off" value="" required>
                     <div class="invalid-feedback">
-                        กรุณากรอก หัวข้อ
+                        กรุณากรอก หัวข้อราย วิชา
                     </div>
                 </div>
             </div>

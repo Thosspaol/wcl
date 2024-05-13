@@ -1,49 +1,24 @@
 <?php
-// โค้ดไฟล์ dbconnect.php ดูได้ที่ http://niik.in/que_2398_5642
-session_start();
-$open_connect = 1;
-require_once("../../connect.php");
-if (!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])) { //ถ้าไม่มีเซสชัน id_account หรือเซสชัน role_account จะถูกส่งไปหน้า login
-    die(header('Location: ../form_login.php'));
-} elseif (isset($_GET['logout'])) { //ถ้ามีการกดปุ่มออกจากระบบให้ทำการทำลายเซสชันและส่งไปหน้า login
-    session_destroy();
-    die(header('Location: ../form_login.php'));
-} else {
-    $id_account = $_SESSION['id_account'];
-    $query_show = "SELECT * FROM account WHERE id_account= '$id_account'";
-    $call_back_show = mysqli_query($connect, $query_show);
-    $result_show = mysqli_fetch_assoc($call_back_show);
-    $directory = '../../images_account/';
-    $image_name = $directory . $result_show['images_account'];
-    $clear_cache = '?' . filemtime($image_name);
-    $image_account = $image_name . $clear_cache;
+// การเชื่อมต่อฐานข้อมูล
+$servername = "localhost"; // ชื่อเซิร์ฟเวอร์ฐานข้อมูล
+$username = "root"; // ชื่อผู้ใช้ฐานข้อมูล
+$password = ""; // รหัสผ่านฐานข้อมูล
+$dbname = "wcl"; // ชื่อฐานข้อมูล
+
+// สร้างการเชื่อมต่อ
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// เช็คการเชื่อมต่อ
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+// สร้างคำสั่ง SQL สำหรับดึงข้อมูลตารางสอน
+$sql = "SELECT * FROM tbl_schedule";
+$result = $conn->query($sql);
+
 ?>
-<?php
-// การบันทึกข้อมูลอย่างง่ายเบื้องตั้น
-if (isset($_POST['btn_add']) && $_POST['btn_add'] != "") {
-    $p_schedule_title = (isset($_POST['schedule_title'])) ? $_POST['schedule_title'] : "";
-    $p_schedule_startdate = (isset($_POST['schedule_startdate'])) ? $_POST['schedule_startdate'] : "0000-00-00";
-    $p_schedule_enddate = (isset($_POST['schedule_enddate'])) ? $_POST['schedule_enddate'] : "0000-00-00";
-    $p_schedule_enddate = ($p_schedule_enddate == "0000-00-00") ? $p_schedule_startdate : $p_schedule_enddate;
-    $p_schedule_starttime = (isset($_POST['schedule_starttime'])) ? $_POST['schedule_starttime'] : "00:00:00";
-    $p_schedule_endtime = (isset($_POST['schedule_endtime'])) ? $_POST['schedule_endtime'] : "00:00:00";
-    $p_schedule_repeatday = (isset($_POST['schedule_repeatday'])) ? $_POST['schedule_repeatday'] : "";
-    $p_schedule_allday = (isset($_POST['schedule_allday'])) ? 1 : 0;
-    $sql = "
-    INSERT INTO tbl_schedule SET
-    schedule_title='" . $p_schedule_title . "',
-    schedule_startdate='" . $p_schedule_startdate . "',
-    schedule_enddate='" . $p_schedule_enddate . "',
-    schedule_starttime='" . $p_schedule_starttime . "',
-    schedule_endtime='" . $p_schedule_endtime . "',
-    schedule_repeatday='" . $p_schedule_repeatday . "'
-    ";
-    $mysqli->query($sql);
-    header("Location:form_schedule.php");
-    exit;
-}
-?>
+
 <!DOCTYPE html>
 <html lang='en'>
 
@@ -51,189 +26,69 @@ if (isset($_POST['btn_add']) && $_POST['btn_add'] != "") {
     <meta charset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>โปรไฟล์ | Watchonglom</title>
-    <!-- Favicons -->
+    <title>ตารางสอน | Watchonglom</title>
+    <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/senate.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicons/senate.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicons/senate.png">
-    <link rel="manifest" href="../../assets/img/favicons/senate.png">
-    <link rel="mask-icon" href="../../assets/img/favicons/senate.png" color="#5bbad5">
-    <link rel="shortcut icon" href="../../assets/img/favicons/senate.png">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="../../assets/img/favicons/senate.png">
-    <meta name="theme-color" content="#ffffff">
-     <!-- stylesheet -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">
-  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="../assets/css/adminlte.min.css">
-  <link rel="stylesheet" href="../assets/css/style1.css">
     <style type="text/css">
-        .wrap-form {
-            width: 800px;
-            margin: auto;
+        .schedule-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .schedule-table th {
+            background-color: #f2f2f2;
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
     </style>
 </head>
 
-<body class="hold-transition sidebar-mini">
-    <div class="wrapper">
-
-    <?php include_once('../includes/sidebar.php') ?>
-    <div class="content-wrapper">
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h5 class="m-0 text-dark">ตารางเรียน</h5>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item active">เจ้าหน้าที่</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Main content -->
-        <br>
-    <br>
-    <div class="wrap-form">
-        <form action="" method="post" accept-charset="utf-8">
-            <div class="form-group row">
-                <label for="schedule_title" class="col-sm-2 col-form-label text-right">หัวข้อ</label>
-                <div class="col-12 col-sm-8">
-                    <input type="text" class="form-control" name="schedule_title" autocomplete="off" value="" required>
-                    <div class="invalid-feedback">
-                        กรุณากรอก หัวข้อ
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="schedule_startdate" class="col-sm-2 col-form-label text-right">วันที่เริ่มต้น</label>
-                <div class="col-12 col-sm-8">
-                    <div class="input-group date" id="schedule_startdate" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" name="schedule_startdate" data-target="#schedule_startdate" autocomplete="off" value="" required>
-                        <div class="input-group-append" data-target="#schedule_startdate" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                        </div>
-                    </div>
-                    <div class="invalid-feedback">
-                        กรุณากรอก วันที่เริ่มต้น
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="schedule_enddate" class="col-sm-2 col-form-label text-right">วันที่สิ้นสุด</label>
-                <div class="col-12 col-sm-8">
-                    <div class="input-group date" id="schedule_enddate" data-target-input="nearest">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="far fa-times-circle"></i></div>
-                        </div>
-                        <input type="text" class="form-control datetimepicker-input" name="schedule_enddate" data-target="#schedule_enddate" autocomplete="off" value="">
-                        <div class="input-group-append" data-target="#schedule_enddate" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                        </div>
-                    </div>
-                    <div class="invalid-feedback">
-                        กรุณากรอก วันที่สิ้นสุด
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="schedule_starttime" class="col-sm-2 col-form-label text-right">เวลาเริ่มต้น</label>
-                <div class="col-12 col-sm-8">
-                    <div class="input-group date" id="schedule_starttime" data-target-input="nearest">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="far fa-times-circle"></i></div>
-                        </div>
-                        <input type="text" class="form-control datetimepicker-input" name="schedule_starttime" data-target="#schedule_starttime" autocomplete="off" value="">
-                        <div class="input-group-append" data-target="#schedule_starttime" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="far fa-clock"></i></div>
-                        </div>
-                    </div>
-                    <div class="invalid-feedback">
-                        กรุณากรอก เวลาเริ่มต้น
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="schedule_endtime" class="col-sm-2 col-form-label text-right">เวลาสิ้นสุด</label>
-                <div class="col-12 col-sm-8">
-                    <div class="input-group date" id="schedule_endtime" data-target-input="nearest">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="far fa-times-circle"></i></div>
-                        </div>
-                        <input type="text" class="form-control datetimepicker-input" name="schedule_endtime" data-target="#schedule_endtime" autocomplete="off" value="">
-                        <div class="input-group-append" data-target="#schedule_endtime" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="far fa-clock"></i></div>
-                        </div>
-                    </div>
-                    <div class="invalid-feedback">
-                        กรุณากรอก เวลาสิ้นสุด
-                    </div>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="schedule_endtime" class="col-2 col-form-label text-right">ทำซ้ำวัน</label>
-                <div class="col-12 col-sm-10 pt-2">
-                    <?php
-                    $dayTH = array('อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.');
-                    ?>
-                    <div class="input-group">
-                        <?php foreach ($dayTH as $k => $day_value) { ?>
-                            <div class="form-check ml-3" style="width:50px;">
-                                <input class="custom-control-input repeatday_chk" type="checkbox" name="schedule_repeatday_chk" id="schedule_repeatday_chk<?= $k ?>" value="<?= $k ?>">
-                                <label class="custom-control-label" for="schedule_repeatday_chk<?= $k ?>"><?= $day_value ?></label>
-                            </div>
-                        <?php } ?>
-                        <input type="hidden" name="schedule_repeatday" id="schedule_repeatday" value="" />
-                    </div>
-                    <br>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-2 offset-sm-2 text-right pt-3">
-                    <button type="submit" name="btn_add" value="1" class="btn btn-primary btn-block">เพิ่มข้อมูล</button>
-                </div>
-            </div>
-        </form>
+<body>
+    <div class="container">
+        <h2 class="text-center mt-5">ตารางสอน</h2>
+        <table class="table schedule-table">
+            <thead>
+                <tr>
+                    <th>วิชา</th>
+                    <th>วันที่เริ่มสอน</th>
+                    <th>วันที่สิ้นสุดการสอน</th>
+                    <th>เวลาเริ่มสอน</th>
+                    <th>เวลาสิ้นสุดการสอน</th>
+                    <th>รอบการสอน</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row['schedule_title'] . "</td>";
+                        echo "<td>" . $row['schedule_startdate'] . "</td>";
+                        echo "<td>" . $row['schedule_enddate'] . "</td>";
+                        echo "<td>" . $row['schedule_starttime'] . "</td>";
+                        echo "<td>" . $row['schedule_endtime'] . "</td>";
+                        // แปลงรอบการสอนจากเลขเป็นชื่อวัน
+                        $repeat_day = str_replace(["1", "2", "3", "4" ,"5"], ["จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์"], $row['schedule_repeatday']);
+                        echo "<td>" . $repeat_day . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='6'>ไม่พบข้อมูลตารางสอน</td></tr>";
+                }
+                ?>
+            </tbody>
+        </table>
     </div>
-
-    </div>
-    </div>
-
-   
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <script type="text/javascript">
-        $(function() {
-            // เมื่อเฃือกวันทำซ้ำ วนลูป สร้างชุดข้อมูล
-            $(document.body).on("change", ".repeatday_chk", function() {
-                $("#schedule_repeatday").val("");
-                var repeatday_chk = [];
-                $(".repeatday_chk:checked").each(function(k, ele) {
-                    repeatday_chk.push($(ele).val());
-                });
-                $("#schedule_repeatday").val(repeatday_chk.join(",")); // จะได้ค่าเปน เช่น 1,3,4
-            });
-            $('#schedule_startdate,#schedule_enddate').datetimepicker({
-                format: 'YYYY-MM-DD'
-            });
-            $('#schedule_starttime,#schedule_endtime').datetimepicker({
-                format: 'HH:mm'
-            });
-            $(".input-group-prepend").find("div").css("cursor", "pointer").click(function() {
-                $(this).parents(".input-group").find(":text").val("");
-            });
-        });
-    </script>
-
-
 </body>
 
 </html>
