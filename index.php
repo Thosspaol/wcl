@@ -95,7 +95,7 @@
         </ul>
       </div>
       <div class="btn-group ml-auto">
-        <a class="btn btn-success" href="login/form_login.php"><i class='fas fa-home'></i> เข้าสู่ระบบ</a>
+        <a class="btn btn-success" href="login/form_login.php">เข้าสู่ระบบ</a>
       </div>
       <!-- <button class="iteam ">
             <a class="nav-link " href="contact.html">เข้าสู่ระบบ</a>
