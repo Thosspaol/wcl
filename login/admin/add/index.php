@@ -85,7 +85,7 @@ $open_connect = 1;
                                             <label for="role_account">สถานะ <font style = "color: red; margin-left: 1px">*</font></label>
                                             <select name="role_account" id="status" class="form-select" required>
                                                 <option value disabled selected>สถานะผู้ใช้</option>
-                                                <option value="personnel">บุคคลากร</option>
+                                                <option value="person">บุคคลากร</option>
                                                 <option value="admin">เจ้าหน้าที่</option>
                                                 <option value="student">นักเรียน</option>
                                             </select>

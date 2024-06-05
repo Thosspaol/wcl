@@ -30,24 +30,7 @@ require('../../connect.php');
                         </script>";
                         header("refresh:2.5; url=process_admin.php"); // รหัสผ่านไม่ตรงกัน
                         exit; // เพื่อหยุดการทำงานของสคริปต์ทันที
-                    }
-                  
-                    $query_check_id_card = "SELECT id_card FROM account WHERE id_card = '$id_card'";
-                    $call_back_query_check_id_card = mysqli_query($connect, $query_check_id_card);
-                     if(mysqli_num_rows($call_back_query_check_id_card) > 0){
-                            echo "<script>
-                    $(document).ready(function() {
-                        Swal.fire({
-                            title: 'มีผู้ใช้เลขบัตรประชาชนนี้แล้ว!!',
-                            text: 'SENATE',
-                            icon: 'error',
-                            timer: 5000,
-                            showConfirmButton: false
-                        });
-                    })
-                    </script>";
-                    header("refresh:2.5; url=index.php"); //มีผู้ใช้อีเมลนี้แล้ว
-                         }else{
+                    }else{
                             //  $length = random_int(97, 128);
                             //  $salt_account = bin2hex(random_bytes($length)); //สร้างค่าเกลือ
                             //  $password_account1 = $password_account1 . $salt_account; //เอารหัสผ่านต่อกับค่าเกลือ
