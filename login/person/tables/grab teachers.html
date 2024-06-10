@@ -75,14 +75,17 @@
             display: flex;
             flex-wrap: wrap;
         }
-        .teacher-item {
-            flex: 1 0 20%; /* ขนาดเท่ากับ 20% ของแถว */
-            padding: 5px;
-        }
         .btn-success {
-            width: 100%;
-            text-align: center;
-            white-space: normal;
+            display: inline-block;
+            width: 200px; /* กำหนดความกว้าง */
+            height: 50px; /* กำหนดความสูง */
+            line-height: 50px; /* จัดกึ่งกลางแนวตั้ง */
+            text-align: center; /* จัดกึ่งกลางแนวนอน */
+            font-size: 16px; /* ขนาดตัวอักษร */
+            margin: 5px; /* ระยะห่างระหว่างปุ่ม */
+        }
+        .teacher-item {
+            display: inline-block; /* แสดงปุ่มในบรรทัดเดียวกัน */
         }
         .btn-primary {
             margin-top: 10px;
@@ -126,9 +129,18 @@
         <div class="teacher-item"><a href="#table_15" class="btn btn-success">ครูบรรพต มานะ</a></div>
         <div class="teacher-item"><a href="#table_16" class="btn btn-success">ครูกำไลทิพย์ พจมาน</a></div>
         <div class="teacher-item"><a href="#table_17" class="btn btn-success">ครูน้ำทิพย์ สวัสดี</a></div>
-        <div class="teacher-item"><a href="#table_18" class="btn btn-success">ครูพวงเพ็ญ ศรึสุข</a></div>
-        <div class="teacher-item"><a href="#table_19" class="btn btn-success">ครูทิพปภา ไชยเทพ</a></div>      
-        <div class="teacher-item"><a href="#table_20" class="btn btn-success">ครูสมบูรณ์ สุขสวัสดิ</a></div>  
+        <div class="teacher-item"><a href="#table_18" class="btn btn-success">ครูพวงเพ็ญ ศรึสุข</a></div>             
+        <div class="teacher-item"><a href="#table_19" class="btn btn-success">ครูสมบูรณ์ สุขสวัสดิ</a></div>  
+        <div class="teacher-item"><a href="#table_20" class="btn btn-success">ครูปวิณ ปมปรีดี</a></div>  
+        </div>
+        <div class="teacher-list">
+          <div class="teacher-item"><a href="#table_21" class="btn btn-success">ครูสมภพ มากมี</a></div>  
+          <div class="teacher-item"><a href="#table_22" class="btn btn-success">ครูพรเทพ จิตอาสา</a></div>  
+          <div class="teacher-item"><a href="#table_23" class="btn btn-success">ครูมิ่งขวัญ ยั่งยืน</a></div>
+          <div class="teacher-item"><a href="#table_24" class="btn btn-success">ครูเอกสิทธิ์ เพิ่มพูล</a></div>
+          <div class="teacher-item"><a href="#table_25" class="btn btn-success">ครูบงกช จันทร์เกษม</a></div>
+          <div class="teacher-item"><a href="#table_26" class="btn btn-success">ครูอุไท ดวงดี</a></div>
+          <div class="teacher-item"><a href="#table_27" class="btn btn-success">ครูเขมทัต มหาทัย ณ อยุธยา</a></div>
         </div>
       <div class="teacher-item"><a href="../dashboard/home.php" class="btn btn-primary"><i class="fas fa-arrow-left"></i> กลับหน้าแรก</a></div>
 </div>
@@ -1673,93 +1685,9 @@
   </table>  
 </div>
 <a href="#top" class="btn btn-primary"><i class="fas fa-arrow-up"></i> กลับขึ้นด้านบน</a></th>
-<div class="centered-table">    
-  <table id="table_19" border="1" class="odd_table">
-    <caption>ตารางสอนโรงเรียนวัดช่องลมธรรมโชติ ปีการศึกษา 2566 ภาคเรียนที่ 2</caption>
-    <thead>
-      <tr>
-        <td rowspan="2" class="foot"></td>
-        <th colspan="8">ครูทิพปภา ไชยเทพ</th>
-      </tr>
-      <tr>
-        <!-- span -->
-        <th class="xAxis">08:30-09:20</th>
-        <th class="xAxis">09:20-10:10</th>
-        <th class="xAxis">10:10-11:00</th>
-        <th class="xAxis">11:00-11:50</th>
-        <th class="xAxis">11:50-12:40</th>
-        <th class="xAxis">12:40-13:30</th>
-        <th class="xAxis">13:30-14:20</th>
-        <th class="xAxis">14:20-15:10</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th class="yAxis">จันทร์</th>
-        <td>---</td>
-        <td>---</td>
-        <td>ป.4 <br />อ22102 ภาษาอังกฤษ<br /></td>
-        <td>---</td>
-        <td>-X-</td>
-        <td>ป.5 <br />อ22102 ภาษาอังกฤษ<br /></td>
-        <td>---</td>>
-        <td>---</td>
-      </tr>
-      <tr>
-        <th class="pink">อังคาร</th>
-        <td>ป.6 <br />อ22102 ภาษาอังกฤษ<br /></td>
-        <td>---</td>
-        <td>---</td>
-        <td>ป.5 <br />อ22102 ภาษาอังกฤษ<br /></td>
-        <td>-X-</td>
-        <td>---</td>
-        <td>---</td>
-        <td>---</td>
-      </tr>
-      <tr>
-        <th class="green">พุธ</th>
-        <td>---</td>
-        <td>---</td>
-        <td>ป.6 <br />อ22102 ภาษาอังกฤษ<br /></td>
-        <td>---</td>
-        <td>-X-</td>
-        <td>ป.4 <br />อ22102 ภาษาอังกฤษ<br /></td>
-        <td>---</td>
-        <td>---</td>
-      </tr>
-      <tr>
-        <th class="orent">พฤหัสบดี</th>
-        <td>ป.5 <br />อ22102 ภาษาอังกฤษ<br /></td>
-        <td>---</td>
-        <td>---</td>
-        <td>---</td>
-        <td>-X-</td>
-        <td>ป.6 <br />อ22102 ภาษาอังกฤษ<br /></td>
-        <td>---</td>
-        <td>---</td>
-      </tr>
-      <tr>
-        <th class="blue">ศุกร์</th>
-        <td>---</td>
-        <td>---</td>
-        <td>---</td>
-        <td>ป.4 <br />อ22102 ภาษาอังกฤษ<br /></td>
-        <td>-X-</td>
-        <td>---</td>
-        <td>---</td>
-        <td>ป.5 <br />อ22102 ภาษาอังกฤษ<br /></td>
-      </tr>
-      <tr class="foot">
-        <td class="foot"></td>
-        <td colspan="8" class="foot">โรงเรียนวัดช่องลมธรรมโชติ</td>
-      </tr>
-    </tbody>
-  </table>  
-</div>
-<a href="#top" class="btn btn-primary"><i class="fas fa-arrow-up"></i> กลับขึ้นด้านบน</a></th>
 
 <div class="centered-table">    
-  <table id="table_20" border="1" class="odd_table">
+  <table id="table_19" border="1" class="odd_table">
     <caption>ตารางสอนโรงเรียนวัดช่องลมธรรมโชติ ปีการศึกษา 2566 ภาคเรียนที่ 2</caption>
     <thead>
       <tr>
@@ -1843,6 +1771,685 @@
 </div>
 <a href="#top" class="btn btn-primary"><i class="fas fa-arrow-up"></i> กลับขึ้นด้านบน</a></th>
 
+<div class="centered-table">    
+  <table id="table_20" border="1" class="odd_table">
+    <caption>ตารางสอนโรงเรียนวัดช่องลมธรรมโชติ ปีการศึกษา 2566 ภาคเรียนที่ 2</caption>
+    <thead>
+      <tr>
+        <td rowspan="2" class="foot"></td>
+        <th colspan="8">ครูปวิณ ปมปรีดี</th>
+      </tr>
+      <tr>
+        <!-- span -->
+        <th class="xAxis">08:30-09:20</th>
+        <th class="xAxis">09:20-10:10</th>
+        <th class="xAxis">10:10-11:00</th>
+        <th class="xAxis">11:00-11:50</th>
+        <th class="xAxis">11:50-12:40</th>
+        <th class="xAxis">12:40-13:30</th>
+        <th class="xAxis">13:30-14:20</th>
+        <th class="xAxis">14:20-15:10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="yAxis">จันทร์</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>ป.4 <br />ง14101 เกษตร<br /></td>
+        <td>ป.6 <br />ง14101 เกษตร<br /></td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="pink">อังคาร</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>ป.5 <br />ง14101 เกษตร<br /></td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="green">พุธ</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="orent">พฤหัสบดี</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="blue">ศุกร์</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr class="foot">
+        <td class="foot"></td>
+        <td colspan="8" class="foot">โรงเรียนวัดช่องลมธรรมโชติ</td>
+      </tr>
+    </tbody>
+  </table>  
+</div>
+<a href="#top" class="btn btn-primary"><i class="fas fa-arrow-up"></i> กลับขึ้นด้านบน</a></th>
+
+<div class="centered-table">    
+  <table id="table_21" border="1" class="odd_table">
+    <caption>ตารางสอนโรงเรียนวัดช่องลมธรรมโชติ ปีการศึกษา 2566 ภาคเรียนที่ 2</caption>
+    <thead>
+      <tr>
+        <td rowspan="2" class="foot"></td>
+        <th colspan="8">ครูสมภพ มากมี</th>
+      </tr>
+      <tr>
+        <!-- span -->
+        <th class="xAxis">08:30-09:20</th>
+        <th class="xAxis">09:20-10:10</th>
+        <th class="xAxis">10:10-11:00</th>
+        <th class="xAxis">11:00-11:50</th>
+        <th class="xAxis">11:50-12:40</th>
+        <th class="xAxis">12:40-13:30</th>
+        <th class="xAxis">13:30-14:20</th>
+        <th class="xAxis">14:20-15:10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="yAxis">จันทร์</th>
+        <td>ป.5 <br />ง21104 เทคโนโลยี<br /></td>
+        <td>---</td>
+        <td>---</td>
+        <td>ป.6 <br />ง21104 เทคโนโลยี<br /></td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>ป.4 <br />ง21104 เทคโนโลยี<br /></td>
+      </tr>
+      <tr>
+        <th class="pink">อังคาร</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="green">พุธ</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="orent">พฤหัสบดี</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="blue">ศุกร์</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr class="foot">
+        <td class="foot"></td>
+        <td colspan="8" class="foot">โรงเรียนวัดช่องลมธรรมโชติ</td>
+      </tr>
+    </tbody>
+  </table>  
+</div>
+<a href="#top" class="btn btn-primary"><i class="fas fa-arrow-up"></i> กลับขึ้นด้านบน</a></th>
+
+<div class="centered-table">    
+  <table id="table_22" border="1" class="odd_table">
+    <caption>ตารางสอนโรงเรียนวัดช่องลมธรรมโชติ ปีการศึกษา 2566 ภาคเรียนที่ 2</caption>
+    <thead>
+      <tr>
+        <td rowspan="2" class="foot"></td>
+        <th colspan="8">ครูพรเทพ จิตอาสา</th>
+      </tr>
+      <tr>
+        <!-- span -->
+        <th class="xAxis">08:30-09:20</th>
+        <th class="xAxis">09:20-10:10</th>
+        <th class="xAxis">10:10-11:00</th>
+        <th class="xAxis">11:00-11:50</th>
+        <th class="xAxis">11:50-12:40</th>
+        <th class="xAxis">12:40-13:30</th>
+        <th class="xAxis">13:30-14:20</th>
+        <th class="xAxis">14:20-15:10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="yAxis">จันทร์</th>
+        <td>---</td>
+        <td>---</td>
+        <td>ป.6 <br />ท22101 ภาษาไทย<br /></td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="pink">อังคาร</th>
+        <td>ป.4 <br />ท22101 ภาษาไทย<br /></td>
+        <td>---</td>
+        <td>ป.5 <br />ท22101 ภาษาไทย<br /></td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>ป.6 <br />ท22101 ภาษาไทย<br /></td>
+      </tr>
+      <tr>
+        <th class="green">พุธ</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>ป.5 <br />ท22101 ภาษาไทย<br /></td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="orent">พฤหัสบดี</th>
+        <td>ป.4 <br />ท22101 ภาษาไทย<br /></td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="blue">ศุกร์</th>
+        <td>---</td>
+        <td>ป.4 <br />ท22101 ภาษาไทย<br /></td>
+        <td>ป.5 <br />ท22101 ภาษาไทย<br /></td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>ป.6 <br />ท22101 ภาษาไทย<br /></td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr class="foot">
+        <td class="foot"></td>
+        <td colspan="8" class="foot">โรงเรียนวัดช่องลมธรรมโชติ</td>
+      </tr>
+    </tbody>
+  </table>  
+</div>
+<a href="#top" class="btn btn-primary"><i class="fas fa-arrow-up"></i> กลับขึ้นด้านบน</a></th>
+
+<div class="centered-table">    
+  <table id="table_23" border="1" class="odd_table">
+    <caption>ตารางสอนโรงเรียนวัดช่องลมธรรมโชติ ปีการศึกษา 2566 ภาคเรียนที่ 2</caption>
+    <thead>
+      <tr>
+        <td rowspan="2" class="foot"></td>
+        <th colspan="8">ครูมิ่งขวัญ ยั่งยืน</th>
+      </tr>
+      <tr>
+        <!-- span -->
+        <th class="xAxis">08:30-09:20</th>
+        <th class="xAxis">09:20-10:10</th>
+        <th class="xAxis">10:10-11:00</th>
+        <th class="xAxis">11:00-11:50</th>
+        <th class="xAxis">11:50-12:40</th>
+        <th class="xAxis">12:40-13:30</th>
+        <th class="xAxis">13:30-14:20</th>
+        <th class="xAxis">14:20-15:10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="yAxis">จันทร์</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>ป.5 <br />ส11101 สังคมศึกษาและวัฒนธรรม<br /></td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="pink">อังคาร</th>
+        <td>---</td>
+        <td>ป.6 <br />ส11101 สังคมศึกษาและวัฒนธรรม<br /></td>
+        <td>ป.4 <br />ส11101 สังคมศึกษาและวัฒนธรรม<br /></td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="green">พุธ</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="orent">พฤหัสบดี</th>
+        <td>ป.6 <br />ส11101 สังคมศึกษาและวัฒนธรรม<br /></td>
+        <td>ป.4 <br />ส11101 สังคมศึกษาและวัฒนธรรม<br /></td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="blue">ศุกร์</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>ป.5 <br />ส11101 สังคมศึกษาและวัฒนธรรม<br /></td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr class="foot">
+        <td class="foot"></td>
+        <td colspan="8" class="foot">โรงเรียนวัดช่องลมธรรมโชติ</td>
+      </tr>
+    </tbody>
+  </table>  
+</div>
+<a href="#top" class="btn btn-primary"><i class="fas fa-arrow-up"></i> กลับขึ้นด้านบน</a></th>
+
+<div class="centered-table">    
+  <table id="table_24" border="1" class="odd_table">
+    <caption>ตารางสอนโรงเรียนวัดช่องลมธรรมโชติ ปีการศึกษา 2566 ภาคเรียนที่ 2</caption>
+    <thead>
+      <tr>
+        <td rowspan="2" class="foot"></td>
+        <th colspan="8">ครูเอกสิทธิ์ เพิ่มพูล</th>
+      </tr>
+      <tr>
+        <!-- span -->
+        <th class="xAxis">08:30-09:20</th>
+        <th class="xAxis">09:20-10:10</th>
+        <th class="xAxis">10:10-11:00</th>
+        <th class="xAxis">11:00-11:50</th>
+        <th class="xAxis">11:50-12:40</th>
+        <th class="xAxis">12:40-13:30</th>
+        <th class="xAxis">13:30-14:20</th>
+        <th class="xAxis">14:20-15:10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="yAxis">จันทร์</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="pink">อังคาร</th>
+        <td>ป.5 <br />ศ11121 ดนตรีและนาฎศิลป์<br /></td>
+        <td>---</td>
+        <td>---</td>
+        <td>ป.4 <br />ศ11121 ดนตรีและนาฎศิลป์<br /></td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="green">พุธ</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>ป.6 <br />ศ11121 ดนตรีและนาฎศิลป์<br /></td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="orent">พฤหัสบดี</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="blue">ศุกร์</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr class="foot">
+        <td class="foot"></td>
+        <td colspan="8" class="foot">โรงเรียนวัดช่องลมธรรมโชติ</td>
+      </tr>
+    </tbody>
+  </table>  
+</div>
+<a href="#top" class="btn btn-primary"><i class="fas fa-arrow-up"></i> กลับขึ้นด้านบน</a></th>
+
+<div class="centered-table">    
+  <table id="table_25" border="1" class="odd_table">
+    <caption>ตารางสอนโรงเรียนวัดช่องลมธรรมโชติ ปีการศึกษา 2566 ภาคเรียนที่ 2</caption>
+    <thead>
+      <tr>
+        <td rowspan="2" class="foot"></td>
+        <th colspan="8">ครูบงกช จันทร์เกษม</th>
+      </tr>
+      <tr>
+        <!-- span -->
+        <th class="xAxis">08:30-09:20</th>
+        <th class="xAxis">09:20-10:10</th>
+        <th class="xAxis">10:10-11:00</th>
+        <th class="xAxis">11:00-11:50</th>
+        <th class="xAxis">11:50-12:40</th>
+        <th class="xAxis">12:40-13:30</th>
+        <th class="xAxis">13:30-14:20</th>
+        <th class="xAxis">14:20-15:10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="yAxis">จันทร์</th>
+        <td>---</td>
+        <td>ป.5 <br />ส11201 หน้าที่พลเมือง<br /></td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="pink">อังคาร</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>ป.6 <br />ส11201 หน้าที่พลเมือง<br /></td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>ป.4 <br />ส11201 หน้าที่พลเมือง<br /></td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="green">พุธ</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>ป.6 <br />ศ11121 ดนตรีและนาฎศิลป์<br /></td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="orent">พฤหัสบดี</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="blue">ศุกร์</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr class="foot">
+        <td class="foot"></td>
+        <td colspan="8" class="foot">โรงเรียนวัดช่องลมธรรมโชติ</td>
+      </tr>
+    </tbody>
+  </table>  
+</div>
+<a href="#top" class="btn btn-primary"><i class="fas fa-arrow-up"></i> กลับขึ้นด้านบน</a></th>
+
+<div class="centered-table">    
+  <table id="table_26" border="1" class="odd_table">
+    <caption>ตารางสอนโรงเรียนวัดช่องลมธรรมโชติ ปีการศึกษา 2566 ภาคเรียนที่ 2</caption>
+    <thead>
+      <tr>
+        <td rowspan="2" class="foot"></td>
+        <th colspan="8">ครูอุไท ดวงดี</th>
+      </tr>
+      <tr>
+        <!-- span -->
+        <th class="xAxis">08:30-09:20</th>
+        <th class="xAxis">09:20-10:10</th>
+        <th class="xAxis">10:10-11:00</th>
+        <th class="xAxis">11:00-11:50</th>
+        <th class="xAxis">11:50-12:40</th>
+        <th class="xAxis">12:40-13:30</th>
+        <th class="xAxis">13:30-14:20</th>
+        <th class="xAxis">14:20-15:10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="yAxis">จันทร์</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>ป.5 <br />พ22103 สุขศึกษา<br /></td>
+      </tr>
+      <tr>
+        <th class="pink">อังคาร</th>
+        <td>---</td>
+        <td>---</td>
+        <td>ป.6 <br />พ22103 สุขศึกษา<br /></td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>ป.4 <br />พ22103 สุขศึกษา<br /></td>
+      </tr>
+      <tr>
+        <th class="green">พุธ</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="orent">พฤหัสบดี</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="blue">ศุกร์</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr class="foot">
+        <td class="foot"></td>
+        <td colspan="8" class="foot">โรงเรียนวัดช่องลมธรรมโชติ</td>
+      </tr>
+    </tbody>
+  </table>  
+</div>
+<a href="#top" class="btn btn-primary"><i class="fas fa-arrow-up"></i> กลับขึ้นด้านบน</a></th>
+
+<div class="centered-table">    
+  <table id="table_27" border="1" class="odd_table">
+    <caption>ตารางสอนโรงเรียนวัดช่องลมธรรมโชติ ปีการศึกษา 2566 ภาคเรียนที่ 2</caption>
+    <thead>
+      <tr>
+        <td rowspan="2" class="foot"></td>
+        <th colspan="8">ครูเขมทัต มหาทัย ณ อยุธยา</th>
+      </tr>
+      <tr>
+        <!-- span -->
+        <th class="xAxis">08:30-09:20</th>
+        <th class="xAxis">09:20-10:10</th>
+        <th class="xAxis">10:10-11:00</th>
+        <th class="xAxis">11:00-11:50</th>
+        <th class="xAxis">11:50-12:40</th>
+        <th class="xAxis">12:40-13:30</th>
+        <th class="xAxis">13:30-14:20</th>
+        <th class="xAxis">14:20-15:10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="yAxis">จันทร์</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>ป.6 <br />ศ11121 ศิลปะ<br /></td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="pink">อังคาร</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="green">พุธ</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>ป.4 <br />ศ11121 ศิลปะ<br /></td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="orent">พฤหัสบดี</th>
+        <td>---</td>
+        <td>---</td>
+        <td>ป.5 <br />ศ11121 ศิลปะ<br /></td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <th class="blue">ศุกร์</th>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+        <td>-X-</td>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr class="foot">
+        <td class="foot"></td>
+        <td colspan="8" class="foot">โรงเรียนวัดช่องลมธรรมโชติ</td>
+      </tr>
+    </tbody>
+  </table>  
+</div>
+<a href="#top" class="btn btn-primary"><i class="fas fa-arrow-up"></i> กลับขึ้นด้านบน</a></th>
 </body>
 
 </html>
