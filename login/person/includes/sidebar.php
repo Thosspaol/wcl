@@ -42,7 +42,7 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//ถ�
 </nav>
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="../admin.php" class="brand-link">
+    <a href="../person.php" class="brand-link">
         <img src="../../images_account/โลโก้วัดช่องลม.png" 
              alt="Admin Logo" 
              class="brand-image img-circle elevation-3">
