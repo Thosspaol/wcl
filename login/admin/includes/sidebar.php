@@ -77,6 +77,12 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//ถ�
                     &nbsp;<i class='fas fa-user-cog'></i>&nbsp; 
                         <p>ผู้ดูแลระบบ</p>
                     </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../calendar/index.php" class="nav-link">
+                        &nbsp;<i class='fas fa-calendar-alt'></i>&nbsp;
+                            <p>ปฏิทินกิจกรรม</p>
+                    </a>
                 </li>                
                 <li class="nav-header"></li>
                 <li class="nav-item">

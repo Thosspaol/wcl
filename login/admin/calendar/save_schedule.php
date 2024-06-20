@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php 
 require_once('db-connect.php');
 if($_SERVER['REQUEST_METHOD'] !='POST'){
@@ -15,7 +17,18 @@ if(empty($id)){
 }
 $save = $conn->query($sql);
 if($save){
-    echo "<script> alert('Schedule Successfully Saved.'); location.replace('./') </script>";
+    echo "<script>
+    $(document).ready(function() {
+        Swal.fire({
+            title: 'บันทึกสำเร็จ!!',
+            text: 'SENATE',
+            icon: 'success',
+            timer: 5000,
+            showConfirmButton: false
+        });
+    })
+</script>";
+header("refresh:2.5; url=index.php");
 }else{
     echo "<pre>";
     echo "An Error occured.<br>";
