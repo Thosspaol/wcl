@@ -1,56 +1,75 @@
-<!--4HYMJ4oXLshLqfyyoHtL1BXypQF7PBII0kvINMg9MDk -->
-<?php 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<?php
 
-$header = "Testing Line Notify";
-$firstname = $_POST['firstname'];
-$lastname = $_POST['lastname'];
-$phone = $_POST['phone'];
-$email = $_POST['email'];
+$open_connect = 1;
+require('connect.php');
 
-$message = $header.
-            "\n". "ชื่อจริง: " . $firstname .
-            "\n". "นามสกุล: " . $lastname .
-            "\n". "เบอร์โทรศัพท์: " . $phone .
-            "\n". "อีเมล์: " . $email;
+if (isset($_POST['signup'])) {
+    $pre = htmlspecialchars($_POST['pre']);
+    $firstname = htmlspecialchars($_POST['firstname']);
+    $lastname = htmlspecialchars($_POST['lastname']);
+    $title = htmlspecialchars($_POST['title']); // แก้ไขจาก tile เป็น title
+    $apostille = htmlspecialchars($_POST['apostille']);
 
-if (isset($_POST["submit"])) {
-    if ( $firstname <> "" ||  $lastname <> "" ||  $phone <> "" ||  $email <> "" ) {
-        sendlinemesg();
-        header('Content-Type: text/html; charset=utf8');
-        $res = notify_message($message);
-        echo "<script>alert('สมัครสมาชิกเรียบร้อย');</script>";
-        header("location: index.php");
-    } else {
-        echo "<script>alert('กรุณากรอกข้อมูลให้ครบถ้วน');</script>";
-        header("location: index.php");
+    try {
+        $stmt = $conn->prepare("INSERT INTO system_db(pre, firstname, lastname, title, apostille) VALUES(:pre, :firstname, :lastname, :title, :apostille)");
+        $stmt->bindParam(":pre", $pre);
+        $stmt->bindParam(":firstname", $firstname);
+        $stmt->bindParam(":lastname", $lastname);
+        $stmt->bindParam(":title", $title);
+        $stmt->bindParam(":apostille", $apostille);
+        $stmt->execute();
+
+        $sToken = ["tpjlNvHVx1bN4vyEuQPAleOyBDA9rhSNplF00LjxacU", "EmIaKzUe4sX9j42TN5qACU3o3sckKNnbg6rLGZeycWb", "3vAUW2O2f7gGJwS7tu4dZvmovmeelUDuSEDZ2kq8RrY"];
+        $sMessage = "แจ้งเตือนผู้ปกครองทุกคน!\r\n";
+        $sMessage .= $pre . " " . $firstname . " " . $lastname . " ได้มีเรื่องแจ้งให้ทราบ!\r\n";
+        $sMessage .= "ชื่อเรื่อง: " . $title . "\r\n";
+        $sMessage .= "หมายเหตุ: " . $apostille . "\r\n";
+        $sMessage .= "โรงเรียนวัดช่องลมธรรมโชติขอขอบพระคุณอย่างยิ่ง\r\n";
+
+        function notify_message($sMessage, $Token)
+        {
+            $chOne = curl_init();
+            curl_setopt($chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify");
+            curl_setopt($chOne, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($chOne, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($chOne, CURLOPT_POST, 1);
+            curl_setopt($chOne, CURLOPT_POSTFIELDS, "message=" . $sMessage);
+            $headers = array('Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer ' . $Token,);
+            curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($chOne, CURLOPT_RETURNTRANSFER, 1);
+            $result = curl_exec($chOne);     
+        }
+
+        foreach ($sToken as $Token) {
+            notify_message($sMessage, $Token);
+        }
+
+        echo "<script>
+                $(document).ready(function() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'สำเร็จ',
+                        text: 'ส่งข้อความเรียบร้อยแล้ว'
+                    }).then(function() {
+                        window.location = 'index.php';
+                    });
+                });
+              </script>";
+    } catch (PDOException $e) {
+        echo "<script>
+                $(document).ready(function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'ข้อผิดพลาด',
+                        text: 'มีบางอย่างผิดพลาด: " . $e->getMessage() . "'
+                    }).then(function() {
+                        window.location = 'index.php';
+                    });
+                });
+              </script>";
     }
 }
-
-function sendlinemesg() {
-    // LINE LINE_API https://notify-api.line.me/api/notify
-    // LINE TOKEN mhIYaeEr9u3YUfSH1u7h9a9GlIx3Ry6TlHtfVxn1bEu แนะนำให้ใช้ของตัวเองนะครับเพราะของผมยกเลิกแล้วไม่สามารถใช้ได้
-    define('LINE_API',"https://notify-api.line.me/api/notify");
-    define('LINE_TOKEN',"4HYMJ4oXLshLqfyyoHtL1BXypQF7PBII0kvINMg9MDk");
-
-    function notify_message($message) {
-        $queryData = array('message' => $message);
-        $queryData = http_build_query($queryData,'','&');
-        $headerOptions = array(
-            'http' => array(
-                'method' => 'POST',
-                'header' => "Content-Type: application/x-www-form-urlencoded\r\n"
-                            ."Authorization: Bearer ".LINE_TOKEN."\r\n"
-                            ."Content-Length: ".strlen($queryData)."\r\n",
-                'content' => $queryData
-            )
-        );
-        $context = stream_context_create($headerOptions);
-        $result = file_get_contents(LINE_API, FALSE, $context);
-        $res = json_decode($result);
-        return $res;
-    }
-}
-
-
 ?>

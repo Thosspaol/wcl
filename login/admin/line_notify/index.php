@@ -54,7 +54,7 @@ $open_connect = 1;
                                 <h3 class="card-title" style="line-height:2.1rem;">กรอกข้อมูลแจ้งผู้ปกครอง</h3>
                                 <a href="../dashboard/home.php" class="btn btn-primary float-right"><i class="fas fa-arrow-left"></i> กลับ</a>
                             </div>
-                            <form action="process_admin.php" method="POST" enctype="multipart/form-data">
+                            <form action="line_notify.php" method="POST" enctype="multipart/form-data">
                                 <div class="card-body">
                                     <div class="form-row">
                                         <div class="form-group col-sm-4">
@@ -80,7 +80,7 @@ $open_connect = 1;
                                             <input type="text" name="apostille" class="form-control" >
                                         </div>
                                        
-                                    <button class="btn btn-success btn-block" type="submit"><i class='fas fa-location-arrow'></i> ส่งข้อความ</button>
+                                    <button class="btn btn-success btn-block" type="submit" name="signup"><i class='fas fa-location-arrow'></i> ส่งข้อความ</button>
                                 </div>
                             </form>
                         </div>
