@@ -83,7 +83,13 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//ถ�
                         &nbsp;<i class='fas fa-calendar-alt'></i>&nbsp;
                             <p>ปฏิทินกิจกรรม</p>
                     </a>
-                </li>                
+                </li>   
+                <li  class="nav-item">
+                    <a href="../line_notify/index.php" class="nav-link">
+                    &nbsp;<i class='fab fa-line'></i> &nbsp;
+                    <p>Line notify</p>
+                    </a>                    
+                </li>             
                 <li class="nav-header"></li>
                 <li class="nav-item">
                     <a href="../../form_login.php" id="logout" class="nav-link">
