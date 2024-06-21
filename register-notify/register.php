@@ -1,6 +1,9 @@
-<?php 
-    session_start();
-    require_once('config.php');
+<?php
+
+session_start();
+$open_connect = 1;
+require('../../connect.php');
+
 
 ?>
 
@@ -41,9 +44,7 @@
 </head>
 <body>
 
-    <?php 
-        require_once("nav.php");
-    ?>
+    
     <main class="form-signin">
   <form action="register_db.php" method="POST">
     <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
@@ -100,9 +101,7 @@
   </form>
 </main>
 
-  <?php 
-    require_once("footer.php");
-  ?>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     

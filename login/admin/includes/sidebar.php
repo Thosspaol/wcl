@@ -85,7 +85,7 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//à¸–à¹
                     </a>
                 </li>   
                 <li  class="nav-item">
-                    <a href="../line_notify/index.php" class="nav-link">
+                    <a href="../line_notify/register.php" class="nav-link">
                     &nbsp;<i class='fab fa-line'></i> &nbsp;
                     <p>Line notify</p>
                     </a>                    
