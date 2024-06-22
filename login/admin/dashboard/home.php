@@ -35,12 +35,12 @@ $finishCount = 0;
 //     $stmt->execute();
 //     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 //     $breakwaterCount = $result['count'];
-    
+
 //     $stmt = $conn->prepare("SELECT COUNT(*) AS count FROM test WHERE card = 'finish'");
 //     $stmt->execute();
 //     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 //     $finishCount = $result['count'];
-    
+
 
 // } catch(PDOException $e) {
 //     echo "Error: " . $e->getMessage();
@@ -50,31 +50,33 @@ $finishCount = 0;
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>หน้าหลัก | Watchonglom</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css">
-       <!-- Favicons -->
-       
-  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/senate.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicons/senate.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicons/senate.png">
-  <link rel="manifest" href="../../assets/img/favicons/senate.png">
-  <link rel="mask-icon" href="../../assets/img/favicons/senate.png" color="#5bbad5">
-  <link rel="shortcut icon" href="../../assets/img/favicons/senate.png">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="../../assets/img/favicons/senate.png">
-  <meta name="theme-color" content="#ffffff">
+    <!-- Favicons -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/senate.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicons/senate.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicons/senate.png">
+    <link rel="manifest" href="../../assets/img/favicons/senate.png">
+    <link rel="mask-icon" href="../../assets/img/favicons/senate.png" color="#5bbad5">
+    <link rel="shortcut icon" href="../../assets/img/favicons/senate.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="../../assets/img/favicons/senate.png">
+    <meta name="theme-color" content="#ffffff">
     <!-- stylesheet -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">
-  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="../assets/css/adminlte.min.css">
-  <link rel="stylesheet" href="../assets/css/style1.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/adminlte.min.css">
+    <link rel="stylesheet" href="../assets/css/style1.css">
 </head>
-<body class = "hold-transition sidebar-mini">
+
+<body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <?php include_once('../includes/sidebar.php')?>
+        <?php include_once('../includes/sidebar.php') ?>
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
@@ -92,28 +94,48 @@ $finishCount = 0;
             </div>
             <!-- Main content -->
             <div class="content">
-            <div class="container-fluid">
-                <div class="row">                
-                    <div class="col-12 col-md-3">
-                        <div class="card">
-                            <form id="formData">
-                                    <a href="../add/index.php"  title="เพิ่มบุคลากร">
-                                     <img alt="เพิ่มบุคลากร" class="img-responsive ls-is-cached lazyloaded"   src="../img/เพิ่ม.png"  style="max-width: 75%; height: auto;" >                                                                 
-                                    </a>    
-                            </form>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-md-3">
+                            <div class="card">
+                                <form id="formData">
+                                    <a href="../add/index.php" title="เพิ่มบุคลากร">
+                                        <img alt="เพิ่มบุคลากร" class="img-responsive ls-is-cached lazyloaded" src="../img/เพิ่ม.png" style="max-width: 75%; height: auto;">
+                                    </a>
+                                </form>
+                            </div>
                         </div>
-                    </div>
+                        <div class="col-12 col-md-3">
+                            <div class="card">
+                                <form id="formData">
+                                    <a href="../calendar/index.php" title="เพิ่มปฏิทินกิจกรรม">
+                                        <img alt="เพิ่มปฏิทินกิจกรรม" class="img-responsive ls-is-cached lazyloaded" src="../img/ปฏิทิน.png" style="max-width: 75%; height: auto;">
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-3">
+                            <div class="card">
+                                <form id="formData">
+                                    <a href="../line_notify/index.php" title="line-Notify">
+                                        <img alt="Line-Notify" class="img-responsive ls-is-cached lazyloaded" src="../img/Line.png" style="max-width: 75%; height: auto;">
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
 
-                        </div>
-                        </div>
+
                     </div>
-           
+                </div>
+            </div>
+
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-       
+
     <script src="../assets/js/home.js"></script>
 </body>
+
 </html>
 <!-- SCRIPTS -->
 
@@ -124,4 +146,4 @@ $finishCount = 0;
 
 <!-- OPTIONAL SCRIPTS -->
 <script src="../plugins/chart.js/Chart.min.js"></script>
-<script src="../assets/js/pages/dashboard.js"></script> 
+<script src="../assets/js/pages/dashboard.js"></script>

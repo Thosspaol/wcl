@@ -12,6 +12,7 @@ if (isset($_POST['signup'])) {
     $lastname = htmlspecialchars($_POST['lastname']);
     $title = htmlspecialchars($_POST['title']); // แก้ไขจาก tile เป็น title
     $apostille = htmlspecialchars($_POST['apostille']);
+    $image_url = htmlspecialchars($_POST['image_url']); // เพิ่มช่องกรอก URL รูปภาพ
 
     try {
         $stmt = $conn->prepare("INSERT INTO system_db(pre, firstname, lastname, title, apostille) VALUES(:pre, :firstname, :lastname, :title, :apostille)");
@@ -29,22 +30,22 @@ if (isset($_POST['signup'])) {
         $sMessage .= "หมายเหตุ: " . $apostille . "\r\n";
         $sMessage .= "โรงเรียนวัดช่องลมธรรมโชติขอขอบพระคุณอย่างยิ่ง\r\n";
 
-        function notify_message($sMessage, $Token)
+        function notify_message($sMessage, $Token, $image_url)
         {
             $chOne = curl_init();
             curl_setopt($chOne, CURLOPT_URL, "https://notify-api.line.me/api/notify");
             curl_setopt($chOne, CURLOPT_SSL_VERIFYHOST, 0);
             curl_setopt($chOne, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($chOne, CURLOPT_POST, 1);
-            curl_setopt($chOne, CURLOPT_POSTFIELDS, "message=" . $sMessage);
+            curl_setopt($chOne, CURLOPT_POSTFIELDS, "message=" . $sMessage . "&imageThumbnail=" . $image_url . "&imageFullsize=" . $image_url);
             $headers = array('Content-type: application/x-www-form-urlencoded', 'Authorization: Bearer ' . $Token,);
             curl_setopt($chOne, CURLOPT_HTTPHEADER, $headers);
             curl_setopt($chOne, CURLOPT_RETURNTRANSFER, 1);
-            $result = curl_exec($chOne);     
+            $result = curl_exec($chOne);
         }
 
         foreach ($sToken as $Token) {
-            notify_message($sMessage, $Token);
+            notify_message($sMessage, $Token, $image_url);
         }
 
         echo "<script>

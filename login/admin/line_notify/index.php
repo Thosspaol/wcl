@@ -59,15 +59,15 @@ $open_connect = 1;
                                     <div class="form-row">
                                         <div class="form-group col-sm-4">
                                             <label for="pre">คำนำหน้า <font style = "color: red; margin-left: 1px">*</font></label>
-                                            <input type="text" name="pre" class="form-control" placeholder="คำนำหน้า" required>
+                                            <input type="text" name="pre" class="form-control" value="<?php echo $result_show['pre'];?>" readonly>
                                         </div>
                                         <div class="form-group col-sm-4">
                                             <label for="firstname">ชื่อ <font style = "color: red; margin-left: 1px">*</font></label>
-                                            <input type="text" name="firstname" class="form-control" placeholder="ชื่อ" required>
+                                            <input type="text" name="firstname" class="form-control" value="<?php echo $result_show['firstname'];?>" readonly>
                                         </div>
                                         <div class="form-group col-sm-4">
                                             <label for="lastname">นามสกุล <font style = "color: red; margin-left: 1px">*</font></label>
-                                            <input type="text" name="lastname" class="form-control" placeholder="นามสกุล" required>
+                                            <input type="text" name="lastname" class="form-control" value="<?php echo $result_show['lastname'];?>" readonly>
                                         </div>
                                     </div>
                                     <div class="form-row">
@@ -79,6 +79,12 @@ $open_connect = 1;
                                             <label for="apostille">หมายเหตุ</label>
                                             <input type="text" name="apostille" class="form-control" >
                                         </div>
+                                        <div class="form-group col-sm-4">
+                                                <div class="custom-file">
+                                                    <label for="image_account">รูปภาพ</label>
+                                                    <input type="file" name="image_url" class="form-control" id="image_url" accept=".jpg, .jpeg, .png" value="" required>
+                                                </div>
+                                               </div> 
                                        
                                     <button class="btn btn-success btn-block" type="submit" name="signup"><i class='fas fa-location-arrow'></i> ส่งข้อความ</button>
                                 </div>
