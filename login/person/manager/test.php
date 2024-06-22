@@ -20,76 +20,59 @@
 <h2>Grade System</h2>
 
 <form method="post">
-    <label for="student_name">Student Name:</label>
+    <label for="student_name">ชื่อของนักเรียน:</label>
     <input type="text" id="student_name" name="student_name" required>
     <br><br>
-    <label for="math_grade">Math Grade:</label>
+    <label for="math_grade">เกรดคณิตศาสตร์:</label>
     <input type="text" id="math_grade" name="math_grade" required>
     <br><br>
-    <label for="science_grade">Science Grade:</label>
+    <label for="science_grade">เกรดวิทยาศาสตร์:</label>
     <input type="text" id="science_grade" name="science_grade" required>
     <br><br>
-    <label for="english_grade">English Grade:</label>
+    <label for="english_grade">เกรดภาษาอังกฤษ:</label>
     <input type="text" id="english_grade" name="english_grade" required>
     <br><br>
-    <input type="submit" name="submit" value="Calculate Grades">
+    <input type="submit" name="submit" value="คำนวณเกรด">
 </form>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Process form data
+    // ประมวลผลข้อมูลฟอร์ม
     $student_name = htmlspecialchars($_POST['student_name']);
     $math_grade = (float) $_POST['math_grade'];
     $science_grade = (float) $_POST['science_grade'];
     $english_grade = (float) $_POST['english_grade'];
 
-    // Calculate total grade and average
-    $total_grade = $math_grade + $science_grade + $english_grade;
-    $average_grade = $total_grade / 3;
+    // คำนวณผลรวมเกรดและเกรดเฉลี่ย
+    $total_grade = ($math_grade * 2) + ($science_grade * 2) + ($english_grade * 2);
+    $average_grade = $total_grade / 8;
 
-    // Determine letter grade based on average
-    if ($average_grade >= 90) {
-        $letter_grade = 'A';
-    } elseif ($average_grade >= 80) {
-        $letter_grade = 'B';
-    } elseif ($average_grade >= 70) {
-        $letter_grade = 'C';
-    } elseif ($average_grade >= 60) {
-        $letter_grade = 'D';
-    } else {
-        $letter_grade = 'F';
-    }
-
-    // Display results
-    echo "<h3>Results for $student_name:</h3>";
+    // แสดงผลลัพธ์
+    echo "<h3>ผลลัพธ์สำหรับ $student_name:</h3>";
     echo "<table>
             <tr>
-                <th>Subject</th>
-                <th>Grade</th>
+                <th>วิชา</th>
+                <th>เกรด</th>
             </tr>
             <tr>
-                <td>Math</td>
+                <td>คณิตศาสตร์</td>
                 <td>$math_grade</td>
             </tr>
             <tr>
-                <td>Science</td>
+                <td>วิทยาศาสตร์</td>
                 <td>$science_grade</td>
             </tr>
             <tr>
-                <td>English</td>
+                <td>ภาษาอังกฤษ</td>
                 <td>$english_grade</td>
             </tr>
             <tr>
-                <th>Total Grade</th>
+                <th>ผลรวมเกรด</th>
                 <td>$total_grade</td>
             </tr>
             <tr>
-                <th>Average Grade</th>
+                <th>เกรดเฉลี่ย</th>
                 <td>$average_grade</td>
-            </tr>
-            <tr>
-                <th>Letter Grade</th>
-                <td>$letter_grade</td>
             </tr>
           </table>";
 }

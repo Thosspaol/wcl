@@ -96,7 +96,7 @@ try {
                                                 <td><?php echo $row['role_account']?></td>
                                                 <td><?php echo $row['level']?></td>
                                                 <td>
-                                                    <a href="edit_manager.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-warning"><i class="far fa-folder-open"></i> ดูข้อมูล</a>
+                                                    <a href="grade_student.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-warning"><i class="far fa-folder-open"></i> ดูข้อมูล</a>
                                                     <a href="delete_manager.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i> ลบ</a>
                                                 </td>
                                             </tr>
