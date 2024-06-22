@@ -109,7 +109,7 @@ $finishCount = 0;
                             <div class="card">
                                 <form id="formData">
                                     <a href="../calendar/index.php" title="เพิ่มปฏิทินกิจกรรม">
-                                        <img alt="เพิ่มปฏิทินกิจกรรม" class="img-responsive ls-is-cached lazyloaded" src="../img/ปฏิทิน.png" style="max-width: 75%; height: auto;">
+                                        <img alt="เพิ่มปฏิทินกิจกรรม" class="img-responsive ls-is-cached lazyloaded" src="../img/เพิ่มกิจกรรม.png" style="max-width: 75%; height: auto;">
                                     </a>
                                 </form>
                             </div>

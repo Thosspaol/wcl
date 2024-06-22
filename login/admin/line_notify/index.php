@@ -79,12 +79,7 @@ $open_connect = 1;
                                             <label for="apostille">หมายเหตุ</label>
                                             <input type="text" name="apostille" class="form-control" >
                                         </div>
-                                        <div class="form-group col-sm-4">
-                                                <div class="custom-file">
-                                                    <label for="image_account">รูปภาพ</label>
-                                                    <input type="file" name="image_url" class="form-control" id="image_url" accept=".jpg, .jpeg, .png" value="" required>
-                                                </div>
-                                               </div> 
+                                       
                                        
                                     <button class="btn btn-success btn-block" type="submit" name="signup"><i class='fas fa-location-arrow'></i> ส่งข้อความ</button>
                                 </div>
