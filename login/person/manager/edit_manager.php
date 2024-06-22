@@ -80,7 +80,21 @@ $row = mysqli_fetch_assoc($result);
                                     <div class="form-row">
                                         <div class="form-group col-sm-4">
                                             <label for="math_grade">เกรด:คณิตศาสตร์</label>
-                                            <input type="text" class="form-control" name="math_grade" id="math_grade" require>
+                                            <input type="text" class="form-control" name="math_grade" id="math_grade" required>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="sci_grade">เกรด:วิทยาศาสตร์</label>
+                                            <input type="text" class="form-control" name="sci_grade" id="sci_grade" required>
+                                        </div>
+                                        <div class="form-group col-sm-4">
+                                            <label for="eng_grade">เกรด:ภาษาอังกฤษ</label>
+                                            <input type="text" name="eng_grade" class="form-control" id="eng_grade" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-sm-4">
+                                            <label for="thai_grade">เกรด:ภาษาไทย</label>
+                                            <input type="text" name="thai_grade" class="form-control" id="thai_grade" required  >
                                         </div>
                                     </div>
                                                                                
