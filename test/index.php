@@ -79,7 +79,7 @@
             echo "<div class='card-header-a'>";
             echo "<h3 class='card-title-a'>" . $row["title"] . "</h3>";
             echo "<div class='card-body-a'>";
-            echo "<p >" . $row["message"] ."<span class='bi bi-chevron-right'></span>" . "</p>";
+            echo "<p จำ>" . $row["message"] ."<span class='bi bi-chevron-right'></span>" . "</p>";
             echo "<small>Posted on: " . $row["created_at"] . "</small>";
             echo "</div>";
             echo "</div>";
