@@ -155,7 +155,7 @@ try {
             // Custom filtering function
             $('#levelFilter').on('change', function() {
                 var selectedLevel = $(this).val();
-                table.columns(6).search(selectedLevel).draw();
+                table.columns(5).search(selectedLevel).draw();
             });
         });
     </script>

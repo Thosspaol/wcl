@@ -6,6 +6,12 @@ $id_account = $_SESSION['id_account'];
 $query = "SELECT * FROM grade WHERE id_account = $id_account";
 $call_back = mysqli_query($connect, $query);
 $row_show = mysqli_fetch_assoc($call_back);
+
+// ตรวจสอบว่ามีข้อมูลหรือไม่
+if (!$row_show) {
+    // ถ้าไม่มีข้อมูลให้แสดงข้อความแจ้งเตือน
+    $message = "ไม่พบข้อมูลเกรดสำหรับนักเรียนนี้";
+}
 ?>
 <!DOCTYPE html>
 <html lang="th">
@@ -93,6 +99,12 @@ $row_show = mysqli_fetch_assoc($call_back);
                                 <a href="../dashboard/home.php" class="btn btn-primary float-right"><i class="fas fa-arrow-left"></i> กลับ</a>
                             </div>
                             <?php
+                            if (isset($message)) {
+                                echo '<div class="alert alert-warning text-center" role="alert">' . $message . '</div>';
+                            } else {
+                                // ตรวจสอบว่ามีข้อมูลก่อนที่จะแสดงตาราง
+                            ?>
+                              <?php
                             $pre = htmlspecialchars($row_show['pre']);
                             $firstname = htmlspecialchars($row_show['firstname']);
                             $lastname = htmlspecialchars($row_show['lastname']);
@@ -119,89 +131,95 @@ $row_show = mysqli_fetch_assoc($call_back);
 
                             $total_grade = number_format(htmlspecialchars($row_show['total_grade']), 2);
                             $average_grade = number_format(htmlspecialchars($row_show['average_grade']), 2);
-                            ?> <br>
-                            <div class="table-container">
-                                <table>                                    
-                                    <tr>
-                                        <td>
-                                            <table class="inner-table">
-                                                <thead class="table-secondary">
-                                                    <tr>                                                        
-                                                        <th colspan="2">ผลการเรียนของ <?php echo "$pre $firstname $lastname"; ?> ภาคเรียนที่ 2</th>
+                            ?> 
+                                <div class="table-container">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <table class="inner-table">
+                                                    <thead class="table-secondary">
+                                                        <tr>
+                                                            <th colspan="2">ผลการเรียนของ <?php echo  "$pre $firstname $lastname"; ?> ภาคเรียนที่ 2</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>วิชา</th>
+                                                            <th>เกรด</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tr>
+                                                        <td>คณิตศาสตร์</td>
+                                                        <td><?php echo $math_grade; ?></td>
                                                     </tr>
                                                     <tr>
-                                                        <th>วิชา</th>
-                                                        <th>เกรด</th>
+                                                        <td>คณิตศาสตร์เพิ่มเติม</td>
+                                                        <td><?php echo $additional_grade; ?></td>
                                                     </tr>
-                                                </thead>
-                                                <tr>
-                                                    <td>คณิตศาสตร์</td>
-                                                    <td><?php echo $math_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>คณิตศาสตร์เพิ่มเติม</td>
-                                                    <td><?php echo $additional_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>วิทยาศาสตร์</td>
-                                                    <td><?php echo $sci_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>ภาษาอังกฤษ</td>
-                                                    <td><?php echo $eng_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>ภาษาไทย</td>
-                                                    <td><?php echo $thai_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>สังคมศึกษาและวัฒนธรรม</td>
-                                                    <td><?php echo $society_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>สุขศึกษา</td>
-                                                    <td><?php echo $health_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>ดนตรีและนาฏศิลป์</td>
-                                                    <td><?php echo $music_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>ประวัติศาสตร์</td>
-                                                    <td><?php echo $history_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>ศิลปะ</td>
-                                                    <td><?php echo $art_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>เทคโนโลยี</td>
-                                                    <td><?php echo $technology_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>การงานอาชีพ <font style="color: red; font-size: 0.8em; color: red;text-align: left;margin-bottom: -10px;">*หมายเหตุ เฉพาะนักเรียนชั้น ปฐมศึกษาปีที่ 1-3* </font>
-                                                    </td>
-                                                    <td><?php echo $career_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>พละศึกษา</td>
-                                                    <td><?php echo $physical_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>หน้าที่พลเมือง</td>
-                                                    <td><?php echo $civic_grade; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>เกษตร <font style="color: red; font-size: 0.8em; color: red;text-align: left;margin-bottom: -10px;">*หมายเหตุ เฉพาะนักเรียนชั้น ปฐมศึกษาปีที่ 4-6* </font>
-                                                    </td>
-                                                    <td><?php echo $farm_grade; ?></td>
-                                                </tr>                                                
-                                                <tr>
-                                                    <th>เกรดเฉลี่ย</th>
-                                                    <th><?php echo $average_grade; ?></th>
-                                                </tr>
-                                            </table>
-                            </div>
+                                                    <tr>
+                                                        <td>วิทยาศาสตร์</td>
+                                                        <td><?php echo $sci_grade; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ภาษาอังกฤษ</td>
+                                                        <td><?php echo $eng_grade; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ภาษาไทย</td>
+                                                        <td><?php echo $thai_grade; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>สังคมศึกษาและวัฒนธรรม</td>
+                                                        <td><?php echo $society_grade; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>สุขศึกษา</td>
+                                                        <td><?php echo $health_grade; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ดนตรีและนาฏศิลป์</td>
+                                                        <td><?php echo $music_grade; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ประวัติศาสตร์</td>
+                                                        <td><?php echo $history_grade; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ศิลปะ</td>
+                                                        <td><?php echo $art_grade; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>เทคโนโลยี</td>
+                                                        <td><?php echo $technology_grade; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>การงานอาชีพ <font style="color: red; font-size: 0.8em; color: red;text-align: left;margin-bottom: -10px;">*หมายเหตุ เฉพาะนักเรียนชั้น ประถมศึกษาปีที่ 1-3* </font>
+                                                        </td>
+                                                        <td><?php echo $career_grade; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>พละศึกษา</td>
+                                                        <td><?php echo $physical_grade; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>หน้าที่พลเมือง</td>
+                                                        <td><?php echo $civic_grade; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>เกษตร <font style="color: red; font-size: 0.8em; color: red;text-align: left;margin-bottom: -10px;">*หมายเหตุ เฉพาะนักเรียนชั้น ประถมศึกษาปีที่ 4-6* </font>
+                                                        </td>
+                                                        <td><?php echo $farm_grade; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>เกรดเฉลี่ย</th>
+                                                        <th><?php echo $average_grade; ?></th>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>

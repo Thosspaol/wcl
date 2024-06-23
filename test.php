@@ -1,39 +1,74 @@
 <?php
-$servername = "localhost"; // หรือชื่อโฮสต์ของคุณ
-$username = "root"; // ชื่อผู้ใช้ฐานข้อมูล
-$password = ""; // รหัสผ่านฐานข้อมูล
-$dbname = "wcl"; // ชื่อฐานข้อมูล
-
-// สร้างการเชื่อมต่อ
-$conn = new mysqli($servername, $username, $password, $dbname);
+// เชื่อมต่อฐานข้อมูล
+$conn = new mysqli('localhost', 'root', '', 'wcl');
 
 // ตรวจสอบการเชื่อมต่อ
 if ($conn->connect_error) {
-    die("การเชื่อมต่อล้มเหลว: " . $conn->connect_error);
+  die("Connection failed: " . $conn->connect_error);
 }
 
-// ดึงข้อมูลจากตาราง people
-$sql = "SELECT role_account, COUNT(*) as count FROM account GROUP BY role_account";
-$result = $conn->query($sql);
+// ตรวจสอบว่าได้ส่ง id มาหรือไม่
+if (isset($_GET['id'])) {
+  $id = intval($_GET['id']);
+  
+  // ดึงข้อมูลประกาศข่าวที่มี id ตรงกับที่ส่งมา
+  $sql = "SELECT * FROM announcements WHERE id = $id";
+  $result = $conn->query($sql);
 
-$roleCount = [
-    'student' => 0,
-    'teacher' => 0,
-];
-
-if ($result->num_rows > 0) {
-    // เก็บจำนวนในแต่ละประเภท
-    while($row = $result->fetch_assoc()) {
-        $roleCount[$row['role_account']] = $row['count'];
-    }
+  if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+  } else {
+    echo "ไม่พบข้อมูล";
+    exit;
+  }
 } else {
-    echo "ไม่มีข้อมูล";
+  echo "ไม่มี ID ที่กำหนด";
+  exit;
 }
-
-// แสดงผลจำนวนคนแต่ละประเภท
-echo "จำนวนนักเรียน: " . $roleCount['student'] . "<br>";
-echo "จำนวนอาจารย์: " . $roleCount['person'] . "<br>";
-echo "ทั้งหมด" . $roleCount['student'] + $roleCount['person'] + $roleCount['admin'] ."<br>";
-
-$conn->close();
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title><?php echo htmlspecialchars($row["title"]); ?></title>
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    .img-box-a img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    .category-b {
+      font-size: 0.9rem;
+      background-color: #2eca6a;
+      padding: 0.3rem 0.7rem;
+      color: black;
+      letter-spacing: 0.03em;
+      border-radius: 50px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="section-news section-t8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-box">
+            <h2 class="title-a"><?php echo htmlspecialchars($row["title"]); ?></h2>
+          </div>
+          <div class="img-box-a">
+            <img src="uploads/<?php echo htmlspecialchars($row["image"]); ?>" class="img-a img-fluid" alt="<?php echo htmlspecialchars($row["title"]); ?>">
+          </div>
+          <div class="content-box">
+            <p><?php echo nl2br(htmlspecialchars($row["message"])); ?></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

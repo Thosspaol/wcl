@@ -104,46 +104,52 @@ try {
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#Table').DataTable({
-                columnDefs: [{
-                    "defaultContent": "-",
-                    "targets": "_all"
-                }],
-                bLengthChange: true,
-                lengthMenu: [[10, 20, -1], [10, 50, "All"]],
-                bFilter: true,
-                bSort: true,
-                bPaginate: true,
-                language: {
-                    "decimal": "",
-                    "emptyTable": "No data available in table",
-                    "info": "แสดง _START_ - _END_ จาก _TOTAL_ รายการ",
-                    "infoEmpty": "ไม่พบข้อมูลที่ต้องการ",
-                    "infoFiltered": "(filtered from _MAX_ total entries)",
-                    "infoPostFix": "",
-                    "thousands": ",",
-                    "lengthMenu": "แสดง _MENU_ แถว",
-                    "loadingRecords": "Loading...",
-                    "processing": "",
-                    "search": "ค้นหา:",
-                    "zeroRecords": "ไม่พบข้อมูลที่ต้องการ",
-                    "paginate": {
-                        "next": "ถัดไป",
-                        "previous": "ก่อนหน้านี้"
-                    },
-                    "aria": {
-                        "orderable": "Order by this column",
-                        "orderableReverse": "Reverse order this column"
-                    }
-                }
-            });
-        });
-    </script>
-   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+   
+   <!-- เรียกใช้ jQuery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- เรียกใช้ DataTables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#Table').DataTable({
+        columnDefs: [{
+            "defaultContent": "-",
+            "targets": "_all"
+        }],
+        bLengthChange: true,
+        lengthMenu: [[10, 20, -1], [10, 50, "All"]],
+        searching: true,
+        bSort: true,
+        bPaginate: true,
+        language: {
+            "decimal": "",
+            "emptyTable": "ไม่มีข้อมูลในตาราง",
+            "info": "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+            "infoEmpty": "ไม่พบข้อมูลที่ต้องการ",
+            "infoFiltered": "(กรองจากทั้งหมด _MAX_ รายการ)",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "แสดง _MENU_ แถวต่อหน้า",
+            "loadingRecords": "กำลังโหลดข้อมูล...",
+            "processing": "กำลังประมวลผล...",
+            "search": "ค้นหา:",
+            "zeroRecords": "ไม่พบข้อมูลที่ตรงกับการค้นหา",
+            "paginate": {
+                "next": "ถัดไป",
+                "previous": "ก่อนหน้า"
+            },
+            "aria": {
+                "sortAscending": ": เรียงจากน้อยไปมาก",
+                "sortDescending": ": เรียงจากมากไปน้อย"
+            }
+        }
+    });
+});
+</script>
+
+
 
 <script src="../assets/js/home.js"></script>
 </body>
