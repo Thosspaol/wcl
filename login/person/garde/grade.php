@@ -179,7 +179,7 @@ $row_show = mysqli_fetch_assoc($call_back);
                                                     <td><?php echo $technology_grade; ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>การงานอาชีพ <font style="color: red; font-size: 0.8em; color: red;text-align: left;margin-bottom: -10px;">*หมายเหตุ เฉพาะนักเรียนชั้น ปฐมศึกษาปีที่ 1-3* </font>
+                                                    <td>การงานอาชีพ <font style="color: red; font-size: 0.8em; color: red;text-align: left;margin-bottom: -10px;">*หมายเหตุ เฉพาะนักเรียนชั้น ประถมศึกษาปีที่ 1-3* </font>
                                                     </td>
                                                     <td><?php echo $career_grade; ?></td>
                                                 </tr>
@@ -192,7 +192,7 @@ $row_show = mysqli_fetch_assoc($call_back);
                                                     <td><?php echo $civic_grade; ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <td>เกษตร <font style="color: red; font-size: 0.8em; color: red;text-align: left;margin-bottom: -10px;">*หมายเหตุ เฉพาะนักเรียนชั้น ปฐมศึกษาปีที่ 4-6* </font>
+                                                    <td>เกษตร <font style="color: red; font-size: 0.8em; color: red;text-align: left;margin-bottom: -10px;">*หมายเหตุ เฉพาะนักเรียนชั้น ประถมศึกษาปีที่ 4-6* </font>
                                                     </td>
                                                     <td><?php echo $farm_grade; ?></td>
                                                 </tr>                                                
