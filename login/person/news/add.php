@@ -90,6 +90,19 @@ $open_connect = 1;
             </div>
 
 
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="../assets/js/home.js"></script>
 </body>
 
 </html>
+<!-- SCRIPTS -->
+
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/adminlte.min.js"></script>
+<script src="../assets/js/login.js"></script>
+
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="../plugins/chart.js/Chart.min.js"></script>
+<script src="../assets/js/pages/dashboard.js"></script>

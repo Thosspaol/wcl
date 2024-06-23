@@ -1,15 +1,15 @@
 <?php
-    // เชื่อมต่อฐานข้อมูล
-    $conn = new mysqli('localhost', 'root', '', 'wcl');
+// เชื่อมต่อฐานข้อมูล
+$conn = new mysqli('localhost', 'root', '', 'wcl');
 
-    // ตรวจสอบการเชื่อมต่อ
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+// ตรวจสอบการเชื่อมต่อ
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
 
-    // ดึงข้อมูลประกาศข่าวทั้งหมด
-    $sql = "SELECT * FROM announcements ORDER BY created_at DESC";
-    $result = $conn->query($sql);
+// ดึงข้อมูลประกาศข่าวทั้งหมด
+$sql = "SELECT * FROM announcements ORDER BY created_at DESC";
+$result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,15 +41,29 @@
   <style>
     .img-box-a img {
       width: 100%;
-      height: 300px; /* กำหนดความสูงของรูปภาพ */
-      object-fit: cover; /* ป้องกันการผิดสัดส่วนของรูปภาพ */
+      height: 300px;
+      /* กำหนดความสูงของรูปภาพ */
+      object-fit: cover;
+      /* ป้องกันการผิดสัดส่วนของรูปภาพ */
     }
+
     .carousel-item-a.intro-item {
-      height: 600px; /* กำหนดความสูงของสไลด์ใน Carousel */
+      height: 600px;
+      /* กำหนดความสูงของสไลด์ใน Carousel */
+    }
+
+    .category-b {
+      font-size: 0.9rem;
+      background-color: #2eca6a;
+      padding: 0.3rem 0.7rem;
+      color: black;
+      letter-spacing: 0.03em;
+      border-radius: 50px;
+      text-decoration: none;
     }
     
   </style>
-  
+
 
 </head>
 
@@ -112,35 +126,36 @@
 
     <div class="swiper-wrapper">
 
-    <?php if ($result->num_rows > 0) : ?>
-      <?php while ($row = $result->fetch_assoc()) : ?>
-        <div class="swiper-slide carousel-item-b intro-item bg-image" style="background-image: url('uploads/<?php echo $row['image']; ?>')">
-          <div class="overlay overlay-a"></div>
-          <div class="intro-content display-table">
-            <div class="table-cell">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-8">
-                    <div class="intro-body">
-                      <p class="intro-title-top"><?php echo $row['title']; ?>
-                        <br> <?php echo date('d F Y', strtotime($row['created_at'])); ?>
-                      </p>
-                      <h1 class="intro-title mb-4">
-                        <?php echo $row['message']; ?>
-                      </h1>
+      <?php if ($result->num_rows > 0) : ?>
+        <?php while ($row = $result->fetch_assoc()) : ?>
+          <div class="swiper-slide carousel-item-b intro-item bg-image" style="background-image: url('uploads/<?php echo $row['image']; ?>')">
+            <div class="overlay overlay-a"></div>
+            <div class="intro-content display-table">
+              <div class="table-cell">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-8">
+                      <div class="intro-body">
+                        <p class="intro-title-top"><?php echo $row['title']; ?>
+                          <br> <?php echo date('d F Y', strtotime($row['created_at'])); ?>
+                        </p>
+                        <h1 class="intro-title mb-4">
+                          <?php echo $row['message']; ?>
+                        </h1>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      <?php endwhile; ?>
-    <?php endif; ?>
-    
+        <?php endwhile; ?>
+      <?php endif; ?>
+
     </div>
   </div><!-- End Intro Section -->
 
+  <br>
   <main id="main">
     <div class="container">
       <div class="row">
@@ -243,62 +258,67 @@
 
     <!-- ======= Latest News Section ======= -->
     <section class="section-news section-t8">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="title-wrap d-flex justify-content-between">
-            <div class="title-box">
-              <h2 class="title-a">กิจกรรมทางโรงเรียน</h2>
-            </div>
-            <div class="title-link">
-              <a href="blog-grid.html">เพิ่มเติม
-                <span class="bi bi-chevron-right"></span>
-              </a>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="title-wrap d-flex justify-content-between">
+              <div class="title-box">
+                <h2 class="title-a">กิจกรรมทางโรงเรียน</h2>
+              </div>
+              <div class="title-link">
+                <a href="blog-grid.html">เพิ่มเติม
+                  <span class="bi bi-chevron-right"></span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div id="news-carousel" class="swiper">
-        <div class="swiper-wrapper">
+        <div id="news-carousel" class="swiper">
+          <div class="swiper-wrapper">
 
-          <?php
-          // รีเซ็ตการเรียกซ้ำฐานข้อมูล
-          $result->data_seek(0);
+            <?php
+            // รีเซ็ตการเรียกซ้ำฐานข้อมูล
+            $result->data_seek(0);
 
-          if ($result->num_rows > 0) {
-              while($row = $result->fetch_assoc()) {
-                  echo '<div class="swiper-slide carousel-item-b me-5">';
-                  echo '  <div class="card-box-a card-shadow">';
-                  echo '    <div class="img-box-a">';
-                  echo '      <img src="uploads/' . $row["image"] . '" class="img-a img-fluid" alt="' . $row["title"] . '">';
-                  echo '    </div>';
-                  echo '    <div class="card-overlay">';
-                  echo '      <div class="card-overlay-a-content">';
-                  echo '        <div class="card-header-a">';
-                  echo '          <h2 class="card-title-a">';
-                  echo '            <a href="property-single.html">' . $row["title"] . '</a>';
-                  echo '          </h2>';
-                  echo '        </div>';
-                  echo '        <div class="card-body-a">';
-                  echo '          <a href="property-single.html" class="link-a">ดูเพิ่มเติม';
-                  echo '            <span class="bi bi-chevron-right"></span>';
-                  echo '          </a>';
-                  echo '        </div>';
-                  echo '      </div>';
-                  echo '    </div>';
-                  echo '  </div>';
-                  echo '</div><!-- End carousel item -->';
+            if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                echo '<div class="swiper-slide carousel-item-b me-5">';
+                echo '  <div class="card-box-a card-shadow">';
+                echo '    <div class="img-box-a">';
+                echo '      <img src="uploads/' . $row["image"] . '" class="img-a img-fluid" alt="' . $row["title"] . '">';
+                echo '    </div>';
+                echo '    <div class="card-overlay">';
+                echo '      <div class="card-overlay-a-content">';
+                echo '        <div class="card-header-a">';
+                echo '          <h2 class="card-title-a">';
+                echo '            <a href="property-single.html" class="category-b" style="color: black;">' . $row["title"] . '</a>';
+                echo '          </h2>';
+                echo '        </div>';
+                echo '          <div class="card-header-a">';
+                echo '                   <h2 class="card-title-a>';      
+                echo '                     <a href="blog-single.html"  class="link-a" style="color: white;">' . $row["message"] . '</a>';
+                echo '             </h2>';
+                echo '              </div>';
+                echo '        <div class="card-body-a">';
+                echo '          <a href="property-single.html" class="link-a">ดูเพิ่มเติม';
+                echo '            <span class="bi bi-chevron-right"></span>';
+                echo '          </a>';
+                echo '        </div>';
+                echo '      </div>';
+                echo '    </div>';
+                echo '  </div>';
+                echo '</div><!-- End carousel item -->';
               }
-          } else {
+            } else {
               echo '<p>ไม่มีประกาศข่าว</p>';
-          }
-          ?>
+            }
+            ?>
+          </div>
         </div>
-      </div>
 
-    </div>
-  </section><!-- End carousel item --><!-- End Latest News Section -->
+      </div>
+    </section><!-- End carousel item --><!-- End Latest News Section -->
 
     <!-- ======= Testimonials Section ======= -->
 
