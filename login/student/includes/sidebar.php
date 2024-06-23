@@ -74,10 +74,22 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//ถ�
                 </li>                
                 <li class="nav-item">
                     <a href="../tables/index.php" class="nav-link">
-                    &nbsp;<i class='fas fa-calendar-alt'></i>&nbsp; 
+                    &nbsp;<i class='fas fa-th-list'></i>&nbsp; 
                         <p>ตารางสอนนักเรียน</p>
                     </a>
-                </li>         
+                </li> 
+                <li class="nav-item">
+                    <a href="../calendar/index.php" class="nav-link">
+                    &nbsp;<i class='fas fa-calendar-alt'></i>&nbsp; 
+                        <p>ปฏิทินกิจกรรม</p>
+                    </a>
+                </li>      
+                <li class="nav-item">
+                    <a href="../grade/index.php" class="nav-link">
+                    &nbsp;<i class='fas fa-clipboard-list'></i>&nbsp; 
+                        <p>ผลการศึกษา</p>
+                    </a>
+                </li>    
                 <li class="nav-header"></li>
                 <li class="nav-item">
                     <a href="../../form_login.php" id="logout" class="nav-link">

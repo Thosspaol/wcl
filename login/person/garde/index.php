@@ -34,7 +34,7 @@ try {
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h5 class="m-0 text-dark">ผู้ดูแลระบบ</h5>
+                            <h5 class="m-0 text-dark">บุคลากร</h5>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -96,8 +96,9 @@ try {
                                                 <td><?php echo $row['role_account']?></td>
                                                 <td><?php echo $row['level']?></td>
                                                 <td>
-                                                    <a href="grade_student.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-warning"><i class="far fa-folder-open"></i> ดูข้อมูล</a>
-                                                    <a href="delete_manager.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i> ลบ</a>
+                                                    <a href="grade_student.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-success"><i class="fas fa-poll-h"></i> ออกเกรด</a> 
+                                                    <a href="grade.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-primary"><i class="fas fa-address-card"></i> ตรวจสอบผลการเรียน</a>      
+                                                    <a href="edit_grade_student.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> แก้ไขผลการเรียน</a>                                                 
                                                 </td>
                                             </tr>
                                             <?php

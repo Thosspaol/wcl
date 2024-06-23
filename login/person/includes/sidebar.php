@@ -79,9 +79,9 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//ถ�
                     </a>
                 </li> 
                 <li class="nav-item">
-                    <a href="../manager/index.php" class="nav-link">
+                    <a href="../garde/index.php" class="nav-link">
                     &nbsp;<i class='fas fa-user-cog'></i>&nbsp; 
-                        <p>สมาชิกนักเรียน</p>
+                        <p>ผลการศึกษาของนักเรียน</p>
                     </a>
                 </li>
                 <li class="nav-item">

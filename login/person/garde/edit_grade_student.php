@@ -3,7 +3,7 @@ session_start();
 $open_connect = 1;
 require('../../connect.php');
 $id = $_GET["id_account"];
-$sql = "SELECT * FROM account WHERE id_account = $id";
+$sql = "SELECT * FROM grade WHERE id_account = $id";
 $result = mysqli_query($connect, $sql);
 $row = mysqli_fetch_assoc($result);
 ?>
@@ -62,7 +62,7 @@ $row = mysqli_fetch_assoc($result);
                                     <h3 class="card-title" style="line-height:2.1 rem;">แก้ไขข้อมูล</h3>
                                     <a href="../dashboard/home.php" class="btn btn-primary float-right"><i class='fas fa-arrow-left'></i> กลับ</a>
                                 </div><br>
-                                <form action="update_manager.php" method="post" enctype="multipart/form-data">
+                                <form action="update_grade.php" method="post" enctype="multipart/form-data">
                                     <div class="card-body">
                                         <div class="form-row">
                                             <input type="hidden" name="id_account" value="<?php echo $row["id_account"]; ?>">
@@ -86,78 +86,78 @@ $row = mysqli_fetch_assoc($result);
                                         <div class="form-row">
                                             <div class="form-group col-sm-4">
                                                 <label for="math_grade">เกรด:คณิตศาสตร์</label>
-                                                <input type="text" class="form-control" name="math_grade" id="math_grade" required>
+                                                <input type="text" class="form-control" name="math_grade" id="math_grade" value="<?php echo $row["math_grade"]; ?>" required>
                                             </div>
                                             <div class="form-group col-sm-4">
                                                 <label for="additional_grade">เกรด:คณิตศาสตร์เพิ่มเเติม</label>
-                                                <input type="text" class="form-control" name="additional_grade" id="additional_grade" required>
+                                                <input type="text" class="form-control" name="additional_grade" id="additional_grade" value="<?php echo $row["additional_grade"]; ?>" required>
                                             </div>
                                             <div class="form-group col-sm-4">
                                                 <label for="sci_grade">เกรด:วิทยาศาสตร์</label>
-                                                <input type="text" class="form-control" name="sci_grade" id="sci_grade" required>
+                                                <input type="text" class="form-control" name="sci_grade" id="sci_grade" value="<?php echo $row["sci_grade"]; ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-sm-4">
                                                 <label for="eng_grade">เกรด:ภาษาอังกฤษ</label>
-                                                <input type="text" name="eng_grade" class="form-control" id="eng_grade" required>
+                                                <input type="text" name="eng_grade" class="form-control" id="eng_grade" value="<?php echo $row["eng_grade"]; ?>" required>
                                             </div>
                                             <div class="form-group col-sm-4">
                                                 <label for="thai_grade">เกรด:ภาษาไทย</label>
-                                                <input type="text" name="thai_grade" class="form-control" id="thai_grade" required>
+                                                <input type="text" name="thai_grade" class="form-control" id="thai_grade" value="<?php echo $row["thai_grade"]; ?>" required>
                                             </div>
                                             <div class="form-group col-sm-4">
                                                 <label for="society_grade">เกรด:สังคมศึกษาและวัฒนธรรม</label>
-                                                <input type="text" name="society_grade" class="form-control" id="society_grade" required>
+                                                <input type="text" name="society_grade" class="form-control" id="society_grade" value="<?php echo $row["society_grade"]; ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-sm-4">
                                                 <label for="อ">เกรด:สุขศึกษา</label>
-                                                <input type="text" name="health_grade" class="form-control" id="health_grade" required>
+                                                <input type="text" name="health_grade" class="form-control" id="health_grade" value="<?php echo $row["health_grade"]; ?>" required>
                                             </div>
                                             <div class="form-group col-sm-4">
                                                 <label for="music_grade">เกรด:ดนตรีและนาฎศิลป์</label>
-                                                <input type="text" name="music_grade" class="form-control" id="music_grade" required>
+                                                <input type="text" name="music_grade" class="form-control" id="music_grade" value="<?php echo $row["music_grade"]; ?>" required>
                                             </div>
                                             <div class="form-group col-sm-4">
                                                 <label for="history_grade">เกรด: ประวัติศาสตร์</label>
-                                                <input type="text" name="history_grade" class="form-control" id="history_grade" required>
+                                                <input type="text" name="history_grade" class="form-control" id="history_grade" value="<?php echo $row["history_grade"]; ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-sm-4">
                                                 <label for="art_grade">เกรด: ศิลปะ</label>
-                                                <input type="text" name="art_grade" class="form-control" id="art_grade" required>
+                                                <input type="text" name="art_grade" class="form-control" id="art_grade" value="<?php echo $row["art_grade"]; ?>" required>
                                             </div>
                                             <div class="form-group col-sm-4">
                                                 <label for="technology_grade">เกรด: เทคโนโลยี</label>
-                                                <input type="text" name="technology_grade" class="form-control" id="technology_grade" required>
+                                                <input type="text" name="technology_grade" class="form-control" id="technology_grade" value="<?php echo $row["technology_grade"]; ?>" required>
                                             </div>
                                             <div class="form-group col-sm-4">
                                                 <label for="career_grade">เกรด: การงานอาชีพ</label>
-                                                <input type="text" name="career_grade" class="form-control" id="career_grade" required>
+                                                <input type="text" name="career_grade" class="form-control" id="career_grade" value="<?php echo $row["career_grade"]; ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-row">
                                             <div class="form-group col-sm-4">
                                                 <label for="physical_grade">เกรด: พละศึกษา</label>
-                                                <input type="text" name="physical_grade" class="form-control" id="physical_grade" required>
+                                                <input type="text" name="physical_grade" class="form-control" id="physical_grade"  value="<?php echo $row["physical_grade"]; ?>"required>
                                             </div>
                                             <div class="form-group col-sm-4">
                                                 <label for="civic_grade">เกรด: หน้าที่พลเมือง</label>
-                                                <input type="text" name="civic_grade" class="form-control" id="civic_grade" required>
+                                                <input type="text" name="civic_grade" class="form-control" id="civic_grade" value="<?php echo $row["civic_grade"]; ?>" required>
                                             </div>
                                             <div class="form-group col-sm-4">
-                                                <label for="farm_grade">เกรด: เกษตร</label>
-                                                <input type="text" name="farm_grade" class="form-control" id="farm_grade" required>
+                                                <label for="farm_grade">เกรด: เกษตร </label>
+                                                <input type="text" name="farm_grade" class="form-control" id="farm_grade" value="<?php echo $row["farm_grade"]; ?>" required>
                                             </div>
                                         </div> 
 
 
 
 
-                                        <button type="submit" class="btn btn-success btn-block"><i class='fas fa-save'></i> บันทึกข้อมูล</button>
+                                        <button type="submit" class="btn btn-warning btn-block"><i class='fas fa-pencil-alt'></i> แก้ไขข้อมูล</button>
                                     </div>
                                 </form>
                             </div>

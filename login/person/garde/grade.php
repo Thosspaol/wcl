@@ -2,7 +2,7 @@
 session_start();
 $open_connect = 1;
 require('../../connect.php');
-$id_account = $_SESSION['id_account'];
+$id_account = $_GET['id_account'];
 $query = "SELECT * FROM grade WHERE id_account = $id_account";
 $call_back = mysqli_query($connect, $query);
 $row_show = mysqli_fetch_assoc($call_back);

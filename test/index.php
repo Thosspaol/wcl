@@ -67,16 +67,16 @@
 
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
-            echo "<div class='carousel-item-b me-5'>";
-            echo " <div class='card-box-a card-shadow'>";
-            echo "<div class='img-box-a'>";
+            echo "<div class='carousel-item-c swiper-slide'>";
+            echo " <div class='card-box-b card-shadow news-box>";
+            echo "<div class='img-box-b'>";
             if (!empty($row["image"])) {
                 echo "<img src='uploads/" . $row["image"] . "'class='img-a img-fluid' width='960' height='665'><br>";
             }
             echo "</div>";
             echo " <div class='card-overlay'>";
-            echo "<div class='card-overlay-a-content'>";
-            echo "<div class='card-header-a'>";
+            echo "<div class='card-header-b'>";
+            echo "<div class='card-category-b'>";
             echo "<h3 class='card-title-a'>" . $row["title"] . "</h3>";
             echo "<div class='card-body-a'>";
             echo "<p จำ>" . $row["message"] ."<span class='bi bi-chevron-right'></span>" . "</p>";

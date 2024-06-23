@@ -1,3 +1,16 @@
+<?php
+            // เชื่อมต่อฐานข้อมูล
+            $conn = new mysqli('localhost', 'root', '', 'wcl');
+
+            // ตรวจสอบการเชื่อมต่อ
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            // ดึงข้อมูลประกาศข่าวทั้งหมด
+            $sql = "SELECT * FROM announcements ORDER BY created_at DESC";
+            $result = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
