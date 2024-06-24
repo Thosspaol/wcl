@@ -6,6 +6,7 @@ $open_connect = 1;
 require('../../connect.php');
 $title = $_POST["title"];
 $message= $_POST["message"];
+$link = $_POST["link"];
 $id = $_POST["student_id"];
 
 
@@ -38,7 +39,7 @@ if ($_FILES['image']['name']) {
 
 
 
-$sql2="UPDATE recruiting SET title = '$title',message = '$message',image = '$image' ,created_at = CURRENT_TIMESTAMP WHERE student_id = $id ";
+$sql2="UPDATE recruiting SET title = '$title',message = '$message',link = '$link' ,image = '$image' ,created_at = CURRENT_TIMESTAMP WHERE student_id = $id ";
 $result2 = mysqli_query($connect, $sql2);
 
 

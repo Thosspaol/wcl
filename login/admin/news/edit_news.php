@@ -36,6 +36,7 @@ $row = mysqli_fetch_assoc($result);
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
     <link rel="stylesheet" href="../assets/css/style1.css">
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -80,10 +81,14 @@ $row = mysqli_fetch_assoc($result);
                                             <label for="message">ข้อความ:</label>
                                             <textarea id="message" name="message" class="form-control" required><?php echo $row["message"]; ?></textarea>
                                         </div>
+                                        <div class="form-group col-sm-8">
+                                            <label for="link">ลิ้งค์:</label>
+                                            <textarea id="link" name="link" class="form-control" required><?php echo $row["link"]; ?></textarea>
+                                        </div>
                                         <div class="form-group col-sm-4">
                                             <label for="image">รูปภาพ:</label><br>                                        
                                             <?php if($row["image"]) { ?>
-                                                <img src="../../../uploads/<?php echo $row["image"]; ?>" alt="<?php echo $row["title"]; ?>" style="width: 100px; height: auto;">
+                                                <img src="../../../uploads/<?php echo $row["image"]; ?>" alt="<?php echo $row["title"]; ?>" style="width: 100px; height: auto;" required>
                                             <?php } ?>
                                             <br><br><input type="file" id="image" name="image" class="form-control" accept="image/*">
                                         </div>
@@ -93,6 +98,9 @@ $row = mysqli_fetch_assoc($result);
                             </div>
                         </div>
                     </div>
+                    <script>
+                CKEDITOR.replace('link');
+            </script>
                 </div>
             </div>
 

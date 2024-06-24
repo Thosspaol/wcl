@@ -161,7 +161,7 @@ $result_recruiting = $conn->query($sql_recruiting);
                       </div>
                       <div class="card-header-a">
                         <h2 class="card-title-a">
-                          <a class="link-a" style="color: white;"><?php echo htmlspecialchars($row_show["message"]); ?> </a>
+                          <a class="link-a" style="color: white;"><?php echo ($row_show["message"]); ?> </a>
                         </h2>
                       </div>
                       <div class="card-body-a">

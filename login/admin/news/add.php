@@ -31,6 +31,7 @@ $open_connect = 1;
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
     <link rel="stylesheet" href="../assets/css/style1.css">
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -65,23 +66,25 @@ $open_connect = 1;
                                 <form action="submit.php" method="POST" enctype="multipart/form-data">
                                     <div class="card-body">
                                         <div class="form-row">
-                                        <div class="form-group col-sm-6">
-                                            <label for="title">หัวข้อ:</label>
-                                            <input type="text" id="title" name="title" class="form-control" required>
+                                            <div class="form-group col-sm-6">
+                                                <label for="title">หัวข้อ:</label>
+                                                <input type="text" id="title" name="title" class="form-control" required>
                                             </div>  
-                                            </div>  
-                                            <div class="form-group col-sm-8">
+                                        </div>  
+                                        <div class="form-group col-sm-8">
                                             <label for="message">ข้อความ:</label>
                                             <textarea id="message" name="message" class="form-control" required></textarea>
-                                            </div>
-                                            <div class="form-group col-sm-4">
+                                        </div>
+                                        <div class="form-group col-sm-8">
+                                            <label for="link">ลิ้งค์:</label>
+                                            <textarea id="link" name="link" class="form-control" required></textarea>
+                                        </div>
+                                        <div class="form-group col-sm-4">
                                             <label for="image">รูปภาพ:</label>
                                             <input type="file" id="image" name="image" class="form-control" accept="image/*">
-                                            </div>
-                                            
-                                            
-                                            <button type="submit" class="btn  btn-success btn-block">เพิ่มประกาศข่าว</button>
                                         </div>
+                                        <button type="submit" class="btn btn-success btn-block">เพิ่มประกาศข่าว</button>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -89,20 +92,20 @@ $open_connect = 1;
                 </div>
             </div>
 
+            <script>
+                CKEDITOR.replace('link');
+            </script>
+        </div>
+    </div>
 
-            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/adminlte.min.js"></script>
+    <script src="../assets/js/login.js"></script>
 
-<script src="../assets/js/home.js"></script>
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="../plugins/chart.js/Chart.min.js"></script>
+    <script src="../assets/js/pages/dashboard.js"></script>
 </body>
-
 </html>
-<!-- SCRIPTS -->
-
-<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/js/adminlte.min.js"></script>
-<script src="../assets/js/login.js"></script>
-
-
-<!-- OPTIONAL SCRIPTS -->
-<script src="../plugins/chart.js/Chart.min.js"></script>
-<script src="../assets/js/pages/dashboard.js"></script>

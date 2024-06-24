@@ -10,6 +10,7 @@ if ($conn->connect_error) {
 // รับข้อมูลจากฟอร์ม
 $title = $_POST['title'];
 $message = $_POST['message'];
+$link = $_POST['link'];
 $image = "";
 
 // ตรวจสอบว่ามีการอัปโหลดรูปภาพหรือไม่
@@ -37,7 +38,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
 }
 
 // บันทึกข้อมูลลงในตาราง
-$sql = "INSERT INTO recruiting (title, message, image) VALUES ('$title', '$message', '$image')";
+$sql = "INSERT INTO recruiting (title, message,link, image) VALUES ('$title', '$message','$link', '$image')";
 
 if ($conn->query($sql) === TRUE) {
     echo "ประกาศข่าวถูกบันทึกเรียบร้อยแล้ว";

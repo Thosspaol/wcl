@@ -187,7 +187,12 @@ if (isset($_GET['id'])) {
                   </div>
                   <div class="property-description">
                   <p class="description color-text-a">
-                  <?php echo nl2br(htmlspecialchars($row["message"])); ?>
+                  <?php echo htmlspecialchars ($row["message"]); ?>
+                      </p>
+                  </div>
+                  <div class="property-description">
+                  <p class="description color-text-a">
+                  <?php echo ($row["link"]); ?>
                       </p>
                   </div>
                 </div>
