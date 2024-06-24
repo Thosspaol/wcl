@@ -8,48 +8,40 @@ if ($conn->connect_error) {
 }
 
 // ดึงข้อมูลประกาศข่าวทั้งหมด
-$sql = "SELECT * FROM announcements ORDER BY created_at DESC";
-$result = $conn->query($sql);
+$sql_announcements = "SELECT * FROM announcements ORDER BY created_at DESC";
+$result_announcements = $conn->query($sql_announcements);
+
+// ดึงข้อมูลรับสมัครเรียนทั้งหมด
+$sql_recruiting = "SELECT * FROM recruiting ORDER BY created_at DESC";
+$result_recruiting = $conn->query($sql_recruiting);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>โรงเรียนวัดช่องลมธรรมโชติ</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
-  <!-- Favicons -->
   <link href="assets/img/โลโก้วัดช่องลม.png" rel="icon">
   <link href="assets/img/โลโก้วัดช่องลม (1).png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
   <style>
     .img-box-a img {
       width: 100%;
       height: 300px;
-      /* กำหนดความสูงของรูปภาพ */
       object-fit: cover;
-      /* ป้องกันการผิดสัดส่วนของรูปภาพ */
     }
 
     .carousel-item-a.intro-item {
       height: 600px;
-      /* กำหนดความสูงของสไลด์ใน Carousel */
     }
 
     .category-b {
@@ -61,14 +53,10 @@ $result = $conn->query($sql);
       border-radius: 50px;
       text-decoration: none;
     }
-    
   </style>
-
-
 </head>
 
 <body>
-
   <!-- ======= Header/Navbar ======= -->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container">
@@ -78,25 +66,19 @@ $result = $conn->query($sql);
         <span></span>
       </button>
       <a class="navbar-brand text-brand" href="index.php">โรงเรียนวัดช่องลมธรรมโชติ</a>
-
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
-
-          <li class="nav-item">
-            <a class="nav-link active" href="index.php">หน้าแรก</a>
-          </li>
-
+          <li class="nav-item"><a class="nav-link active" href="index.php">หน้าแรก</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">รู้จักโรงเรียน</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item " href="property-single.php">ประวัติโรงเรียน</a>
-              <a class="dropdown-item " href="blog-single.php">วิสัยทัศน์/พันธกิจ</a>
-              <a class="dropdown-item " href="property-grid.php">คณะผู้บริหาร</a>
+              <a class="dropdown-item" href="property-single.php">ประวัติโรงเรียน</a>
+              <a class="dropdown-item" href="blog-single.php">วิสัยทัศน์/พันธกิจ</a>
+              <a class="dropdown-item" href="property-grid.php">คณะผู้บริหาร</a>
             </div>
           </li>
-
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">กลุ่มสาระการเรียนรู้</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">กลุ่มสาระการเรียนรู้</a>
             <div class="dropdown-menu">
               <a href="sci.php" class="dropdown-item">วิทยาศาสตร์และเทคโนโลยี</a>
               <a href="#" class="dropdown-item">คณิตศาสตร์</a>
@@ -109,10 +91,7 @@ $result = $conn->query($sql);
               <a href="#" class="dropdown-item">กิจกรรมพัฒนาผู้เรียน</a>
             </div>
           </li>
-
-          <li class="nav-item">
-            <a class="nav-link " href="contact.php">ติดต่อเรา</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.php">ติดต่อเรา</a></li>
         </ul>
       </div>
       <div class="btn-group ml-auto">
@@ -122,12 +101,10 @@ $result = $conn->query($sql);
   </nav><!-- End Header/Navbar -->
 
   <!-- ======= Intro Section ======= -->
-  <div class="intro intro-carousel  position-relative">
-
+  <div class="intro intro-carousel position-relative">
     <div class="swiper-wrapper">
-
-      <?php if ($result->num_rows > 0) : ?>
-        <?php while ($row = $result->fetch_assoc()) : ?>
+      <?php if ($result_announcements->num_rows > 0) : ?>
+        <?php while ($row = $result_announcements->fetch_assoc()) : ?>
           <div class="swiper-slide carousel-item-b intro-item bg-image" style="background-image: url('uploads/<?php echo $row['image']; ?>')">
             <div class="overlay overlay-a"></div>
             <div class="intro-content display-table">
@@ -136,12 +113,8 @@ $result = $conn->query($sql);
                   <div class="row">
                     <div class="col-lg-8">
                       <div class="intro-body">
-                        <p class="intro-title-top"><?php echo $row['title']; ?>
-                          <br> <?php echo date('d F Y', strtotime($row['created_at'])); ?>
-                        </p>
-                        <h1 class="intro-title mb-4">
-                          <?php echo $row['message']; ?>
-                        </h1>
+                        <p class="intro-title-top"><?php echo $row['title']; ?><br> <?php echo date('d F Y', strtotime($row['created_at'])); ?></p>
+                        <h1 class="intro-title mb-4"><?php echo $row['message']; ?></h1>
                       </div>
                     </div>
                   </div>
@@ -151,176 +124,159 @@ $result = $conn->query($sql);
           </div>
         <?php endwhile; ?>
       <?php endif; ?>
-
     </div>
   </div><!-- End Intro Section -->
 
   <br>
   <main id="main">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="title-wrap d-flex justify-content-between">
-            <div class="title-box">
-              <h2 class="title-a">ข่าวรับสมัคร</h2>
-            </div>
-            <div class="title-link">
-              <a href="property-grid.html">ดูทั้งหมด
-                <span class="bi bi-chevron-right"></span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="property-carousel" class="swiper">
-        <div class="swiper-wrapper">
-          <div class="carousel-item-b me-5">
-            <div class="card-box-a card-shadow">
-              <div class="img-box-a">
-                <img src="assets/img/รับสมัคร-1.jpg" alt="" class="img-a img-fluid" width="960" height="665">
-              </div>
-              <div class="card-overlay">
-                <div class="card-overlay-a-content">
-                  <div class="card-header-a">
-                    <h2 class="card-title-a">
-                      <a href="property-single.html">ข่าวรับสมัคร ประจำปี 2565</a>
-                    </h2>
-                  </div>
-                  <div class="card-body-a">
-                    <a href="#" class="link-a">ดูเพิ่มเติม
-                      <span class="bi bi-chevron-right"></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div><!-- End carousel item -->
-
-          <div class="carousel-item-b">
-            <div class="card-box-a card-shadow">
-              <div class="img-box-a">
-                <img src="assets/img/รับสมัคร-2.jpg" alt="" class="img-a img-fluid" width="960" height="665">
-              </div>
-              <div class="card-overlay">
-                <div class="card-overlay-a-content">
-                  <div class="card-header-a">
-                    <h2 class="card-title-a">
-                      <a href="property-single.html">ข่าวรับสมัคร ประจำปี 2564</a>
-                    </h2>
-                  </div>
-                  <div class="card-body-a">
-                    <a href="property-single.html" class="link-a">ดูเพิ่มเติม
-                      <span class="bi bi-chevron-right"></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      </section>
-      <!-- End carousel item -->
-
-    </div>
-    </div>
-    <!-- <div class="propery-carousel-pagination carousel-pagination"></div> -->
-
-    </div>
-
-    <!-- ======= Agents Section ======= -->
-    <section class="section-agents section-t8">
-      <div class="container">
-        <div class="col-md-12">
-          <div class="title-wrap d-flex justify-content-between">
-            <div class="title-box">
-              <h2 class="title-a">ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row align-items-center">
-          <div class="col-md-3">
-            <div class="card-box-d">
-              <div class="card-img-d">
-                <img src="assets/img/ผู้อำนวยการ.jpg" alt="" class="img-d img-fluid">
-              </div>
-            </div>
-          </div>
-        </div><br>
-        <div class="col-md-3 d-flex flex-column justify-content-start">
-          <h2>นายรัฐวัฒน์ ปรียานนท์</h2>
-          <h6>ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</h6>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ======= Latest News Section ======= -->
     <section class="section-news section-t8">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="title-wrap d-flex justify-content-between">
               <div class="title-box">
-                <h2 class="title-a">กิจกรรมทางโรงเรียน</h2>
+                <h2 class="title-a">รับสมัครเรียน</h2>
               </div>
               <div class="title-link">
-                <a href="blog-grid.html">เพิ่มเติม
-                  <span class="bi bi-chevron-right"></span>
-                </a>
+                <a href="blog-grid.html">เพิ่มเติม<span class="bi bi-chevron-right"></span></a>
               </div>
             </div>
           </div>
         </div>
 
-        <div id="news-carousel" class="swiper">
-          <div class="swiper-wrapper">
+        <div class="row">
+          <?php if ($result_recruiting->num_rows > 0) : ?>
+            <?php while ($row_show = $result_recruiting->fetch_assoc()) : ?>
+              <div class="col-md-4 mb-4">
+                <div class="card-box-a card-shadow">
+                  <div class="img-box-a">
+                    <img src="uploads/<?php echo htmlspecialchars($row_show["image"]); ?>" class="img-a img-fluid" alt="<?php echo htmlspecialchars($row_show["title"]); ?>">
+                  </div>
+                  <div class="card-overlay">
+                    <div class="card-overlay-a-content">
+                      <div class="card-header-a">
+                        <h2 class="card-title-a">
+                          <a class="category-b" style="color: black;"><?php echo htmlspecialchars($row_show["title"]); ?></a>
+                        </h2>
+                      </div>
+                      <div class="card-header-a">
+                        <h2 class="card-title-a">
+                          <a class="link-a" style="color: white;"><?php echo htmlspecialchars($row_show["message"]); ?> </a>
+                        </h2>
+                      </div>
+                      <div class="card-body-a">
+                        <a href="recruiting.php?id=<?php echo $row_show['student_id']; ?>" class="link-a" style="color: white;">ดูเพิ่มเติม
+                          <span class="bi bi-chevron-right"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <?php endwhile; ?>
+          <?php else : ?>
+            <div class="col-md-12">
+              <p>ไม่มีข้อมูล</p>
+            </div>
+          <?php endif; ?>
+        </div>
+      </div>
+    </section>
+  </main>
 
-            <?php
-            // รีเซ็ตการเรียกซ้ำฐานข้อมูล
-            $result->data_seek(0);
 
-            if ($result->num_rows > 0) {
-              while ($row = $result->fetch_assoc()) {
-                echo '<div class="swiper-slide carousel-item-b me-5">';
-                echo '  <div class="card-box-a card-shadow">';
-                echo '    <div class="img-box-a">';
-                echo '      <img src="uploads/' . $row["image"] . '" class="img-a img-fluid" alt="' . $row["title"] . '">';
-                echo '    </div>';
-                echo '    <div class="card-overlay">';
-                echo '      <div class="card-overlay-a-content">';
-                echo '        <div class="card-header-a">';
-                echo '          <h2 class="card-title-a">';
-                echo '            <a   class="category-b" style="color: black;">' . $row["title"] . '</a>';
-                echo '          </h2>';
-                echo '        </div>';
-                echo '          <div class="card-header-a">';
-                echo '                   <h2 class="card-title-a>';      
-                echo '                     <a   class="link-a" style="color: white;">' . $row["message"] . '</a>';
-                echo '             </h2>';
-                echo '              </div>';
-                echo '        <div class="card-body-a">';
-                echo '          <a href="test.php?id=' . $row["id"] . ' class="link-a" style="color: white;">ดูเพิ่มเติม';
-                echo '            <span class="bi bi-chevron-right"></span>';
-                echo '          </a>';
-                echo '        </div>';
-                echo '      </div>';
-                echo '    </div>';
-                echo '  </div>';
-                echo '</div><!-- End carousel item -->';
-              }
-            } else {
-              echo '<p>ไม่มีประกาศข่าว</p>';
-            }
-            ?>
+  <!-- ======= Agents Section ======= -->
+  <section class="section-agents section-t8">
+    <div class="container">
+      <div class="col-md-12">
+        <div class="title-wrap d-flex justify-content-between">
+          <div class="title-box">
+            <h2 class="title-a">ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</h2>
           </div>
         </div>
-
       </div>
-    </section><!-- End carousel item --><!-- End Latest News Section -->
+      <div class="row align-items-center">
+        <div class="col-md-3">
+          <div class="card-box-d">
+            <div class="card-img-d">
+              <img src="assets/img/ผู้อำนวยการ.jpg" alt="" class="img-d img-fluid">
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <div class="col-md-3 d-flex flex-column justify-content-start">
+        <h2>นายรัฐวัฒน์ ปรียานนท์</h2>
+        <h6>ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</h6>
+      </div>
+    </div>
+  </section>
 
-    <!-- ======= Testimonials Section ======= -->
+
+  <!-- ======= Latest News Section ======= -->
+  <section class="section-news section-t8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">กิจกรรมทางโรงเรียน</h2>
+            </div>
+            <div class="title-link">
+              <a href="blog-grid.html">เพิ่มเติม
+                <span class="bi bi-chevron-right"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="news-carousel" class="swiper">
+        <div class="swiper-wrapper">
+
+          <?php
+          // รีเซ็ตการเรียกซ้ำฐานข้อมูล
+          $result_announcements->data_seek(0);
+
+          if ($result_announcements->num_rows > 0) {
+            while ($row = $result_announcements->fetch_assoc()) {
+              echo '<div class="swiper-slide carousel-item-b me-5">';
+              echo '  <div class="card-box-a card-shadow">';
+              echo '    <div class="img-box-a">';
+              echo '      <img src="uploads/' . $row["image"] . '" class="img-a img-fluid" alt="' . $row["title"] . '">';
+              echo '    </div>';
+              echo '    <div class="card-overlay">';
+              echo '      <div class="card-overlay-a-content">';
+              echo '        <div class="card-header-a">';
+              echo '          <h2 class="card-title-a">';
+              echo '            <a   class="category-b" style="color: black;">' . $row["title"] . '</a>';
+              echo '          </h2>';
+              echo '        </div>';
+              echo '          <div class="card-header-a">';
+              echo '                   <h2 class="card-title-a>';
+              echo '                     <a   class="link-a" style="color: white;">' . $row["message"] . '</a>';
+              echo '             </h2>';
+              echo '              </div>';
+              echo '        <div class="card-body-a">';
+              echo '          <a href="news.php?id=' . $row["id"] . ' class="link-a" style="color: white;">ดูเพิ่มเติม';
+              echo '            <span class="bi bi-chevron-right"></span>';
+              echo '          </a>';
+              echo '        </div>';
+              echo '      </div>';
+              echo '    </div>';
+              echo '  </div>';
+              echo '</div><!-- End carousel item -->';
+            }
+          } else {
+            echo '<p>ไม่มีประกาศข่าว</p>';
+          }
+          ?>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End carousel item --><!-- End Latest News Section -->
+
+  <!-- ======= Testimonials Section ======= -->
 
 
   </main><!-- End #main -->

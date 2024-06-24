@@ -96,6 +96,12 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//ถ�
                     <p>ส่งเอกสารสำหรับนักเรียน</p>
                     </a>                    
                 </li>    
+                <li  class="nav-item">
+                    <a href="../news/index.php" class="nav-link">
+                    &nbsp;<i class='fas fa-calendar'></i> &nbsp;
+                    <p>กระดานประกาศรับสมัคร</p>
+                    </a>                    
+                </li>  
                 <li class="nav-header"></li>
                 <li class="nav-item">
                     <a href="../../form_login.php" id="logout" class="nav-link">

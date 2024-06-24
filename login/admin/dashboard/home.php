@@ -1,53 +1,34 @@
 <?php
 session_start();
 $open_connect = 1;
-$servername = "localhost";
-$username = "root";
-$password = "";
+$conn = new mysqli('localhost', 'root', '', 'wcl');
 
-$approveCount = 0;
-$pendingCount = 0;
-$breakwaterCount = 0;
-$finishCount = 0;
+// ตรวจสอบการเชื่อมต่อ
+if ($conn->connect_error) {
+    die("การเชื่อมต่อล้มเหลว: " . $conn->connect_error);
+}
 
 
 
-// try {
-//     $conn = new PDO("mysql:host=$servername;dbname=wcl", $username, $password);
-//     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// } catch(PDOException $e) {
-//     echo "Connect failed: " . $e->getMessage();
-//     exit(); // จะไม่สามารถทำงานต่อได้ถ้าไม่สามารถเชื่อมต่อฐานข้อมูลได้
-// }
-
-// try {
-//     $stmt = $conn->prepare("SELECT COUNT(*) AS count FROM test WHERE status = 'online'");
-//     $stmt->execute();
-//     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-//     $approveCount = $result['count'];
-
-//     $stmt = $conn->prepare("SELECT COUNT(*) AS count FROM test WHERE status = 'waitng'");
-//     $stmt->execute();
-//     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-//     $pendingCount = $result['count'];
-
-//     $stmt = $conn->prepare("SELECT COUNT(*) AS count FROM test WHERE card = 'bide'");
-//     $stmt->execute();
-//     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-//     $breakwaterCount = $result['count'];
-
-//     $stmt = $conn->prepare("SELECT COUNT(*) AS count FROM test WHERE card = 'finish'");
-//     $stmt->execute();
-//     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-//     $finishCount = $result['count'];
+// ดึงข้อมูลจากตาราง
+$sql = "SELECT COUNT(*) as count FROM account";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $totalCount = $row['count'];
+}
+$sql = "SELECT COUNT(*) as count FROM announcements";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $newsCount = $row['count'];
+}
 
 
-// } catch(PDOException $e) {
-//     echo "Error: " . $e->getMessage();
-// }
+$conn->close();
 
-// $totalCount = $approveCount + $pendingCount ;
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,7 +38,6 @@ $finishCount = 0;
     <title>หน้าหลัก | Watchonglom</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css">
     <!-- Favicons -->
-
     <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/senate.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicons/senate.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicons/senate.png">
@@ -67,6 +47,16 @@ $finishCount = 0;
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="../../assets/img/favicons/senate.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet" href="dist/css/adminlte.min.css?v=3.2.0">
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
     <!-- stylesheet -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
@@ -96,6 +86,32 @@ $finishCount = 0;
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3><?php echo $totalCount; ?></h3>
+                                    <p>สมาชิกทั้งหมด</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-android-people"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3><?php echo $newsCount; ?></h3>
+                                    <p>ข่าวสารทั้งหมด</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-android-clipboard"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-12 col-md-3">
                             <div class="card">
                                 <form id="formData">
@@ -123,27 +139,30 @@ $finishCount = 0;
                                 </form>
                             </div>
                         </div>
-
-
+                        <div class="col-12 col-md-3">
+                            <div class="card">
+                                <form id="formData">
+                                    <a href="../pdf/index.php" title="line-Notify">
+                                        <img alt="Line-Notify" class="img-responsive ls-is-cached lazyloaded" src="../img/pdf.png" style="max-width: 75%; height: auto;">
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
-
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
     <script src="../assets/js/home.js"></script>
 </body>
 
 </html>
 <!-- SCRIPTS -->
-
 <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="../assets/js/adminlte.min.js"></script>
 <script src="../assets/js/login.js"></script>
-
-
 <!-- OPTIONAL SCRIPTS -->
 <script src="../plugins/chart.js/Chart.min.js"></script>
 <script src="../assets/js/pages/dashboard.js"></script>

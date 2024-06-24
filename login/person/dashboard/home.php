@@ -115,6 +115,26 @@ $finishCount = 0;
                                 </form>
                             </div>
                         </div>
+                        
+                        <div class="col-12 col-md-3">
+                            <div class="card">
+                                <form id="formData">
+                                    <a href="../garde/index.php" title="เกรดนักเรียน">
+                                        <img alt="ออกเกรดนักเรียน" class="img-responsive ls-is-cached lazyloaded" src="../img/grade.png" style="max-width: 75%; height: auto;">
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-3">
+                            <div class="card">
+                                <form id="formData">
+                                    <a href="../news/index.php" title="กระดานประกาศข่าว">
+                                        <img alt="กระดานประกาศข่าว" class="img-responsive ls-is-cached lazyloaded" src="../img/กระดาน.png" style="max-width: 75%; height: auto;">
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
