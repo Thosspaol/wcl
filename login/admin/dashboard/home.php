@@ -38,14 +38,8 @@ $conn->close();
     <title>หน้าหลัก | Watchonglom</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css">
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/senate.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicons/senate.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicons/senate.png">
-    <link rel="manifest" href="../../assets/img/favicons/senate.png">
-    <link rel="mask-icon" href="../../assets/img/favicons/senate.png" color="#5bbad5">
-    <link rel="shortcut icon" href="../../assets/img/favicons/senate.png">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="../../assets/img/favicons/senate.png">
+    <link href="../../../assets/img/โลโก้วัดช่องลม.png" rel="icon">
+    <link href="../../../assets/img/โลโก้วัดช่องลม (1).png" rel="apple-touch-icon">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -95,7 +89,7 @@ $conn->close();
                                 <div class="icon">
                                     <i class="ion ion-android-people"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="../amount/all_members.php" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <div class="col-lg-3 col-6">
@@ -107,7 +101,7 @@ $conn->close();
                                 <div class="icon">
                                     <i class="ion ion-android-clipboard"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="../amount/news_members.php" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>

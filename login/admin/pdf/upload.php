@@ -45,8 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "<script>
                 $(document).ready(function() {
                     Swal.fire({
-                        title: 'แก้ไขสำเร็จ!!',
-                        text: 'SENATE',
+                        title: 'ส่งสำเร็จ!!',
+                        text: 'WCL',
                         icon: 'success',
                         timer: 5000,
                         showConfirmButton: false
