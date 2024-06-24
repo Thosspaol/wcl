@@ -91,7 +91,7 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//ถ�
                     </a>
                 </li>    
                 <li class="nav-item">
-                    <a href="../pdf/save_pdf.php" class="nav-link">
+                    <a href="../pdf/index.php" class="nav-link">
                     &nbsp;<i class='fas fa-download'></i>&nbsp; 
                         <p>ไฟล์โหลดเอกสาร</p>
                     </a>

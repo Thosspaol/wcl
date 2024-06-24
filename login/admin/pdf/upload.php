@@ -2,6 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // ตรวจสอบว่าไฟล์ถูกอัพโหลดหรือไม่
     if (isset($_FILES['file']) && $_FILES['file']['error'] === UPLOAD_ERR_OK) {
         $fileTmpPath = $_FILES['file']['tmp_name'];
         $fileName = $_FILES['file']['name'];
@@ -10,45 +11,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $fileNameCmps = explode(".", $fileName);
         $fileExtension = strtolower(end($fileNameCmps));
 
+        // ตรวจสอบว่าเป็นไฟล์ PDF
         if ($fileExtension === 'pdf') {
+            // URL ของเว็บที่ต้องการส่งไฟล์ไป
             $target_url = 'http://localhost/wcl/login/student/pdf/save_pdf.php'; // เปลี่ยน URL นี้ให้เป็น URL ของคุณ
 
+            // เปิดไฟล์ PDF
             $cfile = new CURLFile($fileTmpPath, 'application/pdf', $fileName);
-            $uploadTime = date("Y-m-d H:i:s"); // ดึงเวลาปัจจุบัน
 
+            // ดึงเวลาปัจจุบัน
+            $uploadTime = date("Y-m-d");
+
+            // สร้าง array สำหรับข้อมูลที่จะส่ง
             $post_data = array(
                 'file' => $cfile,
                 'upload_time' => $uploadTime
             );
 
+            // เริ่มต้น cURL session
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $target_url);
             curl_setopt($ch, CURLOPT_POST, 1);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
+            // ส่งคำขอและเก็บผลลัพธ์
             $response = curl_exec($ch);
-            $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
+            // ตรวจสอบข้อผิดพลาด
             if (curl_errno($ch)) {
                 echo 'Error:' . curl_error($ch);
-            } else if ($http_code == 200) {
+            } else {
                 echo "<script>
                 $(document).ready(function() {
                     Swal.fire({
-                        title: 'บันทึกสำเร็จ!!',
+                        title: 'แก้ไขสำเร็จ!!',
                         text: 'SENATE',
                         icon: 'success',
                         timer: 5000,
                         showConfirmButton: false
                     });
-                })
-            </script>";
-                header("refresh:2.5; url=index.php");
-            } else {
-                echo "Error: Failed to upload file. Server responded with status code $http_code.";
+                });
+                </script>";
+                header("refresh:2; url=../dashboard/home.php");
             }
 
+            // ปิด cURL session
             curl_close($ch);
         } else {
             echo 'Error: Only PDF files are allowed.';

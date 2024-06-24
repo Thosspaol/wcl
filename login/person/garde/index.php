@@ -25,6 +25,7 @@ try {
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
     <link rel="stylesheet" href="../assets/css/style1.css">
+    
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -53,7 +54,7 @@ try {
                                     <h3 class="card-title" style="line-height:2.1 rem;">รายชื่อบุคลากร</h3>
                                     <div class="float-right">
                                         <label for="levelFilter">กรองตามระดับชั้น: </label>
-                                        <select id="levelFilter">
+                                        <select id="levelFilter" class="form-control">
                                             <option value="">ทั้งหมด</option>
                                             <option value="ป.1">ป.1</option>
                                             <option value="ป.2">ป.2</option>
