@@ -142,8 +142,19 @@ $conn->close();
                         <div class="col-12 col-md-3">
                             <div class="card">
                                 <form id="formData">
-                                    <a href="../pdf/index.php" title="line-Notify">
-                                        <img alt="Line-Notify" class="img-responsive ls-is-cached lazyloaded" src="../img/pdf.png" style="max-width: 75%; height: auto;">
+                                    <a href="../pdf/index.php" title="เอกสารpdf">
+                                        <img alt="pdf" class="img-responsive ls-is-cached lazyloaded" src="../img/pdf.png" style="max-width: 75%; height: auto;">
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-12 col-md-3">
+                            <div class="card">
+                                <form id="formData">
+                                    <a href="../news/index.php" title="กระดานข่าวรับสมัครนักเรียน">
+                                        <img alt="กระดานข่าวรับสมัคร" class="img-responsive ls-is-cached lazyloaded" src="../img/กระดาน.png" style="max-width: 75%; height: auto;">
                                     </a>
                                 </form>
                             </div>
