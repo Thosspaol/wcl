@@ -5,10 +5,7 @@ session_start();
 $open_connect = 1;
 require('../../connect.php'); // ตรวจสอบให้แน่ใจว่าไฟล์นี้มีอยู่และเชื่อมต่อฐานข้อมูลอย่างถูกต้อง
 $id_account = $_POST["id_account"];
-$pre = $_POST["pre"];
-$firstname = $_POST["firstname"];
-$lastname = $_POST["lastname"];
-$level = $_POST["level"];
+
 
 $math_grade = (float) $_POST['math_grade'];
 $additional_grade = (float) $_POST['additional_grade'];
@@ -35,7 +32,7 @@ $total_grade = ($math_grade * 2) + ($additional_grade * 2) + ($sci_grade * 2) + 
 ($physical_grade * 2) + ($civic_grade * 2) + ($farm_grade * 2);
 $average_grade = $total_grade / 28;
 
-$sql = "UPDATE grade SET pre = '$pre',firstname = '$firstname',lastname = '$lastname',math_grade = '$math_grade',additional_grade = '$additional_grade',sci_grade = '$sci_grade',eng_grade = '$eng_grade' ,thai_grade = '$thai_grade',society_grade ='$society_grade' ,health_grade = '$health_grade' ,music_grade ='$music_grade' ,history_grade ='$history_grade' ,art_grade ='$art_grade'
+$sql = "UPDATE grade SET math_grade = '$math_grade',additional_grade = '$additional_grade',sci_grade = '$sci_grade',eng_grade = '$eng_grade' ,thai_grade = '$thai_grade',society_grade ='$society_grade' ,health_grade = '$health_grade' ,music_grade ='$music_grade' ,history_grade ='$history_grade' ,art_grade ='$art_grade'
 ,technology_grade ='$technology_grade' ,career_grade ='$career_grade' ,physical_grade ='$physical_grade' ,civic_grade ='$civic_grade' ,farm_grade ='$farm_grade' ,total_grade ='$total_grade' ,average_grade ='$average_grade'   WHERE id_account = $id_account ";
 
 $result2 = mysqli_query($connect, $sql);
@@ -65,6 +62,6 @@ if ($result2) {
         });
     });
     </script>";
-    header("refresh:5; url=../dashboard/home.php");
+    header("refresh:2; url=../dashboard/home.php");
 }
 ?>

@@ -1,0 +1,79 @@
+<?php
+session_start();
+$open_connect = 1;
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เพิ่มบุคลากร | Senate</title>
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/senate.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/senate.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/senate.png">
+    <link rel="manifest" href="../assets/img/favicons/senate.png">
+    <link rel="mask-icon" href="../assets/img/favicons/senate.png" color="#5bbad5">
+    <link rel="shortcut icon" href="../assets/img/favicons/senate.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="../assets/img/favicons/senate.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/adminlte.min.css">
+    <link rel="stylesheet" href="../assets/css/style1.css">
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <?php include_once('../includes/sidebar.php') ?>
+        <div class="content-wrapper">
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h5 class="m-0 text-dark">ส่งไฟล์เอกสารให้นักเรียน</h5>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item active">เจ้าหน้าที่</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main content -->
+            <div class="content">
+                <div class="content-fluid">
+                    <div class="row">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title" style="line-height:2.1rem;">กรอกข้อมูล</h3>
+                                <a href="../dashboard/home.php" class="btn btn-primary float-right"><i class="fas fa-arrow-left"></i> กลับ</a>
+                            </div>
+
+                            <form action="upload.php" method="post" enctype="multipart/form-data">
+                                <div class="card-body">
+                                    <div class="form-group col-sm-4">
+                                        <label for="file">เลือกเอกสารส่งให้นักเรียน</label>
+                                        <input type="file" name="file" id="file" class="form-control" accept="application/pdf">
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <input type="submit" name="submit" class="btn btn-success btn-block" value="Upload">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

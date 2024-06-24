@@ -90,6 +90,12 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//ถ�
                         <p>ผลการศึกษา</p>
                     </a>
                 </li>    
+                <li class="nav-item">
+                    <a href="../pdf/save_pdf.php" class="nav-link">
+                    &nbsp;<i class='fas fa-download'></i>&nbsp; 
+                        <p>ไฟล์โหลดเอกสาร</p>
+                    </a>
+                </li>    
                 <li class="nav-header"></li>
                 <li class="nav-item">
                     <a href="../../form_login.php" id="logout" class="nav-link">

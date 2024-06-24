@@ -66,6 +66,6 @@ if ($result2) {
         });
     });
     </script>";
-    header("refresh:2; url=../dashboard/home.php");
+    header("refresh:5; url=../dashboard/home.php");
 }
 ?>

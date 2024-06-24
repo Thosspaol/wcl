@@ -89,7 +89,13 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//ถ�
                     &nbsp;<i class='fab fa-line'></i> &nbsp;
                     <p>Line notify</p>
                     </a>                    
-                </li>             
+                </li>          
+                <li  class="nav-item">
+                    <a href="../pdf/index.php" class="nav-link">
+                    &nbsp;<i class='fas fa-paste'></i> &nbsp;
+                    <p>ส่งเอกสารสำหรับนักเรียน</p>
+                    </a>                    
+                </li>    
                 <li class="nav-header"></li>
                 <li class="nav-item">
                     <a href="../../form_login.php" id="logout" class="nav-link">

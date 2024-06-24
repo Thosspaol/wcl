@@ -229,3 +229,5 @@ if (!$row_show) {
 </body>
 
 </html>
+
+<input type="text" name="physical_grade" class="form-control" id="physical_grade" required>
