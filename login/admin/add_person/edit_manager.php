@@ -1,0 +1,183 @@
+<?php
+session_start();
+$open_connect = 1;
+require('../../connect.php');
+$id = $_GET["id_people"];
+$sql = "SELECT * FROM manager WHERE id_people = $id";
+$result = mysqli_query($connect, $sql);
+$row = mysqli_fetch_assoc($result);
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ปฏิทินกิจกรรม | wcl</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./fullcalendar/lib/main.min.css">
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./fullcalendar/lib/main.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/senate.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/senate.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/senate.png">
+    <link rel="manifest" href="../assets/img/favicons/senate.png">
+    <link rel="mask-icon" href="../assets/img/favicons/senate.png" color="#5bbad5">
+    <link rel="shortcut icon" href="../assets/img/favicons/senate.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="../assets/img/favicons/senate.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/adminlte.min.css">
+    <link rel="stylesheet" href="../assets/css/style1.css">
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+        <?php include_once('../includes/sidebar.php') ?>
+        <div class="content-wrapper">
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h5 class="m-0 text-dark">กระดานประกาศข่าว</h5>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item active">บุคลากร</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title" style="line-height: 2.1 rem;">เพิ่มเนื้อหาที่จะแสดง</h3>
+                                    <a href="../dashboard/home.php" class="btn btn-primary float-right"><i class='fas fa-arrow-left'></i> กลับ</a>
+                                </div>
+                                <form action="updale_manager.php" method="POST" enctype="multipart/form-data">
+                                    <div class="card-body">
+
+                                        <div class="form-row">
+                                            <input type="hidden" name="id_people" value="<?php echo $row["id_people"]; ?>">
+                                            <div class="form-group col-sm-4">
+                                                <label for="pre">คำนำหน้า</label>
+                                                <input type="text" id="pre" name="pre" class="form-control" value="<?php echo $row["pre"]; ?>" required>
+                                            </div>
+                                            <div class="form-group col-sm-4">
+                                                <label for="first_name">ชื่อ</label>
+                                                <input type="text" id="first_name" name="first_name" class="form-control" value="<?php echo $row["first_name"]; ?>" required>
+                                            </div>
+                                            <div class="form-group col-sm-4">
+                                                <label for="last_name">นามสกุล</label>
+                                                <input type="text" id="last_name" name="last_name" class="form-control" value="<?php echo $row["last_name"]; ?>" required>
+                                            </div>
+                                            <div class="form-group col-sm-6" >
+                                                <label for="role_people">ตำแหน่ง</label>
+                                                <?php
+                                                if ($row["role_people"] === 'ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ') {
+                                                    echo "<select name = 'role_people' id= '' class = form-select>
+                                                    <option value = 'ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ' selected>ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารวิชาการ'>รองผู้อำนวยการกลุ่มบริหารวิชาการ</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์'>รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารทั่วไป'>รองผู้อำนวยการกลุ่มบริหารทั่วไป</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน'>รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน</option>
+                                                    <option value = 'ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา'>ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา</option>
+                                                    </select>";
+                                                } elseif ($row["role_people"] === 'รองผู้อำนวยการกลุ่มบริหารวิชาการ') {
+                                                    echo "<select name = 'role_people' id='' class = form-select>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารวิชาการ' select>รองผู้อำนวยการกลุ่มบริหารวิชาการ</option>
+                                                    <option value = 'ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ'>ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</option>                                                    
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์'>รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารทั่วไป'>รองผู้อำนวยการกลุ่มบริหารทั่วไป</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน'>รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน</option>
+                                                    <option value = 'ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา'>ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา</option>
+                                                    </select>";
+                                                } elseif ($row["role_people"] === 'รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์') {
+                                                    echo "<select name = 'role_people' id='' class = form-select>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์' select>รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์</option>
+                                                    <option value = 'ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ'>ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารวิชาการ'>รองผู้อำนวยการกลุ่มบริหารวิชาการ</option>                                                   
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารทั่วไป'>รองผู้อำนวยการกลุ่มบริหารทั่วไป</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน'>รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน</option>
+                                                    <option value = 'ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา'>ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา</option>
+                                                    </select>";
+                                                } elseif ($row["role_people"] === 'รองผู้อำนวยการกลุ่มบริหารทั่วไป') {
+                                                    echo "<select name = 'role_people' id='' class = form-select>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารทั่วไป' select>รองผู้อำนวยการกลุ่มบริหารทั่วไป</option>\
+                                                    <option value = 'ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ'>ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารวิชาการ'>รองผู้อำนวยการกลุ่มบริหารวิชาการ</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์'>รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์</option>                                                    
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน'>รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน</option>
+                                                    <option value = 'ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา'>ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา</option>>
+                                                    </select>";
+                                                } elseif ($row["role_people"] === 'รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน') {
+                                                    echo "<select name = 'role_people' id='' class = form-select>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน' select>รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน</option>
+                                                    <option value = 'ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ'>ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารวิชาการ'>รองผู้อำนวยการกลุ่มบริหารวิชาการ</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์'>รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์</option>                                                                                                        
+                                                    <option value = 'ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา'>ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา</option>>
+                                                    </select>";
+                                                } elseif ($row["role_people"] === 'ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา') {
+                                                    echo "<select name = 'role_people' id='' class = form-select>
+                                                    <option value = 'ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา' select>ปฏิบัติหน้าที่รองผู้อำนวยการกลุ่มพัฒนาคุณภาพการศึกษา</option>
+                                                    <option value = 'ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ'>ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารวิชาการ'>รองผู้อำนวยการกลุ่มบริหารวิชาการ</option>
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์'>รองผู้อำนวยการกลุ่มบริหารบุคคล การเงินและสินทรัพย์</option>                                                    
+                                                    <option value = 'รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน'>รองผู้อำนวยการกลุ่มบริหารกิจการนักเรียน</option>                                                    
+                                                    </select>";
+                                                }
+                                                ?>
+                                            </div>
+                                           
+                                        </div>
+                                                <div class="form-group col-sm-4">
+                                                    <label for="image">รูปภาพ:</label><br>
+                                                    <?php if ($row["image"]) { ?>
+                                                        <img src="../../../uploads/<?php echo $row["image"]; ?>"  style="width: 100px; height: auto;" required>
+                                                    <?php } ?>
+                                                    <br><br><input type="file" id="image" name="image" class="form-control" accept="image/*" required>
+                                                </div>
+                                            
+                                            <button type="submit" class="btn btn-success btn-block">เพิ่มประกาศข่าว</button>
+                                        
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        CKEDITOR.replace('link');
+                    </script>
+                </div>
+            </div>
+
+            <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+            <script src="../assets/js/home.js"></script>
+</body>
+
+</html>
+<!-- SCRIPTS -->
+
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/adminlte.min.js"></script>
+<script src="../assets/js/login.js"></script>
+
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="../plugins/chart.js/Chart.min.js"></script>
+<script src="../assets/js/pages/dashboard.js"></script>

@@ -14,7 +14,22 @@ $result_announcements = $conn->query($sql_announcements);
 // ดึงข้อมูลรับสมัครเรียนทั้งหมด
 $sql_recruiting = "SELECT * FROM recruiting ORDER BY created_at DESC";
 $result_recruiting = $conn->query($sql_recruiting);
+
+$sql_manager = "SELECT * FROM manager WHERE role_people = 'ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ' LIMIT 1";
+$result_manager = $conn->query($sql_manager);
+
+// ตรวจสอบว่ามีข้อมูลผู้อำนวยการหรือไม่
+if ($result_manager->num_rows == 0) {
+    // หากไม่มีผู้อำนวยการ ให้ดึงข้อมูลรองผู้อำนวยการกลุ่มบริหารทั่วไป
+    $sql_manager = "SELECT * FROM manager WHERE role_people = 'รองผู้อำนวยการกลุ่มบริหารทั่วไป' LIMIT 1";
+    $result_manager = $conn->query($sql_manager);
+}
+
+$manager = $result_manager->fetch_assoc();
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -195,20 +210,24 @@ $result_recruiting = $conn->query($sql_recruiting);
           </div>
         </div>
       </div>
+
       <div class="row align-items-center">
-        <div class="col-md-3">
-          <div class="card-box-d">
-            <div class="card-img-d">
-              <img src="assets/img/ผู้อำนวยการ.jpg" alt="" class="img-d img-fluid">
+        
+            <div class="col-md-3">
+              <div class="card-box-d">
+                <div class="card-img-d">
+                <img src="uploads/<?php echo $manager['image']; ?>" alt="" class="img-d img-fluid" style="width: 100%; height: 300px;">
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
       </div><br>
       <div class="col-md-3 d-flex flex-column justify-content-start">
-        <h2>นายรัฐวัฒน์ ปรียานนท์</h2>
-        <h6>ผู้อำนวยการโรงเรียนวัดช่องลมธรรมโชติ</h6>
+        <h2><?php echo $manager["pre"]; ?><?php echo $manager["first_name"]; ?> <?php echo $manager["last_name"]; ?></h2>
+        <h6> <?php echo $manager['role_people']; ?></h6>
+     
       </div>
-    </div>
+
+
   </section>
 
 

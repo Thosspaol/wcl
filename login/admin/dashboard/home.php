@@ -8,8 +8,6 @@ if ($conn->connect_error) {
     die("การเชื่อมต่อล้มเหลว: " . $conn->connect_error);
 }
 
-
-
 // ดึงข้อมูลจากตาราง
 $sql = "SELECT COUNT(*) as count FROM account";
 $result = $conn->query($sql);
@@ -17,6 +15,7 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $totalCount = $row['count'];
 }
+
 $sql = "SELECT COUNT(*) as count FROM announcements";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
@@ -24,9 +23,23 @@ if ($result->num_rows > 0) {
     $newsCount = $row['count'];
 }
 
+$sql = "SELECT COUNT(*) as count FROM grade";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $gradeCount = $row['count'];
+}
+
+$sql = "SELECT role_account, COUNT(*) as count FROM account WHERE role_account = 'student'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $studentCount = $row['count'];
+} else {
+    $studentCount = 0;
+}
 
 $conn->close();
-
 ?>
 
 <!DOCTYPE html>
@@ -99,9 +112,33 @@ $conn->close();
                                     <p>ข่าวสารทั้งหมด</p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-android-clipboard"></i>
+                                    <i class="ion ion-easel"></i>
                                 </div>
                                 <a href="../amount/news_members.php" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3><?php echo $gradeCount; ?></h3>
+                                    <p>ผลการเรียนทุกชั้นปี</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-clipboard"></i>
+                                </div>
+                                <a href="../amount/grade_student.php" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="small-box bg-secondary">
+                                <div class="inner">
+                                    <h3><?php echo $studentCount; ?></h3>
+                                    <p>นักเรียนทั้งหมด</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-ios-people"></i>
+                                </div>
+                                <a href="../amount/student_members.php" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -144,7 +181,7 @@ $conn->close();
                         </div>
                     </div>
                     <div class="row">
-                    <div class="col-12 col-md-3">
+                        <div class="col-12 col-md-3">
                             <div class="card">
                                 <form id="formData">
                                     <a href="../news/index.php" title="กระดานข่าวรับสมัครนักเรียน">
