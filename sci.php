@@ -1,11 +1,30 @@
+<?php
+// เชื่อมต่อฐานข้อมูล
+$conn = new mysqli('localhost', 'root', '', 'wcl');
+
+// ตรวจสอบการเชื่อมต่อ
+if ($conn->connect_error) {
+    die("การเชื่อมต่อล้มเหลว: " . $conn->connect_error);
+}
+
+// ฟังก์ชันสำหรับดึงข้อมูลผู้บริหารในกลุ่มสาระการเรียนรู้วิทยาศาสตร์และเทคโนโลยี
+function getManager($conn, $role) {
+    $sql = "SELECT * FROM person WHERE roles = '$role'";
+    $result = $conn->query($sql);
+    return $result;
+}
+
+$scienceManagers = getManager($conn, 'sci');
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>EstateAgency Bootstrap Template - Index</title>
+  <title>กลุ่มสาระการเรียนรู้วิทยาศาสตร์</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -25,18 +44,15 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: EstateAgency
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    .card-img-top {
+      height: 250px;
+      object-fit: cover;
+    }
+  </style>
 </head>
 
 <body>
-
-
 
   <!-- ======= Header/Navbar ======= -->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
@@ -50,60 +66,43 @@
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
-
           <li class="nav-item">
             <a class="nav-link active" href="index.php">หน้าแรก</a>
           </li>
-
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">รู้จักโรงเรียน</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item " href="property-single.php">ประวัติโรงเรียน</a>
-              <a class="dropdown-item " href="blog-single.php">วิสัยทัศน์/พันธกิจ</a>
-              <a class="dropdown-item " href="property-grid.php">คณะผู้บริหาร</a>
+              <a class="dropdown-item" href="property-single.php">ประวัติโรงเรียน</a>
+              <a class="dropdown-item" href="blog-single.php">วิสัยทัศน์/พันธกิจ</a>
+              <a class="dropdown-item" href="property-grid.php">คณะผู้บริหาร</a>
             </div>
           </li>
-
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dorupdown" aria-haspopup="true" aria-expanded="false">กลุ่มสาระการเรียนรู้</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">กลุ่มสาระการเรียนรู้</a>
             <div class="dropdown-menu">
               <a href="sci.php" class="dropdown-item">วิทยาศาสตร์และเทคโนโลยี</a>
-              <a href="#" class="dropdown-item">คณิตศาสตร์</a>
-              <a href="#" class="dropdown-item">ภาษาไทย</a>
-              <a href="#" class="dropdown-item">สังคมศึกษา ศาสนาและวัฒนธรรม</a>
-              <a href="#" class="dropdown-item">ภาษาต่างประเทศ</a>
-              <a href="#" class="dropdown-item">ศิลปะ</a>
-              <a href="#" class="dropdown-item">สุขศึกษาและพละศึกษา</a>
-              <a href="#" class="dropdown-item">การงานอาชีพ</a>
-              <a href="#" class="dropdown-item">กิจกรรมพัฒนาผู้เรียน</a>
+              <a href="math.php" class="dropdown-item">คณิตศาสตร์</a>
+              <a href="thai.php" class="dropdown-item">ภาษาไทย</a>
+              <a href="society.php" class="dropdown-item">สังคมศึกษา ศาสนาและวัฒนธรรม</a>
+              <a href="eng.php" class="dropdown-item">ภาษาต่างประเทศ</a>
+              <a href="art.php" class="dropdown-item">ศิลปะ</a>
+              <a href="health.php" class="dropdown-item">สุขศึกษาและพละศึกษา</a>
+              <a href="career.php" class="dropdown-item">การงานอาชีพ</a>
+              <a href="activity.php" class="dropdown-item">กิจกรรมพัฒนาผู้เรียน</a>
             </div>
           </li>
-
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">นักเรียน</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item " href="timetable2022_subgroups_days_vertical.html">ตารางสอน</a>
-              <a class="dropdown-item " href="blog-single.html">ตารางสอบ</a>
-            </div>
-          </li> -->
           <li class="nav-item">
-            <a class="nav-link " href="contact.php">ติดต่อเรา</a>
+            <a class="nav-link" href="contact.php">ติดต่อเรา</a>
           </li>
         </ul>
       </div>
       <div class="btn-group ml-auto">
-      <a class="btn btn-success" href="login/form_login.php">เข้าสู่ระบบ</a>
+        <a class="btn btn-success" href="login/form_login.php">เข้าสู่ระบบ</a>
       </div>
-      <!-- <button class="iteam ">
-            <a class="nav-link " href="contact.html">เข้าสู่ระบบ</a>
-          </button> -->
-    </div>
-
     </div>
   </nav><!-- End Header/Navbar -->
 
   <main id="main">
-
     <!-- ======= Intro Single ======= -->
     <section class="intro-single">
       <div class="container">
@@ -119,89 +118,22 @@
     </section><!-- End Intro Single-->
 
     <!-- ======= Property Grid ======= -->
-    <table border="0" cellpadding="4" cellspacing="1" style="margin-left: auto; margin-right: auto;" width="450">
-      <tbody>
-        <tr>
-          <td>
-            <div>
-              <div style="text-align: center;">
-                <img src="assets/img/ครูวิทย์.jpg" style="width: 170px; height: 216px;" /><br />
-                <br />
-                <strong>นางสุดารัตน์ วรวลัญช์</strong><br />
-                <p>หัวหน้ากลุ่มสาระการเรียนรู้วิทยาศาสตร์และเทคโนโลยี</p>
+    <div class="container">
+      <div class="row">
+        <?php while ($row = $scienceManagers->fetch_assoc()) { ?>
+          <div class="col-md-3 mb-4">
+            <div class="card">
+              <img src="uploads/<?php echo $row['images']; ?>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $row['pres'] . ' ' . $row['firsts'] . ' ' . $row['lasts']; ?></h5>
+                <p class="card-text">กลุ่มสาระการเรียนรู้วิทยาศาสตร์และเทคโนโลยี</p>
               </div>
-              <div style="text-align: center;">
-                &nbsp;</div>
             </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-    <div>
-      <table border="0" cellpadding="1" cellspacing="1" width="100%">
-        <tbody>
-          <tr style="text-align: center;">
-            <td style="vertical-align: bottom;">
-              <div>
-                &nbsp;</div>
-              <div>
-                <img src="assets/img/agent-6.jpg" style="width: 160px; height: 216px;" />
-              </div>
-              <div>
-                &nbsp;</div>
-              <div>
-                <strong>นายนัทภพย์ พูนสวัสดิ์</strong>
-              </div>
-              <div>
-                รองหัวหน้ากลุ่มสาระการเรียนรู้วิทยาศาสตร์และเทคโนโลยี</div>
-              <div>
-                &nbsp;</div>
-            </td>
-            <td style="vertical-align: bottom;">
-              <div>
-                <img src="assets/img/agent-2.jpg" style="width: 160px; height: 216px;" />
-              </div>
-              <div>
-                &nbsp;</div>
-              <div>
-                <div>
-                  <strong>นายเชาวดี ด่านทอง</strong>
-                </div>                
-                <div>
-                  &nbsp;</div>
-              </div>
-            </td>
-          </tr>
-          <tr style="text-align: center;">
-            <td style="vertical-align: bottom;">
-              <p>
-                <img src="assets/img/author-1.jpg" style="width: 160px; height: 216px;" />
-              </p>
-              <p>
-                <b>นายยสพร โชคดี</b>              
-              </p>
-            </td>
-            <td style="text-align: center; vertical-align: bottom; width: 50%;">
-              <div>
-                <img src="assets/img/agent-7.jpg" style="width: 160px; height: 216px;" />
-              </div>
-              <div>
-                &nbsp;</div>
-              <div>
-                <b>นางเนวรัตน์ บุญมี</b>                
-              </div>  
-        </tbody>
-      </table>
-    </div>
-
-
-    </div>
+          </div>
+        <?php } ?>
+      </div>
     </div><!-- End Property Grid Single-->
-
   </main><!-- End #main -->
-
-  
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -215,5 +147,4 @@
   <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>

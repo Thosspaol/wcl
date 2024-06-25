@@ -59,7 +59,7 @@ try {
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h3 class="card-title" style="line-height:2.1 rem;">รายชื่อบุคลากร ระดับชั้น <?php echo $level; ?></h3>
+                                        <h3 class="card-title" style="line-height:2.1 rem;">รายชื่อบุคลากร ระดับชั้น <?php echo $level; ?></h3>                                    
                                     </div>
                                     <div class="card-body">
                                         <table class="table table-striped table-bordered" id="Table_<?php echo $level; ?>" style="width:100%">

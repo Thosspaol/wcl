@@ -96,17 +96,23 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//ถ�
                     <p>ส่งเอกสารสำหรับนักเรียน</p>
                     </a>                    
                 </li>    
+                <li class="nav-header">จัดแต่งหน้าเว็ป</li>
                 <li  class="nav-item">
                     <a href="../news/index.php" class="nav-link">
                     &nbsp;<i class='fas fa-calendar'></i> &nbsp;
                     <p>กระดานประกาศรับสมัคร</p>
                     </a>                    
                 </li> 
-                <li class="nav-header">จัดแต่งหน้าบุคลากร</li>
                 <li  class="nav-item">
-                    <a href="../add_person/index.php" class="nav-link">
+                    <a href="../add_manager/index.php" class="nav-link">
                     &nbsp;<i class='fas fa-id-card-alt'></i> &nbsp;
                     <p>ผู้บริหาร</p>
+                    </a>                    
+                </li>
+                <li  class="nav-item">
+                    <a href="../add_person/index.php" class="nav-link">
+                    &nbsp;<i class='fas fa-id-badge'></i> &nbsp;
+                    <p>บุคลากรกลุ่มสาระ</p>
                     </a>                    
                 </li> 
                 <li class="nav-header"></li>

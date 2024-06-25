@@ -1,11 +1,30 @@
+<?php
+// เชื่อมต่อฐานข้อมูล
+$conn = new mysqli('localhost', 'root', '', 'wcl');
+
+// ตรวจสอบการเชื่อมต่อ
+if ($conn->connect_error) {
+    die("การเชื่อมต่อล้มเหลว: " . $conn->connect_error);
+}
+
+// ฟังก์ชันสำหรับดึงข้อมูลผู้บริหารในกลุ่มสาระการเรียนรู้วิทยาศาสตร์และเทคโนโลยี
+function getManager($conn, $role) {
+    $sql = "SELECT * FROM person WHERE roles = '$role'";
+    $result = $conn->query($sql);
+    return $result;
+}
+
+$scienceManagers = getManager($conn, 'health');
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>EstateAgency Bootstrap Template - Index</title>
+  <title>กลุ่มสาระการเรียนรู้วิทยาศาสตร์</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -25,17 +44,17 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: EstateAgency
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/real-estate-agency-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    .card-img-top {
+      height: 250px;
+      object-fit: cover;
+    }
+  </style>
 </head>
 
 <body>
 
+  <!-- ======= Header/Navbar ======= -->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
     <div class="container">
       <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,22 +66,19 @@
 
       <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
         <ul class="navbar-nav">
-
           <li class="nav-item">
             <a class="nav-link active" href="index.php">หน้าแรก</a>
           </li>
-
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">รู้จักโรงเรียน</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item " href="property-single.php">ประวัติโรงเรียน</a>
-              <a class="dropdown-item " href="blog-single.php">วิสัยทัศน์/พันธกิจ</a>
-              <a class="dropdown-item " href="property-grid.php">คณะผู้บริหาร</a>
+              <a class="dropdown-item" href="property-single.php">ประวัติโรงเรียน</a>
+              <a class="dropdown-item" href="blog-single.php">วิสัยทัศน์/พันธกิจ</a>
+              <a class="dropdown-item" href="property-grid.php">คณะผู้บริหาร</a>
             </div>
           </li>
-
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dorupdown" aria-haspopup="true" aria-expanded="false">กลุ่มสาระการเรียนรู้</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">กลุ่มสาระการเรียนรู้</a>
             <div class="dropdown-menu">
               <a href="sci.php" class="dropdown-item">วิทยาศาสตร์และเทคโนโลยี</a>
               <a href="math.php" class="dropdown-item">คณิตศาสตร์</a>
@@ -75,101 +91,49 @@
               <a href="activity.php" class="dropdown-item">กิจกรรมพัฒนาผู้เรียน</a>
             </div>
           </li>
-
-          <!-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">นักเรียน</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item " href="timetable2022_subgroups_days_vertical.html">ตารางสอน</a>
-              <a class="dropdown-item " href="blog-single.html">ตารางสอบ</a>
-            </div>
-          </li> -->
           <li class="nav-item">
-            <a class="nav-link " href="contact.php">ติดต่อเรา</a>
+            <a class="nav-link" href="contact.php">ติดต่อเรา</a>
           </li>
         </ul>
       </div>
       <div class="btn-group ml-auto">
         <a class="btn btn-success" href="login/form_login.php">เข้าสู่ระบบ</a>
       </div>
-      <!-- <button class="iteam ">
-            <a class="nav-link " href="contact.html">เข้าสู่ระบบ</a>
-          </button> -->
     </div>
-
-    </div>
-  </nav>
+  </nav><!-- End Header/Navbar -->
 
   <main id="main">
-
     <!-- ======= Intro Single ======= -->
     <section class="intro-single">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
-              <h1 class="title-single">ติดต่อเรา</h1>
+              <h1 class="title-single">กลุ่มสาระการเรียนรู้</h1>
+              <p>สุขศึกษาและพละศึกษา</p>              
             </div>
           </div>
         </div>
       </div>
     </section><!-- End Intro Single-->
 
-    <!-- ======= Contact Single ======= -->
-    <section class="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="icon-box section-b2">
-              <div class="icon-box-icon">
-                <span class="bi bi-envelope"></span>
-              </div>
-              <div class="icon-box-content table-cell">
-                <div class="icon-box-title">
-                  <h4 class="icon-title">ติดต่อ</h4>
-                </div>
-                <div class="icon-box-content">
-                  <p class="mb-1">อีเมล
-                    <span class="color-a">...@gmail.com</span>
-                  </p>
-                  <p class="mb-1">โทร
-                    <span class="color-a">0 3471 8435</span>
-                  </p>
-                </div>
+    <!-- ======= Property Grid ======= -->
+    <div class="container">
+      <div class="row">
+        <?php while ($row = $scienceManagers->fetch_assoc()) { ?>
+          <div class="col-md-3 mb-4">
+            <div class="card">
+              <img src="uploads/<?php echo $row['images']; ?>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $row['pres'] . ' ' . $row['firsts'] . ' ' . $row['lasts']; ?></h5>
+                <p class="card-text">กลุ่มสาระการเรียนรู้สุขศึกษาและพละศึกษา</p>
               </div>
             </div>
           </div>
-
-          <div class="col-md-6">
-            <div class="icon-box section-b2">
-              <div class="icon-box-icon">
-                <span class="bi bi-geo-alt"></span>
-              </div>
-              <div class="icon-box-content table-cell">
-                <div class="icon-box-title">
-                  <h4 class="icon-title">ที่อยู่</h4>
-                </div>
-                <div class="icon-box-content">
-                  <p class="mb-1">
-                    หมู่ที่ 6 บ้านลมทวน ตำบลบ้านปรก อำเภอเมืองสมุทรสงคราม จังหวัดสมุทรสงคราม 75000
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-12">
-          <div class="contact-map box">
-            <div id="map" class="contact-map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248319.07655795247!2d99.95683278643409!3d13.474986684310677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2d40de015592b%3A0x21473ef52c4a1f7!2z4LmC4Lij4LiH4LmA4Lij4Li14Lii4LiZ4Lin4Lix4LiU4LiK4LmI4Lit4LiH4Lil4Lih!5e0!3m2!1sth!2sth!4v1698258293364!5m2!1sth!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
-        </div>
-    </section><!-- End Contact Single-->
-
+        <?php } ?>
+      </div>
+    </div><!-- End Property Grid Single-->
   </main><!-- End #main -->
-
- 
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -183,5 +147,4 @@
   <script src="assets/js/main.js"></script>
 
 </body>
-
 </html>

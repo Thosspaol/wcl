@@ -96,14 +96,14 @@ $manager = $result_manager->fetch_assoc();
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">กลุ่มสาระการเรียนรู้</a>
             <div class="dropdown-menu">
               <a href="sci.php" class="dropdown-item">วิทยาศาสตร์และเทคโนโลยี</a>
-              <a href="#" class="dropdown-item">คณิตศาสตร์</a>
-              <a href="#" class="dropdown-item">ภาษาไทย</a>
-              <a href="#" class="dropdown-item">สังคมศึกษา ศาสนาและวัฒนธรรม</a>
-              <a href="#" class="dropdown-item">ภาษาต่างประเทศ</a>
-              <a href="#" class="dropdown-item">ศิลปะ</a>
-              <a href="#" class="dropdown-item">สุขศึกษาและพละศึกษา</a>
-              <a href="#" class="dropdown-item">การงานอาชีพ</a>
-              <a href="#" class="dropdown-item">กิจกรรมพัฒนาผู้เรียน</a>
+              <a href="math.php" class="dropdown-item">คณิตศาสตร์</a>
+              <a href="thai.php" class="dropdown-item">ภาษาไทย</a>
+              <a href="society.php" class="dropdown-item">สังคมศึกษา ศาสนาและวัฒนธรรม</a>
+              <a href="eng.php" class="dropdown-item">ภาษาต่างประเทศ</a>
+              <a href="art.php" class="dropdown-item">ศิลปะ</a>
+              <a href="health.php" class="dropdown-item">สุขศึกษาและพละศึกษา</a>
+              <a href="career.php" class="dropdown-item">การงานอาชีพ</a>
+              <a href="activity.php" class="dropdown-item">กิจกรรมพัฒนาผู้เรียน</a>
             </div>
           </li>
           <li class="nav-item"><a class="nav-link" href="contact.php">ติดต่อเรา</a></li>
