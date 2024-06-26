@@ -14,7 +14,7 @@ if($delete){
     $(document).ready(function() {
         Swal.fire({
             title: 'ลบสำเร็จ!!',
-            text: 'SENATE',
+            text: 'WCL',
             icon: 'success',
             timer: 5000,
             showConfirmButton: false

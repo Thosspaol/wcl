@@ -74,7 +74,7 @@ $open_connect = 1;
                                     </div>
                                     <div class="row">
 
-                                        <div class="form-group col-sm-6">
+                                        <div class="form-group col-sm-4">
                                             <label for="roles">กลุ่มสาระการเรียนรู้ <font style="color: red; margin-left: 1px">*</font></label>
                                             <select name="roles" id="status" class="form-select" required>
                                                 <option value disabled selected>เลือกกลุ่มสาระการเรียนรู้</option>
@@ -89,7 +89,15 @@ $open_connect = 1;
                                                 <option value="activity">กิจกรรมพัฒนาผู้เรียน</option>
                                             </select>
                                         </div>
-                                        <div class="form-group col-sm-6">
+                                        <div class="form-group col-sm-4">
+                                            <label for="manager">ตำแหน่ง <font style="color: red; margin-left: 1px ">*</font></label>
+                                            <select name="manager" id="status" class="form-select">
+                                                <option value disabled selected>เหลือกตำแหน่ง</option>
+                                                <option value="หัวหน้ากลุ่ม">หัวหน้ากลุ่มสาระ</option>
+                                                <option value="รองหัวหน้ากลุ่ม">รองหัวหน้ากลุ่มสาระ</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-sm-4">
                                             <label for="images">รูปภาพ <font style="color: red; margin-left: 1px">*</font></label>
                                             <input type="file" id="images" name="images" class="form-control" accept="image/*" required>
                                         </div>

@@ -48,7 +48,7 @@ if ($conn->query($sql) === TRUE) {
             $(document).ready(function() {
                 Swal.fire({
                     title: 'บันทึกสำเร็จ!!',
-                    text: 'บันทึกข้อมูลผู้อำนวยการเรียบร้อยแล้ว',
+                    text: 'WCL',
                     icon: 'success',
                     timer: 1500,
                     showConfirmButton: false

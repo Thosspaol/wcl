@@ -13,7 +13,7 @@ if($result){
     $(document).ready(function() {
         Swal.fire({
             title: 'ลบข้อมูลสำเร็จแล้ว!!',
-            text: 'SENATE',
+            text: 'WCL',
             icon: 'success',
             timer: 5000,
             showConfirmButton: false

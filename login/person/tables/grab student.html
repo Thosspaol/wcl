@@ -53,8 +53,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      /* ให้ตารางเต็มหน้าจอ */
+      margin-top: 20px; /* ปรับเพิ่มขึ้นเพื่อเลื่อนตารางให้ใกล้กับลิสต์ */
     }
 
     /* กำหนดความกว้างของตาราง */
@@ -86,7 +85,7 @@
     </tr>
   </table>
   <p><strong>Table of contents</strong></p>
-  <ul>
+  <ul style="display: flex; justify-content: space-between; width: 80%;">
     <li>
        ประถมศึกษาตอนต้น
       <ul>
@@ -100,7 +99,7 @@
           <a href="#table_7" class="btn btn-success">นักเรียนชั้น ป.3 </a>
         </li>
       </ul>
-    </li><br>
+    </li>
     <li>
        ประถมศึกษาตอนปลาย
       <ul>
@@ -114,8 +113,10 @@
           <a href="#table_14" class="btn btn-success">นักเรียนชั้น ป.6 </a>
         </li>
       </ul>
-    </li><br>
-    <li>      
+    </li>
+  </ul>
+  <br>
+  <li>      
       <a href="../dashboard/home.php" class="btn btn-primary "><i class="fas fa-arrow-left"></i> กลับหน้าแรก</a>
     </li>
 

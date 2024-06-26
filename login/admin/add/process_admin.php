@@ -49,7 +49,7 @@ require('../../connect.php');
                                 $(document).ready(function() {
                                     Swal.fire({
                                         title: 'บันทึกสำเร็จ!!',
-                                        text: 'SENATE',
+                                        text: 'WCL',
                                         icon: 'success',
                                         timer: 5000,
                                         showConfirmButton: false
@@ -63,7 +63,7 @@ require('../../connect.php');
                                $(document).ready(function() {
                                    Swal.fire({
                                        title: 'สร้างบัญชีล้มเหลว!!',
-                                       text: 'SENATE',
+                                       text: 'WCL',
                                        icon: 'error',
                                        timer: 5000,
                                        showConfirmButton: false
@@ -81,7 +81,7 @@ require('../../connect.php');
                                $(document).ready(function() {
                                    Swal.fire({
                                        title: 'ไม่มีข้อมูล!!',
-                                       text: 'SENATE',
+                                       text: 'WCL',
                                        icon: 'error',
                                        timer: 5000,
                                        showConfirmButton: false

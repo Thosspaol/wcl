@@ -107,6 +107,22 @@ $row = mysqli_fetch_assoc($result);
                                                     ?>
                                                 </select>
                                             </div>
+                                            <div class="form-group col-sm-6">
+                                                <label for="manager">ตำแหน่ง</label>
+                                                <select name="manager" id="manager" class="form-select">
+                                                    <?php
+                                                    $manager = [
+                                                        'หัวหน้ากลุ่ม' => 'หัวหน้ากลุ่มสาระ',
+                                                        'รองหัวหน้ากลุ่ม' => 'รองหัวหน้ากลุ่มสาระ',
+                                                        '' => '-',
+                                                    ];
+                                                    foreach ($manager as $key => $value) {
+                                                        $selected_manager = ($row["manager"] === $key) ? 'selected' : '';
+                                                        echo "<option value='$key' $selected_manager>$value</option>";
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
                                         </div>
                                         <div class="form-group col-sm-4">
                                             <label for="images">รูปภาพ:</label><br>

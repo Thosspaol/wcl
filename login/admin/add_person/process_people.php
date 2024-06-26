@@ -14,6 +14,7 @@ $pre = $_POST['pres'];
 $first_name = $_POST['firsts'];
 $last_name = $_POST['lasts'];
 $role_people = $_POST['roles'];
+$manager = $_POST['manager'];
 $image = "";
 
 // ตรวจสอบว่ามีการอัปโหลดรูปภาพหรือไม่
@@ -41,14 +42,14 @@ if (isset($_FILES['images']) && $_FILES['images']['error'] == 0) {
 }
 
 // บันทึกข้อมูลลงในตาราง
-$sql = "INSERT INTO person (pres, firsts, lasts, roles, images) VALUES ('$pre', '$first_name', '$last_name', '$role_people', '$image')";
+$sql = "INSERT INTO person (pres, firsts, lasts, roles,manager, images) VALUES ('$pre', '$first_name', '$last_name', '$role_people','$manager', '$image')";
 
 if ($conn->query($sql) === TRUE) {
     echo "<script>
             $(document).ready(function() {
                 Swal.fire({
                     title: 'บันทึกสำเร็จ!!',
-                    text: 'บันทึกข้อมูลผู้อำนวยการเรียบร้อยแล้ว',
+                    text: 'WCL',
                     icon: 'success',
                     timer: 1500,
                     showConfirmButton: false
