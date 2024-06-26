@@ -42,7 +42,7 @@ if ($result2) {
     $(document).ready(function() {
         Swal.fire({
             title: 'แก้ไขสำเร็จ!!',
-            text: 'SENATE',
+            text: 'WCL',
             icon: 'success',
             timer: 5000,
             showConfirmButton: false
@@ -56,7 +56,7 @@ header("refresh:1.5; url=../dashboard/home.php");
     $(document).ready(function() {
         Swal.fire({
             title: 'แก้ไขไม่สำเร็จ!!',
-            text: 'SENATE',
+            text: 'WCL',
             icon: 'danger',
             timer: 5000,
             showConfirmButton: false

@@ -95,6 +95,7 @@ $open_connect = 1;
                                                 <option value disabled selected>เหลือกตำแหน่ง</option>
                                                 <option value="หัวหน้ากลุ่ม">หัวหน้ากลุ่มสาระ</option>
                                                 <option value="รองหัวหน้ากลุ่ม">รองหัวหน้ากลุ่มสาระ</option>
+                                                <option value="กลุ่ม">-</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-sm-4">

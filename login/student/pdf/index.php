@@ -1,16 +1,17 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 session_start();
 $open_connect = 1;
 ?>
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>เพิ่มบุคลากร | Senate</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-    <!-- Favicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf_viewer.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/senate.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/senate.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/senate.png">
@@ -20,18 +21,14 @@ $open_connect = 1;
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="../assets/img/favicons/senate.png">
     <meta name="theme-color" content="#ffffff">
-
-    <!-- stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
     <link rel="stylesheet" href="../assets/css/style1.css">
 </head>
-
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-
         <?php include_once('../includes/sidebar.php') ?>
         <div class="content-wrapper">
             <div class="content-header">
@@ -48,7 +45,6 @@ $open_connect = 1;
                     </div>
                 </div>
             </div>
-            <!-- Main content -->
             <div class="content">
                 <div class="content-fluid">
                     <div class="row">
@@ -90,6 +86,46 @@ $open_connect = 1;
                                     }
                                 }
 
+                                if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_file'])) {
+                                    $file_to_delete = 'uploads/' . $_POST['delete_file'];
+                                    if (file_exists($file_to_delete)) {
+                                        unlink($file_to_delete);
+
+                                        $log = file('uploads/uploads.log');
+                                        $new_log = [];
+                                        foreach ($log as $entry) {
+                                            list($name, $time) = explode(' - ', $entry);
+                                            if (trim($name) !== $_POST['delete_file']) {
+                                                $new_log[] = $entry;
+                                            }
+                                        }
+                                        file_put_contents('uploads/uploads.log', implode("", $new_log));
+                                        echo "<script>
+                                        $(document).ready(function() {
+                                            Swal.fire({
+                                                title: 'ลบข้อมูลสำเร็จแล้ว!!',
+                                                text: 'SENATE',
+                                                icon: 'success',
+                                                timer: 5000,
+                                                showConfirmButton: false
+                                            });
+                                        })
+                                    </script>";
+                                    } else {
+                                        echo "<script>
+                                        $(document).ready(function() {
+                                            Swal.fire({
+                                                title: 'ไม่พบไฟล์ที่จะลบ',
+                                                text: 'SENATE',
+                                                icon: 'error',
+                                                timer: 5000,
+                                                showConfirmButton: false
+                                            });
+                                        })
+                                    </script>";
+                                    }
+                                }
+
                                 // แสดงรายการไฟล์ที่อัปโหลดทั้งหมด
                                 echo "<h3 class='mt-4'>ไฟล์ที่อัปโหลด:</h3>";
                                 echo "<table id='uploadedFilesTable' class='table table-striped'>";
@@ -107,7 +143,7 @@ $open_connect = 1;
                                 foreach ($files as $file) {
                                     if ($file !== '.' && $file !== '..' && $file !== 'uploads.log') {
                                         $upload_time = isset($file_upload_times[$file]) ? $file_upload_times[$file] : 'Unknown';
-                                        echo "<tr><td>" . htmlspecialchars($file) . "</td><td>" . $upload_time . "</td><td><a href='download.php?file=" . urlencode($file) . "' class='btn btn-primary btn-sm'><i class='fas fa-download'></i> ดาวน์โหลด</a></td></tr>";
+                                        echo "<tr><td>" . htmlspecialchars($file) . "</td><td>" . $upload_time . "</td><td><a href='download.php?file=" . urlencode($file) . "' class='btn btn-primary btn-sm'><i class='fas fa-download'></i> ดาวน์โหลด</a> <form method='POST' action='' style='display:inline-block;'><input type='hidden' name='delete_file' value='" . htmlspecialchars($file) . "'><button type='submit' class='btn btn-danger btn-sm'><i class='fas fa-trash'></i> ลบ</button></form> <button class='btn btn-secondary btn-sm' onclick='printFile(\"" . htmlspecialchars($file) . "\")'><i class='fas fa-print'></i> พิมพ์</button></td></tr>";
                                     }
                                 }
                                 echo "</tbody></table>";
@@ -120,7 +156,9 @@ $open_connect = 1;
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>  
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf_viewer.min.js"></script>  
     <script>
         $(document).ready(function () {
             $('#uploadedFilesTable').DataTable({
@@ -157,15 +195,18 @@ $open_connect = 1;
                 }
             });
         });
+
+        function printFile(fileName) {
+            const url = `uploads/${fileName}`;
+            const pdfFrame = document.createElement('iframe');
+            pdfFrame.style.visibility = 'hidden';
+            pdfFrame.src = url;
+
+            document.body.appendChild(pdfFrame);
+            pdfFrame.onload = function() {
+                pdfFrame.contentWindow.print();
+            };
+        }
     </script>     
 </body>
 </html>
-<!-- SCRIPTS -->
-
-<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/js/adminlte.min.js"></script>
-<script src="../assets/js/login.js"></script>
-
-<!-- OPTIONAL SCRIPTS -->
-<script src="../plugins/chart.js/Chart.min.js"></script>
-<script src="../assets/js/pages/dashboard.js"></script>

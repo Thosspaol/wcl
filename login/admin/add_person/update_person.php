@@ -8,6 +8,7 @@ $pre = $_POST["pres"];
 $first_name= $_POST["firsts"];
 $last_name= $_POST["lasts"];
 $role_people = $_POST["roles"];
+$manager = $_POST["manager"];
 $id = $_POST["ids"];
 
 
@@ -40,7 +41,7 @@ if ($_FILES['images']['name']) {
 
 
 
-$sql2="UPDATE person SET pres = '$pre',firsts = '$first_name',lasts = '$last_name' , roles = '$role_people',images = '$image'  WHERE ids = $id ";
+$sql2="UPDATE person SET pres = '$pre',firsts = '$first_name',lasts = '$last_name' , roles = '$role_people',manager = '$manager' ,images = '$image'  WHERE ids = $id ";
 $result2 = mysqli_query($connect, $sql2);
 
 

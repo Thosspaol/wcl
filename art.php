@@ -7,16 +7,28 @@ if ($conn->connect_error) {
     die("การเชื่อมต่อล้มเหลว: " . $conn->connect_error);
 }
 
-// ฟังก์ชันสำหรับดึงข้อมูลผู้บริหารในกลุ่มสาระการเรียนรู้วิทยาศาสตร์และเทคโนโลยี
+// ฟังก์ชันสำหรับดึงข้อมูลผู้บริหารในกลุ่มสาระการเรียนรู้การงานอาชีพ
 function getManager($conn, $role) {
-    $sql = "SELECT * FROM person WHERE roles = '$role'";
+    $sql = "SELECT * FROM person WHERE roles = '$role' ORDER BY FIELD(manager, 'หัวหน้ากลุ่ม', 'รองหัวหน้ากลุ่ม', 'กลุ่ม')";
     $result = $conn->query($sql);
     return $result;
 }
 
-$scienceManagers = getManager($conn, 'art');
-?>
+$artManagers = getManager($conn, 'art');
 
+$head = [];
+$deputies = [];
+$members = [];
+while ($row = $artManagers->fetch_assoc()) {
+    if ($row['manager'] == 'หัวหน้ากลุ่ม') {
+        $head[] = $row;
+    } else if ($row['manager'] == 'รองหัวหน้ากลุ่ม') {
+        $deputies[] = $row;
+    } else if ($row['manager'] == 'กลุ่ม') {
+        $members[] = $row;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="th">
 
@@ -24,7 +36,7 @@ $scienceManagers = getManager($conn, 'art');
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>กลุ่มสาระการเรียนรู้วิทยาศาสตร์</title>
+  <title>กลุ่มสาระการเรียนรู้ศิลปะ</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -120,16 +132,46 @@ $scienceManagers = getManager($conn, 'art');
     <!-- ======= Property Grid ======= -->
     <div class="container">
       <div class="row">
-        <?php while ($row = $scienceManagers->fetch_assoc()) { ?>
-          <div class="col-md-3 mb-4">
-            <div class="card">
-              <img src="uploads/<?php echo $row['images']; ?>" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title"><?php echo $row['pres'] . ' ' . $row['firsts'] . ' ' . $row['lasts']; ?></h5>
-                <p class="card-text">กลุ่มสาระการเรียนรู้ศิลปะ</p>
+        <?php if (!empty($head)) { ?>
+          <?php foreach ($head as $row) { ?>
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img src="uploads/<?php echo $row['images']; ?>" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo $row['pres'] . ' ' . $row['firsts'] . ' ' . $row['lasts']; ?></h5>
+                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้การงานอาชีพ</p>
+                </div>
               </div>
             </div>
-          </div>
+          <?php } ?>
+        <?php } ?>
+
+        <?php if (!empty($deputies)) { ?>
+          <?php foreach ($deputies as $row) { ?>
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img src="uploads/<?php echo $row['images']; ?>" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo $row['pres'] . ' ' . $row['firsts'] . ' ' . $row['lasts']; ?></h5>
+                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้การงานอาชีพ</p>
+                </div>
+              </div>
+            </div>
+          <?php } ?>
+        <?php } ?>
+
+        <?php if (!empty($members)) { ?>
+          <?php foreach ($members as $row) { ?>
+            <div class="col-md-3 mb-4">
+              <div class="card">
+                <img src="uploads/<?php echo $row['images']; ?>" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo $row['pres'] . ' ' . $row['firsts'] . ' ' . $row['lasts']; ?></h5>
+                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้การงานอาชีพ</p>
+                </div>
+              </div>
+            </div>
+          <?php } ?>
         <?php } ?>
       </div>
     </div><!-- End Property Grid Single-->

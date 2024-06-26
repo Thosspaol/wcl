@@ -27,7 +27,7 @@ if (!empty($_POST['birthday']) and !empty($_POST['password_account'])) {
                 $(document).ready(function() {
                     Swal.fire({
                         title: 'เข้าสู่ระบบสำเร็จ!!',
-                        text: 'SENATE',
+                        text: 'WCL',
                         icon: 'success',
                         timer: 5000,
                         showConfirmButton: false
@@ -43,7 +43,7 @@ if (!empty($_POST['birthday']) and !empty($_POST['password_account'])) {
                 $(document).ready(function() {
                     Swal.fire({
                         title: 'เข้าสู่ระบบสำเร็จ!!',
-                        text: 'SENATE',
+                        text: 'WCL',
                         icon: 'success',
                         timer: 5000,
                         showConfirmButton: false
@@ -58,7 +58,7 @@ if (!empty($_POST['birthday']) and !empty($_POST['password_account'])) {
                 $(document).ready(function() {
                     Swal.fire({
                         title: 'เข้าสู่ระบบสำเร็จ!!',
-                        text: 'SENATE',
+                        text: 'WCL',
                         icon: 'success',
                         timer: 5000,
                         showConfirmButton: false
@@ -73,7 +73,7 @@ if (!empty($_POST['birthday']) and !empty($_POST['password_account'])) {
             $(document).ready(function() {
                 Swal.fire({
                     title: 'วัน/เดือน/ปีเกิดหรือรหัสผ่านไม่ถูกต้อง!!',
-                    text: 'SENATE',
+                    text: 'WCL',
                     icon: 'error',
                     timer: 5000,
                     showConfirmButton: false

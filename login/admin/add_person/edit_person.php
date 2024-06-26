@@ -113,8 +113,8 @@ $row = mysqli_fetch_assoc($result);
                                                     <?php
                                                     $manager = [
                                                         'หัวหน้ากลุ่ม' => 'หัวหน้ากลุ่มสาระ',
-                                                        'รองหัวหน้ากลุ่ม' => 'รองหัวหน้ากลุ่มสาระ',
-                                                        '' => '-',
+                                                        'รองหัวหน้ากลุ่ม' => 'รองหัวหน้ากลุ่มสาระ',                                                        
+                                                        'กลุ่ม' => '-',
                                                     ];
                                                     foreach ($manager as $key => $value) {
                                                         $selected_manager = ($row["manager"] === $key) ? 'selected' : '';
