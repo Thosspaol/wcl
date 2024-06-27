@@ -7,6 +7,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $semester_name = $_POST['semester_name'];
     $start_date = $_POST['start_date'];

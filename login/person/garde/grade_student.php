@@ -169,7 +169,7 @@ $row = mysqli_fetch_assoc($result);
                                                         <td><input type="text" name="technology_grade" class="form-control" id="technology_grade" required></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>การงานอาชีพ <font style="font-size: 0.8em; color: red;">*หมายเหตุ เฉพาะนักเรียนชั้น ประถมศึกษาปีที่ 1-3* </font></td>
+                                                        <td>การงานอาชีพ<font style="font-size: 0.8em; color: red;">*หมายเหตุ เฉพาะนักเรียนชั้น ประถมศึกษาปีที่ 1-3* </font></td>
                                                         <td><input type="text" name="career_grade" class="form-control" id="career_grade" required></td>
                                                     </tr>
                                                     <tr>
@@ -181,7 +181,7 @@ $row = mysqli_fetch_assoc($result);
                                                         <td><input type="text" name="civic_grade" class="form-control" id="civic_grade" required></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>เกษตร <font style="font-size: 0.8em; color: red;">*หมายเหตุ เฉพาะนักเรียนชั้น ประถมศึกษาปีที่ 4-6* </font></td>
+                                                        <td>เกษตร<font style="font-size: 0.8em; color: red;">*หมายเหตุ เฉพาะนักเรียนชั้น ประถมศึกษาปีที่ 4-6* </font></td>
                                                         <td><input type="text" name="farm_grade" class="form-control" id="farm_grade" required></td>
                                                     </tr>
                                                     <tr>

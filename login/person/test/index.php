@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>เพิ่มภาคเรียน</h1>
-    <form action="term.php" method="POST">
+    <form action="team.php" method="POST">
         <label for="semester_name">ชื่อภาคเรียน:</label>
         <input type="text" id="semester_name" name="semester_name" required><br>
 
