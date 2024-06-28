@@ -2,10 +2,15 @@
 session_start();
 $open_connect = 1;
 require('../../connect.php');
+
 $id = $_GET["id_account"];
-$sql = "SELECT * FROM grade WHERE id_account = $id";
-$result = mysqli_query($connect, $sql);
-$row = mysqli_fetch_assoc($result);
+$sql = "SELECT * FROM grades WHERE id_account = ?";
+$stmt = $connect->prepare($sql);
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+
 ?>
 <!DOCTYPE html>
 <html lang="th">
@@ -46,9 +51,7 @@ $row = mysqli_fetch_assoc($result);
             border-collapse: collapse;
         }
 
-        table,
-        th,
-        td {
+        table, th, td {
             border: 1px solid black;
             padding: 8px;
             text-align: center;
@@ -59,8 +62,7 @@ $row = mysqli_fetch_assoc($result);
             border-collapse: collapse;
         }
 
-        .inner-table th,
-        .inner-table td {
+        .inner-table th, .inner-table td {
             border: 1px solid black;
             padding: 8px;
             text-align: center;
@@ -75,7 +77,6 @@ $row = mysqli_fetch_assoc($result);
 </head>
 
 <body class="hold-transition sidebar-mini">
-
     <div class="wrapper">
         <?php include('../includes/sidebar.php') ?>
         <div class="content-wrapper">
@@ -102,99 +103,46 @@ $row = mysqli_fetch_assoc($result);
                                     <h3 class="card-title" style="line-height:2.1rem;">แก้ไขข้อมูล</h3>
                                     <a href="../dashboard/home.php" class="btn btn-primary float-right"><i class='fas fa-arrow-left'></i> กลับ</a>
                                 </div><br>
-                                <form action="update_grade.php" method="post" enctype="multipart/form-data">
-                                <?php
-                                    $pre = htmlspecialchars($row['pre']);
-                                    $firstname = htmlspecialchars($row['firstname']);
-                                    $lastname = htmlspecialchars($row['lastname']);
-                                    $level = htmlspecialchars($row['level']);
-                                    $average_grade = number_format(htmlspecialchars($row['average_grade']), 2);
-                                ?>
-                                <div class="table-container">
-                                    <input type="hidden" class="form-control" value="<?php echo $row["id_account"];?>" name="id_account">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <table class="inner-table">
-                                                    <thead class="table-secondary">
-                                                        <tr>
-                                                        <th colspan="2">ผลการเรียนของ <?php echo  "$pre $firstname $lastname"; ?> ภาคเรียนที่ 2</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>วิชา</th>
-                                                            <th>เกรด</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tr>
-                                                        <td>คณิตศาสตร์</td>
-                                                        <td><input type="text" name="math_grade" class="form-control" id="math_grade" value="<?php echo $row["math_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>คณิตศาสตร์เพิ่มเติม</td>
-                                                        <td><input type="text" name="additional_grade" class="form-control" id="additional_grade" value="<?php echo $row["additional_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>วิทยาศาสตร์</td>
-                                                        <td><input type="text" name="sci_grade" class="form-control" id="sci_grade" value="<?php echo $row["sci_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ภาษาอังกฤษ</td>
-                                                        <td><input type="text" name="eng_grade" class="form-control" id="eng_grade" value="<?php echo $row["eng_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ภาษาไทย</td>
-                                                        <td><input type="text" name="thai_grade" class="form-control" id="thai_grade" value="<?php echo $row["thai_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>สังคมศึกษาและวัฒนธรรม</td>
-                                                        <td><input type="text" name="society_grade" class="form-control" id="society_grade" value="<?php echo $row["society_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>สุขศึกษา</td>
-                                                        <td><input type="text" name="health_grade" class="form-control" id="health_grade" value="<?php echo $row["health_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ดนตรีและนาฏศิลป์</td>
-                                                        <td><input type="text" name="music_grade" class="form-control" id="music_grade" value="<?php echo $row["music_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ประวัติศาสตร์</td>
-                                                        <td><input type="text" name="history_grade" class="form-control" id="history_grade" value="<?php echo $row["history_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ศิลปะ</td>
-                                                        <td><input type="text" name="art_grade" class="form-control" id="art_grade" value="<?php echo $row["art_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>เทคโนโลยี</td>
-                                                        <td><input type="text" name="technology_grade" class="form-control" id="technology_grade" value="<?php echo $row["technology_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>การงานอาชีพ <font style="font-size: 0.8em; color: red;">*หมายเหตุ เฉพาะนักเรียนชั้น ประถมศึกษาปีที่ 1-3* </font></td>
-                                                        <td><input type="text" name="career_grade" class="form-control" id="career_grade" value="<?php echo $row["career_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>พละศึกษา</td>
-                                                        <td><input type="text" name="physical_grade" class="form-control" id="physical_grade" value="<?php echo $row["physical_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>หน้าที่พลเมือง</td>
-                                                        <td><input type="text" name="civic_grade" class="form-control" id="civic_grade" value="<?php echo $row["civic_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>เกษตร <font style="font-size: 0.8em; color: red;">*หมายเหตุ เฉพาะนักเรียนชั้น ประถมศึกษาปีที่ 4-6* </font></td>
-                                                        <td><input type="text" name="farm_grade" class="form-control" id="farm_grade" value="<?php echo $row["farm_grade"];?>" required></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>เกรดเฉลี่ย</th>
-                                                        <th><?php echo $average_grade; ?></th>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div> <br>
-                                        <button type="submit" class="btn btn-success btn-block"><i class='fas fa-save'></i> บันทึกข้อมูล</button>
+                                <form action="score_student.php" method="POST">
+                                    <div class="card-body">
+                                        <div class="form-row">
+                                            <input type="hidden" name="id_account" value="<?php echo $row["id_account"]; ?>">
+                                            <div class="col-sm-3">
+                                                <label for="pre">คำนำหน้า</label>
+                                                <input type="text" id="pre" name="pre" value="<?php echo $row["pre"]; ?>" required class="form-control"><br>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="firstname">ชื่อ</label>
+                                                <input type="text" id="firstname" class="form-control" name="firstname" value="<?php echo $row["firstname"];?>">
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="lastname">นามสกุล</label>
+                                                <input type="text" id="lastname" class="form-control" name="lastname" value="<?php echo $row["lastname"];?>">
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="level">ชั้น</label>
+                                                <input type="text" id="level" class="form-control" name="level" value="<?php echo $row["level"];?>">
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="subject_id">รหัสวิชา</label>
+                                                <input type="text" id="subject_id" name="subject_id" required class="form-control" value="<?php echo $row["subject_id"];?>"><br>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="teacher_name">ชื่ออาจารย์</label>
+                                                <input type="text" id="teacher_name" name="teacher_name" required class="form-control" value="<?php echo $row["teacher_name"];?> "><br>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="semester_id">ภาคเรียน</label>
+                                                <input type="text" id ="semester_name" name="semester_id" class="form-control" value="<?php echo $row ["semester_id"];?>" readonly>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <label for="grade">คะแนน</label>
+                                                <input type="text" id="grade" name="grade" required class="form-control"><br>
+                                            </div>
+                                            <div class="col-sm-3">
+                                                <input type="submit" value="เพิ่มคะแนน" class="btn btn-success">
+                                            </div>
+                                        </div>
                                     </div>
                                 </form>
                             </div>

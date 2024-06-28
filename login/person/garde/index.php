@@ -7,9 +7,7 @@ $password = "";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=wcl",$username,$password);
-    //set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // echo"Connected successfully";
 } catch(PDOException $e){
     echo "Connect failed:" . $e->getMessage();
 }
@@ -25,7 +23,6 @@ try {
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
     <link rel="stylesheet" href="../assets/css/style1.css">
-    
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -70,7 +67,6 @@ try {
                                     <table class="table table-striped table-bordered" id="Table" style="width:100%">
                                         <thead class="table-secondary">
                                             <tr>
-                                                
                                                 <th scope="col">วัน/เดือน/ปีเกิด</th>
                                                 <th scope="col">คำนำหน้า</th>
                                                 <th scope="col">ชื่อ</th>
@@ -87,9 +83,13 @@ try {
 
                                                 $rows = $stmt->fetchAll();
                                                 foreach($rows as $row){
+                                                    $id_account = $row['id_account'];
+                                                    // ตรวจสอบว่ามีข้อมูลเกรดอยู่หรือไม่
+                                                    $grade_stmt = $conn->prepare("SELECT COUNT(*) FROM grades WHERE id_account = ?");
+                                                    $grade_stmt->execute([$id_account]);
+                                                    $has_grades = $grade_stmt->fetchColumn() > 0;
                                             ?>
                                             <tr>
-                                                
                                                 <td><?php echo $row['birthday']?></td>
                                                 <td><?php echo $row['pre']?></td>
                                                 <td><?php echo $row['firstname']?></td>
@@ -97,7 +97,7 @@ try {
                                                 <td><?php echo $row['role_account']?></td>
                                                 <td><?php echo $row['level']?></td>
                                                 <td>
-                                                    <a href="term.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-success"><i class="fas fa-poll-h"></i> ออกเกรด</a> 
+                                                    <a href="term.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-success <?php if ($has_grades) echo 'disabled'; ?>"><i class="fas fa-poll-h"></i> ออกเกรด</a> 
                                                     <a href="grade.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-primary"><i class="fas fa-address-card"></i> ตรวจสอบผลการเรียน</a>      
                                                     <a href="edit_grade_student.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> แก้ไขผลการเรียน</a>                                                 
                                                 </td>

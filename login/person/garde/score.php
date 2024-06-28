@@ -109,12 +109,24 @@ $row_show = mysqli_fetch_assoc($result_show);
                                                 <input type="text" id ="semester_name" name="semester_id" class="form-control" value="<?php echo $row ["semester_name"];?>" readonly>
                                             </div>
                                             <div class="col-sm-3">
-                                                <label for="grade">คะแนน</label>
-                                                <input type="text" id="grade" name="grade" required class="form-control"><br>
+                                                <label for="academic_year">ปีการศึกษา</label> 
+                                                <input type="text" id="academic_year" class="form-control" name="academic_year" value="<?php echo $row["academic_year"];?>" readonly>
                                             </div>
-                                            <div class="col-sm-3">
-                                                <input type="submit" value="เพิ่มคะแนน" class="btn btn-success">
-                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label for="score">คะแนน เก็บ</label>
+                                            <input type="text" id="score" name="score" required class="form-control"><br>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label for="mitterm">คะแนน สอบกลางภาค</label>
+                                            <input type="text" id="mitterm" name="mitterm" required class="form-control"><br>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label for="final">คะแนน สอบปลายภาค</label>
+                                            <input type="text" id="final" name="final" required class="form-control"><br>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <input type="submit" value="เพิ่มคะแนน" class="btn btn-success">
                                         </div>
                                     </div>
                                 </form>

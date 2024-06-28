@@ -19,37 +19,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $subject_id = $_POST['subject_id']; 
     $teacher_name = $_POST['teacher_name']; 
     $semester_id = $_POST['semester_id']; 
-    $grade = $_POST['grade'];
+    $academic_year = $_POST['academic_year'];
+    $score = $_POST['score'];
+    $mitterm = $_POST['mitterm'];
+    $final = $_POST['final'];
+
+    // คำนวณคะแนนรวม
+    $totle = $score + $mitterm + $final;
 
     // คำนวณเกรด
-    if ($grade >= 80) {
+    if ($totle >= 80) {
+        $grade = 'A';
         $grade_point = 4.0;
-    } elseif ($grade >= 75) {
+    } elseif ($totle >= 75) {
+        $grade = 'B+';
         $grade_point = 3.5;
-    } elseif ($grade >= 70) {
+    } elseif ($totle >= 70) {
+        $grade = 'B';
         $grade_point = 3.0;
-    } elseif ($grade >= 65) {
+    } elseif ($totle >= 65) {
+        $grade = 'C+';
         $grade_point = 2.5;
-    } elseif ($grade >= 60) {
+    } elseif ($totle >= 60) {
+        $grade = 'C';
         $grade_point = 2.0;
-    } elseif ($grade >= 55) {
+    } elseif ($totle >= 55) {
+        $grade = 'D+';
         $grade_point = 1.5;
-    } elseif ($grade >= 50) {
+    } elseif ($totle >= 50) {
+        $grade = 'D';
         $grade_point = 1.0;
     } else {
+        $grade = 'F';
         $grade_point = 0.0;
     }
 
     // สร้างคำสั่ง SQL สำหรับบันทึกข้อมูลลงในตาราง `grades`
-    $sql1 = "INSERT INTO grades (id_account, pre, firstname, lastname, level, subject_id, teacher_name, semester_id, grade, grade_point) 
-             VALUES ('$id', '$pre', '$firstname', '$lastname', '$level', '$subject_id', '$teacher_name', '$semester_id', '$grade', '$grade_point')";
-
-    // สร้างคำสั่ง SQL สำหรับบันทึกข้อมูลลงในตารางที่สอง `second_table`
-    $sql2 = "INSERT INTO second_table (id_account, pre, firstname, lastname, level, subject_id, teacher_name, semester_id, grade, grade_point) 
-             VALUES ('$id', '$pre', '$firstname', '$lastname', '$level', '$subject_id', '$teacher_name', '$semester_id', '$grade', '$grade_point')";
+    $sql1 = "INSERT INTO grades (id_account, pre, firstname, lastname, level, subject_id, teacher_name, semester_id, grade, grade_point, academic_year, score, mitterm, final, totle) 
+             VALUES ('$id', '$pre', '$firstname', '$lastname', '$level', '$subject_id', '$teacher_name', '$semester_id', '$grade', '$grade_point', '$academic_year', '$score', '$mitterm', '$final', '$totle')";
 
     // ทำการ execute คำสั่ง SQL
-    if (mysqli_query($connect, $sql1) && mysqli_query($connect, $sql2)) {
+    if (mysqli_query($connect, $sql1)) {
         echo "<script>
         $(document).ready(function() {
             Swal.fire({
@@ -64,7 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("refresh:2; url=../dashboard/home.php");
     } else {
         echo "Error: " . $sql1 . "<br>" . mysqli_error($connect);
-        echo "Error: " . $sql2 . "<br>" . mysqli_error($connect);
     }
 
     // ปิดการเชื่อมต่อฐานข้อมูล

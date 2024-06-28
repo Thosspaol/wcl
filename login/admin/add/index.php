@@ -96,8 +96,7 @@ $open_connect = 1;
                                         <div class="form-group col-sm-4">
                                             <label for="level">ระดับชั้น <font style = "color: red; margin-left: 1px">*</font></label>
                                             <select name="level" id="level" class="form-select" required>
-                                                <option value disabled selected>ระดับชั้น</option>
-                                                <option value="-">บุคคลากรทั้วไป</option>
+                                                <option value disabled selected>ระดับชั้น</option>                                                
                                                 <option value="ป.1">ป.1</option>
                                                 <option value="ป.2">ป.2</option>
                                                 <option value="ป.3">ป.3</option>
@@ -107,13 +106,25 @@ $open_connect = 1;
                                             </select>
                                         </div>
                                         <div class="form-group col-sm-4">
-                                            <label for="password_account">รหัสผ่าน <font style = "color: red; margin-left: 1px">*</font></label>
-                                            <input type="password" name="password_account1" class="form-control" placeholder="รหัสผ่าน" required>
+                                            <label for="level">ตำแหน่ง <font style = "color: red; margin-left: 1px">*</font></label>
+                                            <select name="level" id="level" class="form-select" required>
+                                                <option value disabled selected>กลุ่มสาระการเรียนรู้</option>                                                
+                                                <option value="ป.1">ป.1</option>
+                                                <option value="ป.2">ป.2</option>
+                                                <option value="ป.3">ป.3</option>
+                                                <option value="ป.4">ป.4</option>
+                                                <option value="ป.5">ป.5</option>
+                                                <option value="ป.6">ป.6</option>
+                                            </select>
                                         </div>
-                                        <div class="form-group col-sm-4">
-                                            <label for="password_account2">ยืนยันรหัสผ่าน <font style = "color: red; margin-left: 1px">*</font></label>
-                                            <input type="password" name="password_account2" class="form-control" placeholder="ยืนยันรหัสผ่าน" required>
-                                        </div>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label for="password_account">รหัสผ่าน <font style = "color: red; margin-left: 1px">*</font></label>
+                                        <input type="password" name="password_account1" class="form-control" placeholder="รหัสผ่าน" required>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label for="password_account2">ยืนยันรหัสผ่าน <font style = "color: red; margin-left: 1px">*</font></label>
+                                        <input type="password" name="password_account2" class="form-control" placeholder="ยืนยันรหัสผ่าน" required>
                                     </div>
                                     <button class="btn btn-success btn-block" type="submit"><i class='fas fa-save'></i> บันทึกข้อมูล</button>
                                 </div>
