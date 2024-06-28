@@ -6,7 +6,7 @@
 $open_connect = 1;
 require('../../connect.php');
                 // Display retrieved data
-                if(!empty($_POST['id_card']) and !empty($_POST['firstname']) and !empty($_POST['lastname']) and !empty($_POST['pre']) and !empty($_POST['birthday']) and !empty($_POST['role_account']) and !empty($_POST['password_account1']) and !empty($_POST['password_account2']) and !empty($_POST['level'])){
+                if(!empty($_POST['id_card']) and !empty($_POST['firstname']) and !empty($_POST['lastname']) and !empty($_POST['pre']) and !empty($_POST['birthday']) and !empty($_POST['role_account']) and !empty($_POST['password_account1']) and !empty($_POST['password_account2']) and !empty($_POST['level']) and !empty($_POST['subject'])){
                     $id_card = htmlspecialchars(mysqli_real_escape_string($connect, $_POST['id_card']));
                     $pre = htmlspecialchars(mysqli_real_escape_string($connect, $_POST['pre']));
                     $firstname = htmlspecialchars(mysqli_real_escape_string($connect, $_POST['firstname']));
@@ -16,6 +16,7 @@ require('../../connect.php');
                     $password_account1 = htmlspecialchars(mysqli_real_escape_string($connect, $_POST['password_account1']));
                     $password_account2 = htmlspecialchars(mysqli_real_escape_string($connect, $_POST['password_account2']));
                     $level = htmlspecialchars(mysqli_real_escape_string($connect,$_POST['level']));
+                    $subject = htmlspecialchars(mysqli_real_escape_string($connect,$_POST['subject']));
                     if ($password_account1 !== $password_account2) {
                         echo "<script>
                             $(document).ready(function() {
@@ -42,7 +43,7 @@ require('../../connect.php');
                             //  ];
                 
                              $password_account = $password_account1; //นำรหัสผ่านที่ต่อกับค่าเกลือแล้ว เข้ารหัสด้วยวิธี ARGON2ID
-                             $query_create_account = "INSERT INTO account VALUES (NULL, '$pre','$firstname','$lastname','$id_card', '$birthday', '$password_account', '$level', '$role_account', 'default_images_account.jpg',0 , 0, NULL)";
+                             $query_create_account = "INSERT INTO account VALUES (NULL, '$pre','$firstname','$lastname','$id_card', '$birthday', '$password_account', '$level', '$role_account', 'default_images_account.jpg',0 , 0, NULL,'$subject')";
                              $call_back_create_account = mysqli_query($connect, $query_create_account);
                              if($call_back_create_account){
                                 echo "<script>

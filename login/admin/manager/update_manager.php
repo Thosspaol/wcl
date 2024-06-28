@@ -13,11 +13,12 @@ $role_account = $_POST["role_account"];
 $level = $_POST["level"];
 $id_account = $_POST["id_account"];
 $images_account = $_POST["images_account"];
+$subject =$_POST["subject"];
 
 
 
 
-$sql2="UPDATE account SET pre = '$pre',firstname = '$firstname',lastname = '$lastname',id_card = '$id_card',birthday = '$birthday',role_account = '$role_account',level = '$level' ,images_account = '$images_account' WHERE id_account = $id_account ";
+$sql2="UPDATE account SET pre = '$pre',firstname = '$firstname',lastname = '$lastname',id_card = '$id_card',birthday = '$birthday',role_account = '$role_account',level = '$level' ,images_account = '$images_account', subject = '$subject', WHERE id_account = $id_account ";
 $result2 = mysqli_query($connect, $sql2);
 
 

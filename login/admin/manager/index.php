@@ -76,6 +76,7 @@ try {
                                         <th scope ="col">นามสกุล</th>
                                         <th scope = "col">สถานะ</th>
                                         <th scope = "col">ระดับชั้น</th>
+                                        <th scope="col">ตำแหน่ง</th>
                                         <th scope = "col">รายละเอียด</th>
                                     </thead> 
                                     <?php
@@ -92,6 +93,7 @@ try {
                                             <td><?php echo $row['firstname']?></td>
                                             <td><?php echo $row['lastname']?></td>
                                             <td><?php echo $row['role_account']?></td>
+                                            <td><?php echo $row ['subject'];?></td>
                                             <td><?php echo $row['level']?></td>
                                             <td><a href="edit_manager.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-warning"><i class="far fa-folder-open"></i> แก้ไขข้อมูล</a>
                                             <a href="delete_manager.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-danger"><i class="fas fa-trash-alt"></i> ลบ</a>

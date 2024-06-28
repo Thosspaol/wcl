@@ -103,18 +103,29 @@ $open_connect = 1;
                                                 <option value="ป.4">ป.4</option>
                                                 <option value="ป.5">ป.5</option>
                                                 <option value="ป.6">ป.6</option>
+                                                <option value="บุคลากร">บุคลากร</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-sm-4">
-                                            <label for="level">ตำแหน่ง <font style = "color: red; margin-left: 1px">*</font></label>
-                                            <select name="level" id="level" class="form-select" required>
+                                            <label for="subject">ตำแหน่ง <font style = "color: red; margin-left: 1px">*</font></label>
+                                            <select name="subject" id="subject" class="form-select" required>
                                                 <option value disabled selected>กลุ่มสาระการเรียนรู้</option>                                                
-                                                <option value="ป.1">ป.1</option>
-                                                <option value="ป.2">ป.2</option>
-                                                <option value="ป.3">ป.3</option>
-                                                <option value="ป.4">ป.4</option>
-                                                <option value="ป.5">ป.5</option>
-                                                <option value="ป.6">ป.6</option>
+                                                <option value="การงานอาชีพ">การงานอาชีพ</option>
+                                                <option value="คณิตศาสตร์">คณิตศาสตร์</option>
+                                                <option value="คณิตศาสตร์เพิ่มเติม">คณิตศาสตร์เพิ่มเติม</option>
+                                                <option value="ดนตรี">ดนตรี</option>
+                                                <option value="ประวัติศาสตร์">ประวัติศาสตร์</option>
+                                                <option value="พละศึกษา">พละศึกษา</option>
+                                                <option value="เกษตร">เกษตร</option>
+                                                <option value="เทคโนโลยี">เทคโนโลยี</option>
+                                                <option value="ภาษาอังกฤษ">ภาษาอังกฤษ</option>
+                                                <option value="ภาษาไทย">ภาษาไทย</option>
+                                                <option value="วิทยาศาสตร์">วิทยาศาสตร์</option>
+                                                <option value="ศิลปะ">ศิลปะ</option>
+                                                <option value="สังคมศึกษา">สังคมศึกษา</option>
+                                                <option value="สุขศึกษา">สุขศึกษา</option>
+                                                <option value="หน้าที่พลเมือง">หน้าที่พลเมือง</option>
+                                                <option value="อื่นๆ">อื่นๆ</option>
                                             </select>
                                         </div>
                                     </div>

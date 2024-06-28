@@ -97,7 +97,7 @@ try {
                                                 <td><?php echo $row['role_account']?></td>
                                                 <td><?php echo $row['level']?></td>
                                                 <td>
-                                                    <a href="term.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-success <?php if ($has_grades) echo 'disabled'; ?>"><i class="fas fa-poll-h"></i> ออกเกรด</a> 
+                                                    <a href="term.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-success" <i class="fas fa-poll-h"></i> ออกเกรด</a> 
                                                     <a href="grade.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-primary"><i class="fas fa-address-card"></i> ตรวจสอบผลการเรียน</a>      
                                                     <a href="edit_grade_student.php?id_account=<?php echo $row["id_account"];?>" class="btn btn-warning"><i class="fas fa-pencil-alt"></i> แก้ไขผลการเรียน</a>                                                 
                                                 </td>
@@ -153,11 +153,7 @@ try {
                 }
             });
 
-            // Custom filtering function
-            $('#levelFilter').on('change', function() {
-                var selectedLevel = $(this).val();
-                table.columns(5).search(selectedLevel).draw();
-            });
+           
         });
     </script>
     <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
