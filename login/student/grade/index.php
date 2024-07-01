@@ -3,32 +3,76 @@ session_start();
 $open_connect = 1;
 require('../../connect.php');
 $id_account = $_SESSION['id_account'];
-$query = "SELECT * FROM grade WHERE id_account = $id_account";
-$call_back = mysqli_query($connect, $query);
-$row_show = mysqli_fetch_assoc($call_back);
 
-// ตรวจสอบว่ามีข้อมูลหรือไม่
-if (!$row_show) {
-    // ถ้าไม่มีข้อมูลให้แสดงข้อความแจ้งเตือน
-    $message = "ไม่พบข้อมูลเกรดสำหรับนักเรียนนี้";
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+try {
+    // Query to get student's name and other details from accounts table
+    $account_query = "
+        SELECT pre, firstname, lastname, level, semester_id
+        FROM grades
+        WHERE id_account = ?
+    ";
+    
+    if ($stmt = mysqli_prepare($connect, $account_query)) {
+        mysqli_stmt_bind_param($stmt, 'i', $id_account);
+        mysqli_stmt_execute($stmt);
+        $account_result = mysqli_stmt_get_result($stmt);
+        $account_info = mysqli_fetch_assoc($account_result);
+        mysqli_stmt_close($stmt);
+    } else {
+        throw new Exception("ไม่สามารถเตรียมการ statement ได้: " . mysqli_error($connect));
+    }
+
+    // Query to join grades and subjects tables
+    $query = "
+        SELECT s.name AS subject_name, g.grade_point
+        FROM grades g
+        JOIN subjects s ON g.subject_id = s.id
+        WHERE g.id_account = ?
+    ";
+
+    if ($stmt = mysqli_prepare($connect, $query)) {
+        mysqli_stmt_bind_param($stmt, 'i', $id_account);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        if (mysqli_num_rows($result) == 0) {
+            $message = "ไม่พบข้อมูลเกรดสำหรับนักเรียนนี้";
+        } else {
+            $grades = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            $total_grades = 0;
+            $total_subjects = count($grades);
+            foreach ($grades as $row_show) {
+                $total_grades += $row_show['grade_point'];
+            }
+            $average_grade = $total_grades / $total_subjects;
+        }
+
+        mysqli_stmt_close($stmt);
+    } else {
+        throw new Exception("ไม่สามารถเตรียมการ statement ได้: " . mysqli_error($connect));
+    }
+} catch (Exception $e) {
+    $error_message = $e->getMessage();
 }
 ?>
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แสดงข้อมูลเกรด</title>
+    <title>แก้ไขผู้ใช้งาน | senate</title>
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/senate.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/senate.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/senate.png">
-    <link rel="manifest" href="../assets/img/favicons/senate.png">
-    <link rel="mask-icon" href="../assets/img/favicons/senate.png" color="#5bbad5">
-    <link rel="shortcut icon" href="../assets/img/favicons/senate.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/senate.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicons/senate.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicons/senate.png">
+    <link rel="manifest" href="../../assets/img/favicons/senate.png">
+    <link rel="mask-icon" href="../../assets/img/favicons/senate.png" color="#5bbad5">
+    <link rel="shortcut icon" href="../../assets/img/favicons/senate.png">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="../assets/img/favicons/senate.png">
+    <meta name="msapplication-config" content="../../assets/img/favicons/senate.png">
     <meta name="theme-color" content="#ffffff">
 
     <!-- stylesheet -->
@@ -37,6 +81,7 @@ if (!$row_show) {
     <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/adminlte.min.css">
     <link rel="stylesheet" href="../assets/css/style1.css">
+
     <style>
         .table-container {
             display: flex;
@@ -69,9 +114,14 @@ if (!$row_show) {
             padding: 8px;
             text-align: center;
         }
+
+        /* Custom CSS for smaller input fields */
+        .small-input {
+            width: 80px;
+            display: inline-block;
+        }
     </style>
 </head>
-
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php include_once('../includes/sidebar.php') ?>
@@ -99,39 +149,12 @@ if (!$row_show) {
                                 <a href="../dashboard/home.php" class="btn btn-primary float-right"><i class="fas fa-arrow-left"></i> กลับ</a>
                             </div>
                             <?php
-                            if (isset($message)) {
+                            if (isset($error_message)) {
+                                echo '<div class="alert alert-danger text-center" role="alert">' . $error_message . '</div>';
+                            } elseif (isset($message)) {
                                 echo '<div class="alert alert-warning text-center" role="alert">' . $message . '</div>';
                             } else {
-                                // ตรวจสอบว่ามีข้อมูลก่อนที่จะแสดงตาราง
                             ?>
-                              <?php
-                            $pre = htmlspecialchars($row_show['pre']);
-                            $firstname = htmlspecialchars($row_show['firstname']);
-                            $lastname = htmlspecialchars($row_show['lastname']);
-
-                            $math_grade = number_format(htmlspecialchars($row_show['math_grade']), 2);
-                            $additional_grade  = number_format(htmlspecialchars($row_show['additional_grade']), 2);
-                            $sci_grade = number_format(htmlspecialchars($row_show['sci_grade']), 2);
-
-                            $eng_grade = number_format(htmlspecialchars($row_show['eng_grade']), 2);
-                            $thai_grade = number_format(htmlspecialchars($row_show['thai_grade']), 2);
-                            $society_grade = number_format(htmlspecialchars($row_show['society_grade']), 2);
-
-                            $health_grade = number_format(htmlspecialchars($row_show['health_grade']), 2);
-                            $music_grade = number_format(htmlspecialchars($row_show['music_grade']), 2);
-                            $history_grade = number_format(htmlspecialchars($row_show['history_grade']), 2);
-
-                            $art_grade = number_format(htmlspecialchars($row_show['art_grade']), 2);
-                            $technology_grade = number_format(htmlspecialchars($row_show['technology_grade']), 2);
-                            $career_grade = number_format(htmlspecialchars($row_show['career_grade']), 2);
-
-                            $physical_grade = number_format(htmlspecialchars($row_show['physical_grade']), 2);
-                            $civic_grade  = number_format(htmlspecialchars($row_show['civic_grade']), 2);
-                            $farm_grade  = number_format(htmlspecialchars($row_show['farm_grade']), 2);
-
-                            $total_grade = number_format(htmlspecialchars($row_show['total_grade']), 2);
-                            $average_grade = number_format(htmlspecialchars($row_show['average_grade']), 2);
-                            ?> 
                                 <div class="table-container">
                                     <table>
                                         <tr>
@@ -139,78 +162,26 @@ if (!$row_show) {
                                                 <table class="inner-table">
                                                     <thead class="table-secondary">
                                                         <tr>
-                                                            <th colspan="2">ผลการเรียนของ <?php echo  "$pre $firstname $lastname"; ?> ภาคเรียนที่ 2</th>
+                                                            <th colspan="2">ผลการเรียน <?php echo $account_info["pre"];?> <?php echo $account_info["firstname"];?> <?php echo $account_info["lastname"];?> ชั้น <?php echo $account_info["level"];?> <?php echo $account_info["semester_id"];?></th>
                                                         </tr>
                                                         <tr>
                                                             <th>วิชา</th>
                                                             <th>เกรด</th>
                                                         </tr>
                                                     </thead>
+                                                    <?php
+                                                    foreach ($grades as $row_show) {
+                                                        $subject_name = htmlspecialchars($row_show['subject_name']);
+                                                        $grade_point = number_format(htmlspecialchars($row_show['grade_point']), 2);
+                                                        echo "<tr>";
+                                                        echo "<td>$subject_name</td>";
+                                                        echo "<td>$grade_point</td>";
+                                                        echo "</tr>";
+                                                    }
+                                                    ?>
                                                     <tr>
-                                                        <td>คณิตศาสตร์</td>
-                                                        <td><?php echo $math_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>คณิตศาสตร์เพิ่มเติม</td>
-                                                        <td><?php echo $additional_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>วิทยาศาสตร์</td>
-                                                        <td><?php echo $sci_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ภาษาอังกฤษ</td>
-                                                        <td><?php echo $eng_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ภาษาไทย</td>
-                                                        <td><?php echo $thai_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>สังคมศึกษาและวัฒนธรรม</td>
-                                                        <td><?php echo $society_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>สุขศึกษา</td>
-                                                        <td><?php echo $health_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ดนตรีและนาฏศิลป์</td>
-                                                        <td><?php echo $music_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ประวัติศาสตร์</td>
-                                                        <td><?php echo $history_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>ศิลปะ</td>
-                                                        <td><?php echo $art_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>เทคโนโลยี</td>
-                                                        <td><?php echo $technology_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>การงานอาชีพ <font style="color: red; font-size: 0.8em; color: red;text-align: left;margin-bottom: -10px;">*หมายเหตุ เฉพาะนักเรียนชั้น ประถมศึกษาปีที่ 1-3* </font>
-                                                        </td>
-                                                        <td><?php echo $career_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>พละศึกษา</td>
-                                                        <td><?php echo $physical_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>หน้าที่พลเมือง</td>
-                                                        <td><?php echo $civic_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>เกษตร <font style="color: red; font-size: 0.8em; color: red;text-align: left;margin-bottom: -10px;">*หมายเหตุ เฉพาะนักเรียนชั้น ประถมศึกษาปีที่ 4-6* </font>
-                                                        </td>
-                                                        <td><?php echo $farm_grade; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th>เกรดเฉลี่ย</th>
-                                                        <th><?php echo $average_grade; ?></th>
+                                                        <td><strong>เกรดเฉลี่ยรวม</strong></td>
+                                                        <td><strong><?php echo number_format($average_grade, 2); ?></strong></td>
                                                     </tr>
                                                 </table>
                                             </td>
@@ -227,5 +198,4 @@ if (!$row_show) {
         </div>
     </div>
 </body>
-
 </html>
