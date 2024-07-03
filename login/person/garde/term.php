@@ -71,7 +71,11 @@ $row = mysqli_fetch_assoc($result);
                                         <input type="hidden" name="level" value="<?php echo $row["level"];?>">
                                         <div class="col-sm-4">
                                             <label for="semester_name">ชื่อภาคเรียน:</label>
-                                            <input type="text" id="semester_name" name="semester_name" class="form-control" required><br>
+                                            <select type="text" id="semester_name" name="semester_name" class="form-control" required>
+                                                <option value disabled selected>ชื่อภาคเรียน</option>
+                                                <option value="ภาคเรียนที่1">ภาคเรียนที่ 1</option>
+                                                <option value="ภาคเรียนที่2">ภาคเรียนที่ 2</option>
+                                            </select><br>
                                         </div>
                                         <div class="col-sm-4">
                                             <label for="start_date">วันเริ่มต้น:</label>

@@ -42,7 +42,7 @@ $row = mysqli_fetch_assoc($result);
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h5 class="m-0 text-dark">ผู้ดูแลระบบ</h5>
+                            <h5 class="m-0 text-dark">แก้ไขภาคเรียน</h5>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -63,7 +63,7 @@ $row = mysqli_fetch_assoc($result);
                                     <a href="../dashboard/home.php" class="btn btn-primary float-right"><i class='fas fa-arrow-left'></i> กลับ</a>
                                 </div>
                                 <div class="card-body">
-                                    <form action="term_add.php" method="POST">
+                                    <form action="update_term.php" method="POST">
                                         <input type="hidden" name="id_account" value="<?php echo $row["id_account"];?>">
                                         <input type="hidden" name="pre" value="<?php echo $row["pre"];?>">
                                         <input type="hidden" name="firstname" value="<?php echo $row["firstname"];?>"> 
@@ -71,7 +71,18 @@ $row = mysqli_fetch_assoc($result);
                                         <input type="hidden" name="level" value="<?php echo $row["level"];?>">
                                         <div class="col-sm-4">
                                             <label for="semester_name">ชื่อภาคเรียน:</label>
-                                            <input type="text" id="semester_name" name="semester_name" class="form-control" required><br>
+                                            <select  id ="semester_name" name="semester_name" class="form-control" >
+                                                <?php
+                                                    $semester_name = [
+                                                        'ภาคเรียนที่1' => 'ภาคเรียนที่1',
+                                                        'ภาคเรียนที่2' => 'ภาคเรียนที่2',                                                       
+                                                    ];
+                                                    foreach ($semester_name as $key => $value) {
+                                                        $selected = ($row["semester_name"] === $key) ? 'selected' : '';
+                                                        echo "<option value='$key' $selected>$value</option>";
+                                                    }
+                                                    ?>
+                                                </select><br>
                                         </div>
                                         <div class="col-sm-4">
                                             <label for="start_date">วันเริ่มต้น:</label>
@@ -87,7 +98,7 @@ $row = mysqli_fetch_assoc($result);
                                                 <!-- JavaScript จะเพิ่มตัวเลือกที่นี่ -->
                                             </select><br>
                                         </div>
-                                        <input type="submit" class="btn btn-success" value="เพิ่มภาคเรียน">
+                                        <input type="submit" class="btn btn-success" value="แก้ไขภาคเรียน">
                                     </form>
                                 </div>
                             </div>

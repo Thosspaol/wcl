@@ -86,45 +86,48 @@ $row_show = mysqli_fetch_assoc($result_show);
                                             </div>
                                             <div class="col-sm-3">
                                                 <label for="firstname">ชื่อ</label>
-                                                <input type="text" id="firstname" class="form-control" name="firstname" value="<?php echo $row["firstname"];?>">
+                                                <input type="text" id="firstname" class="form-control" name="firstname" value="<?php echo $row["firstname"]; ?>">
                                             </div>
                                             <div class="col-sm-3">
                                                 <label for="lastname">นามสกุล</label>
-                                                <input type="text" id="lastname" class="form-control" name="lastname" value="<?php echo $row["lastname"];?>">
+                                                <input type="text" id="lastname" class="form-control" name="lastname" value="<?php echo $row["lastname"]; ?>">
                                             </div>
                                             <div class="col-sm-3">
                                                 <label for="level">ชั้น</label>
-                                                <input type="text" id="level" class="form-control" name="level" value="<?php echo $row["level"];?>">
+                                                <input type="text" id="level" class="form-control" name="level" value="<?php echo $row["level"]; ?>">
                                             </div>
                                             <div class="col-sm-3">
                                                 <label for="subject_id">รหัสวิชา</label>
-                                                <input type="text" id="subject_id" name="subject_id" required class="form-control" value="<?php echo $row_show["subject"];?>"><br>
+                                                <input type="text" id="subject_id" name="subject_id" required class="form-control" value="<?php echo $row_show["subject"]; ?>"><br>
                                             </div>
                                             <div class="col-sm-3">
                                                 <label for="teacher_name">ชื่ออาจารย์</label>
-                                                <input type="text" id="teacher_name" name="teacher_name" required class="form-control" value="<?php echo $row_show["pre"];?> <?php echo $row_show["firstname"];?> <?php echo $row_show["lastname"];?>"><br>
+                                                <input type="text" id="teacher_name" name="teacher_name" required class="form-control" value="<?php echo $row_show["pre"]; ?> <?php echo $row_show["firstname"]; ?> <?php echo $row_show["lastname"]; ?>"><br>
                                             </div>
                                             <div class="col-sm-3">
                                                 <label for="semester_id">ภาคเรียน</label>
-                                                <input type="text" id ="semester_name" name="semester_id" class="form-control" value="<?php echo $row ["semester_name"];?>" readonly>
+                                                <input type="text" id="semester_name" name="semester_id" class="form-control" value="<?php echo $row["semester_name"]; ?>" readonly>
                                             </div>
                                             <div class="col-sm-3">
-                                                <label for="academic_year">ปีการศึกษา</label> 
-                                                <input type="text" id="academic_year" class="form-control" name="academic_year" value="<?php echo $row["academic_year"];?>" readonly>
+                                                <label for="academic_year">ปีการศึกษา</label>
+                                                <input type="text" id="academic_year" class="form-control" name="academic_year" value="<?php echo $row["academic_year"]; ?>" readonly>
                                             </div>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <label for="score">คะแนน เก็บ</label>
-                                            <input type="text" id="score" name="score" required class="form-control"><br>
+                                        <div class="form-row">
+                                            <div class="col-sm-4">
+                                                <label for="score">คะแนน เก็บ</label>
+                                                <input type="text" id="score" name="score" required class="form-control"><br>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="mitterm">คะแนน สอบกลางภาค</label>
+                                                <input type="text" id="mitterm" name="mitterm" required class="form-control"><br>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <label for="final">คะแนน สอบปลายภาค</label>
+                                                <input type="text" id="final" name="final" required class="form-control"><br>
+                                            </div>
                                         </div>
-                                        <div class="col-sm-4">
-                                            <label for="mitterm">คะแนน สอบกลางภาค</label>
-                                            <input type="text" id="mitterm" name="mitterm" required class="form-control"><br>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <label for="final">คะแนน สอบปลายภาค</label>
-                                            <input type="text" id="final" name="final" required class="form-control"><br>
-                                        </div>
+
                                         <div class="col-sm-6">
                                             <input type="submit" value="เพิ่มคะแนน" class="btn btn-success">
                                         </div>

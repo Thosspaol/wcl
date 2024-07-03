@@ -103,44 +103,67 @@ $row = $result->fetch_assoc();
                                     <h3 class="card-title" style="line-height:2.1rem;">แก้ไขข้อมูล</h3>
                                     <a href="../dashboard/home.php" class="btn btn-primary float-right"><i class='fas fa-arrow-left'></i> กลับ</a>
                                 </div><br>
-                                <form action="score_student.php" method="POST">
+                                <form action="update_grades.php" method="POST">
                                     <div class="card-body">
                                         <div class="form-row">
                                             <input type="hidden" name="id_account" value="<?php echo $row["id_account"]; ?>">
                                             <div class="col-sm-3">
                                                 <label for="pre">คำนำหน้า</label>
-                                                <input type="text" id="pre" name="pre" value="<?php echo $row["pre"]; ?>" required class="form-control"><br>
+                                                <input type="text" id="pre" name="pre" value="<?php echo $row["pre"]; ?>" required class="form-control"  readonly><br>
                                             </div>
                                             <div class="col-sm-3">
                                                 <label for="firstname">ชื่อ</label>
-                                                <input type="text" id="firstname" class="form-control" name="firstname" value="<?php echo $row["firstname"];?>">
+                                                <input type="text" id="firstname" class="form-control" name="firstname" value="<?php echo $row["firstname"];?>"  readonly>
                                             </div>
                                             <div class="col-sm-3">
                                                 <label for="lastname">นามสกุล</label>
-                                                <input type="text" id="lastname" class="form-control" name="lastname" value="<?php echo $row["lastname"];?>">
+                                                <input type="text" id="lastname" class="form-control" name="lastname" value="<?php echo $row["lastname"];?>"  readonly>
                                             </div>
                                             <div class="col-sm-3">
                                                 <label for="level">ชั้น</label>
-                                                <input type="text" id="level" class="form-control" name="level" value="<?php echo $row["level"];?>">
+                                                <input type="text" id="level" class="form-control" name="level" value="<?php echo $row["level"];?>"  readonly>
                                             </div>
                                             <div class="col-sm-3">
                                                 <label for="subject_id">รหัสวิชา</label>
-                                                <input type="text" id="subject_id" name="subject_id" required class="form-control" value="<?php echo $row["subject_id"];?>"><br>
+                                                <input type="text" id="subject_id" name="subject_id" required class="form-control" value="<?php echo $row["subject_id"];?>" readonly><br>
                                             </div>
                                             <div class="col-sm-3">
                                                 <label for="teacher_name">ชื่ออาจารย์</label>
-                                                <input type="text" id="teacher_name" name="teacher_name" required class="form-control" value="<?php echo $row["teacher_name"];?> "><br>
+                                                <input type="text" id="teacher_name" name="teacher_name" required class="form-control" value="<?php echo $row["teacher_name"];?> "  readonly><br>
                                             </div>
                                             <div class="col-sm-3">
                                                 <label for="semester_id">ภาคเรียน</label>
-                                                <input type="text" id ="semester_name" name="semester_id" class="form-control" value="<?php echo $row ["semester_id"];?>" readonly>
+                                                <select  id ="semester_name" name="semester_id" class="form-select" >
+                                                <?php
+                                                    $semester_id = [
+                                                        'ภาคเรียนที่1' => 'ภาคเรียนที่1',
+                                                        'ภาคเรียนที่2' => 'ภาคเรียนที่2',                                                       
+                                                    ];
+                                                    foreach ($semester_id as $key => $value) {
+                                                        $selected = ($row["semester_id"] === $key) ? 'selected' : '';
+                                                        echo "<option value='$key' $selected>$value</option>";
+                                                    }
+                                                    ?>
+                                                </select>
                                             </div>
                                             <div class="col-sm-3">
-                                                <label for="grade">คะแนน</label>
-                                                <input type="text" id="grade" name="grade" required class="form-control"><br>
+                                                <label for="academic_year">ปีการศึกษา</label>
+                                                <input type="text" id="academic_year" name="academic_year" required class="form-control" value="<?php echo $row["academic_year"];?> "  readonly><br>
                                             </div>
+                                            <div class="col-sm-4">
+                                            <label for="score">คะแนน เก็บ</label>
+                                            <input type="text" id="score" name="score" required class="form-control" value="<?php echo $row["score"];?> "><br>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label for="mitterm">คะแนน สอบกลางภาค</label>
+                                            <input type="text" id="mitterm" name="mitterm" required class="form-control" value="<?php echo $row["mitterm"];?> "><br>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label for="final">คะแนน สอบปลายภาค</label>
+                                            <input type="text" id="final" name="final" required class="form-control" value="<?php echo $row["final"];?> "><br>
+                                        </div>
                                             <div class="col-sm-3">
-                                                <input type="submit" value="เพิ่มคะแนน" class="btn btn-success">
+                                                <input type="submit" value="แก้ไขคะแนน" class="btn btn-success">
                                             </div>
                                         </div>
                                     </div>
