@@ -2,7 +2,7 @@
 session_start();
 $open_connect = 1;
 require('../../connect.php');
-$id_account = $_GET['id_account'];
+$id_account = $_SESSION['id_account'];
 
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
