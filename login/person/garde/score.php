@@ -3,7 +3,7 @@ session_start();
 $open_connect = 1;
 require('../../connect.php');
 
-$id = $_GET["id_account"];
+$id = $_GET["id"];
 $subject = $_SESSION["id_account"];  // เพิ่มการรับค่า subject จาก GET
 
 // ตรวจสอบการเชื่อมต่อ
@@ -12,7 +12,7 @@ if ($connect->connect_error) {
 }
 
 // ดึงข้อมูลจากตาราง semesters
-$sql = "SELECT * FROM semesters WHERE id_account = $id";
+$sql = "SELECT * FROM semesters WHERE id = $id";
 $result = mysqli_query($connect, $sql);
 $row = mysqli_fetch_assoc($result);
 
@@ -78,7 +78,7 @@ $row_show = mysqli_fetch_assoc($result_show);
                                 </div><br>
                                 <form action="score_student.php" method="POST">
                                     <div class="card-body">
-                                        <div class="form-row">
+                                        <div class="form-row">                                            
                                             <input type="hidden" name="id_account" value="<?php echo $row["id_account"]; ?>">
                                             <div class="col-sm-3">
                                                 <label for="pre">คำนำหน้า</label>
