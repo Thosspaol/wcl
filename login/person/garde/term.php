@@ -76,15 +76,7 @@ $row = mysqli_fetch_assoc($result);
                                                 <option value="ภาคเรียนที่1">ภาคเรียนที่ 1</option>
                                                 <option value="ภาคเรียนที่2">ภาคเรียนที่ 2</option>
                                             </select><br>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <label for="start_date">วันเริ่มต้น:</label>
-                                            <input type="date" id="start_date"  class="form-control" required><br>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <label for="end_date">วันสิ้นสุด:</label>
-                                            <input type="date" id="end_date"  class="form-control" required><br>
-                                        </div>
+                                        </div>                                       
                                         <div class="col-sm-4">
                                             <label for="academic_year">ปีการศึกษา:</label>
                                             <select id="academic_year" name="academic_year" class="form-control" required>
