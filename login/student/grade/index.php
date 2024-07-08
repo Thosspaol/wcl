@@ -7,29 +7,13 @@ $id_account = $_SESSION['id_account'];
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 try {
-    // Query to get student's name and other details from accounts table
-    $account_query = "
-        SELECT pre, firstname, lastname, level, semester_id
-        FROM grades
-        WHERE id_account = ?
-    ";
-    
-    if ($stmt = mysqli_prepare($connect, $account_query)) {
-        mysqli_stmt_bind_param($stmt, 'i', $id_account);
-        mysqli_stmt_execute($stmt);
-        $account_result = mysqli_stmt_get_result($stmt);
-        $account_info = mysqli_fetch_assoc($account_result);
-        mysqli_stmt_close($stmt);
-    } else {
-        throw new Exception("ไม่สามารถเตรียมการ statement ได้: " . mysqli_error($connect));
-    }
-
     // Query to join grades and subjects tables
     $query = "
-        SELECT s.name AS subject_name, g.grade_point
+        SELECT s.name AS subject_name, g.grade_point, g.semester_id, g.academic_year
         FROM grades g
         JOIN subjects s ON g.subject_id = s.id
         WHERE g.id_account = ?
+        ORDER BY g.academic_year, g.semester_id
     ";
 
     if ($stmt = mysqli_prepare($connect, $query)) {
@@ -40,13 +24,10 @@ try {
         if (mysqli_num_rows($result) == 0) {
             $message = "ไม่พบข้อมูลเกรดสำหรับนักเรียนนี้";
         } else {
-            $grades = mysqli_fetch_all($result, MYSQLI_ASSOC);
-            $total_grades = 0;
-            $total_subjects = count($grades);
-            foreach ($grades as $row_show) {
-                $total_grades += $row_show['grade_point'];
+            $grades = [];
+            while ($row = mysqli_fetch_assoc($result)) {
+                $grades[$row['academic_year']][$row['semester_id']][] = $row;
             }
-            $average_grade = $total_grades / $total_subjects;
         }
 
         mysqli_stmt_close($stmt);
@@ -154,41 +135,48 @@ try {
                             } elseif (isset($message)) {
                                 echo '<div class="alert alert-warning text-center" role="alert">' . $message . '</div>';
                             } else {
+                                foreach ($grades as $academic_year => $semesters) {
+                                    foreach ($semesters as $semester_id => $semester_grades) {
+                                        $total_grades = array_sum(array_column($semester_grades, 'grade_point'));
+                                        $total_subjects = count($semester_grades);
+                                        $average_grade = $total_grades / $total_subjects;
                             ?>
-                                <div class="table-container">
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                <table class="inner-table">
-                                                    <thead class="table-secondary">
-                                                        <tr>
-                                                            <th colspan="2">ผลการเรียน <?php echo $account_info["pre"];?> <?php echo $account_info["firstname"];?> <?php echo $account_info["lastname"];?> ชั้น <?php echo $account_info["level"];?> <?php echo $account_info["semester_id"];?></th>
-                                                        </tr>
-                                                        <tr>
-                                                            <th>วิชา</th>
-                                                            <th>เกรด</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <?php
-                                                    foreach ($grades as $row_show) {
-                                                        $subject_name = htmlspecialchars($row_show['subject_name']);
-                                                        $grade_point = number_format(htmlspecialchars($row_show['grade_point']), 2);
-                                                        echo "<tr>";
-                                                        echo "<td>$subject_name</td>";
-                                                        echo "<td>$grade_point</td>";
-                                                        echo "</tr>";
-                                                    }
-                                                    ?>
-                                                    <tr>
-                                                        <td><strong>เกรดเฉลี่ยรวม</strong></td>
-                                                        <td><strong><?php echo number_format($average_grade, 2); ?></strong></td>
-                                                    </tr>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </div>
+                                        <div class="table-container">
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <table class="inner-table">
+                                                            <thead class="table-secondary">
+                                                                <tr>
+                                                                    <th colspan="2">ผลการเรียน ปีการศึกษา <?php echo $academic_year; ?> ภาคเรียน <?php echo $semester_id; ?></th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>วิชา</th>
+                                                                    <th>เกรด</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <?php
+                                                            foreach ($semester_grades as $row_show) {
+                                                                $subject_name = htmlspecialchars($row_show['subject_name']);
+                                                                $grade_point = number_format(htmlspecialchars($row_show['grade_point']), 2);
+                                                                echo "<tr>";
+                                                                echo "<td>$subject_name</td>";
+                                                                echo "<td>$grade_point</td>";
+                                                                echo "</tr>";
+                                                            }
+                                                            ?>
+                                                            <tr>
+                                                                <td><strong>เกรดเฉลี่ยรวม</strong></td>
+                                                                <td><strong><?php echo number_format($average_grade, 2); ?></strong></td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
                             <?php
+                                    }
+                                }
                             }
                             ?>
                         </div>

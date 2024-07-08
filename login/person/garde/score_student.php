@@ -60,6 +60,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // ทำการ execute คำสั่ง SQL
     if (mysqli_query($connect, $sql1)) {
+        // ดึงข้อมูลเกรดทั้งหมดของนักเรียน
+        $sql2 = "SELECT grade_point FROM grades WHERE id_account = '$id'";
+        $result = mysqli_query($connect, $sql2);
+
+        // คำนวณ GPA
+        $total_points = 0;
+        $total_subjects = 0;
+        while ($row = mysqli_fetch_assoc($result)) {
+            $total_points += $row['grade_point'];
+            $total_subjects++;
+        }
+
+        if ($total_subjects > 0) {
+            $gpa = $total_points / $total_subjects;
+        } else {
+            $gpa = 0;
+        }
+
+        // อัปเดต GPA ในตาราง `account`
+        $sql3 = "UPDATE account SET gpa = '$gpa' WHERE id_account = '$id'";
+        mysqli_query($connect, $sql3);
+
         echo "<script>
         $(document).ready(function() {
             Swal.fire({
