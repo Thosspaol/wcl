@@ -17,11 +17,11 @@
         $lastname = $_POST['lastname'];
         $level = $_POST["level"];
         $semester_name = $_POST['semester_name'];
-        $start_date = $_POST['start_date'];
-        $end_date = $_POST['end_date'];
+        // $start_date = $_POST['start_date'];
+        // $end_date = $_POST['end_date'];
         $academic_year = $_POST['academic_year'];
 
-        $sql = "INSERT INTO semesters (id_account, pre, firstname, lastname, level, semester_name, start_date, end_date ,academic_year) VALUES ('$id_account', '$pre', '$firstname', '$lastname', '$level', '$semester_name', '$start_date', '$end_date','$academic_year')";
+        $sql = "INSERT INTO semesters (id_account, pre, firstname, lastname, level, semester_name,academic_year) VALUES ('$id_account', '$pre', '$firstname', '$lastname', '$level', '$semester_name','$academic_year')";
 
         if (mysqli_query($conn, $sql)) {
             // ดึง id ที่เพิ่มล่าสุด
