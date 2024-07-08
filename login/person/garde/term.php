@@ -79,11 +79,11 @@ $row = mysqli_fetch_assoc($result);
                                         </div>
                                         <div class="col-sm-4">
                                             <label for="start_date">วันเริ่มต้น:</label>
-                                            <input type="date" id="start_date" name="start_date" class="form-control" required><br>
+                                            <input type="date" id="start_date"  class="form-control" required><br>
                                         </div>
                                         <div class="col-sm-4">
                                             <label for="end_date">วันสิ้นสุด:</label>
-                                            <input type="date" id="end_date" name="end_date" class="form-control" required><br>
+                                            <input type="date" id="end_date"  class="form-control" required><br>
                                         </div>
                                         <div class="col-sm-4">
                                             <label for="academic_year">ปีการศึกษา:</label>
