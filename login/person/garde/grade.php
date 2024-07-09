@@ -164,6 +164,7 @@ try {
                                                                     <th>เกรด</th>
                                                                 </tr>
                                                             </thead>
+                                                            <tbody>
                                                             <?php
                                                             foreach ($semester_grades as $row_show) {
                                                                 $subject_name = htmlspecialchars($row_show['subject_name']);
@@ -178,6 +179,7 @@ try {
                                                                 <td><strong>เกรดเฉลี่ยรวม</strong></td>
                                                                 <td><strong><?php echo number_format($average_grade, 2); ?></strong></td>
                                                             </tr>
+                                                            </tbody>
                                                         </table>
                                                     </td>
                                                 </tr>
@@ -197,9 +199,11 @@ try {
                                                             <th>GPA รวม</th>
                                                         </tr>
                                                     </thead>
+                                                    <tbody>
                                                     <tr>
                                                         <td><strong><?php echo number_format($gpa, 2); ?></strong></td>
                                                     </tr>
+                                                    </tbody>
                                                 </table>
                                             </td>
                                         </tr>

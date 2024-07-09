@@ -94,30 +94,26 @@ $row = mysqli_fetch_assoc($result);
         </div>
     </div>
     <script>
-        dayjs.locale('th');
-        document.getElementById('start_date').addEventListener('input', function (e) {
-            this.value = dayjs(this.value).format('YYYY-MM-DD');
-        });
-        document.getElementById('end_date').addEventListener('input', function (e) {
-            this.value = dayjs(this.value).format('YYYY-MM-DD');
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            dayjs.locale('th');
 
-        // เพิ่มปีการศึกษาให้เป็นปี พ.ศ.
-        const currentYear = dayjs().year();
-        const startYear = currentYear + 543; // ปี พ.ศ. ปัจจุบัน
-        const endYear = startYear + 10; // ปี พ.ศ. ล่วงหน้า 5 ปี
-        const pastYears = 10; // ปี พ.ศ. ย้อนหลัง 10 ปี
-        const select = document.getElementById('academic_year');
+            // เพิ่มปีการศึกษาให้เป็นปี พ.ศ.
+            const currentYear = dayjs().year();
+            const startYear = currentYear + 543; // ปี พ.ศ. ปัจจุบัน
+            const endYear = startYear + 10; // ปี พ.ศ. ล่วงหน้า 10 ปี
+            const pastYears = 10; // ปี พ.ศ. ย้อนหลัง 10 ปี
+            const select = document.getElementById('academic_year');
 
-        for (let year = startYear - pastYears; year <= endYear; year++) {
-            const option = document.createElement('option');
-            option.value = year;
-            option.text = year;
-            if (year === startYear) {
-                option.selected = true;
+            for (let year = startYear - pastYears; year <= endYear; year++) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.text = year;
+                if (year === startYear) {
+                    option.selected = true;
+                }
+                select.appendChild(option);
             }
-            select.appendChild(option);
-        }
+        });
     </script>
 </body>
 
