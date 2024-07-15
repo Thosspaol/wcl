@@ -107,7 +107,8 @@
       let teacherItems = document.getElementsByClassName('teacher-item');
       for (let i = 0; i < teacherItems.length; i++) {
         let teacherName = teacherItems[i].textContent.toLowerCase();
-        if (teacherName.includes(input)) {
+        let subjectName = teacherItems[i].getAttribute('data-subject').toLowerCase();
+        if (teacherName.includes(input) || subjectName.includes(input)) {
           teacherItems[i].style.display = '';
         } else {
           teacherItems[i].style.display = 'none';
@@ -129,70 +130,70 @@
   </table>
   <p></p>
   <div class="container">
-    <input type="text" id="searchInput" class="form-control search-bar" onkeyup="searchTeachers()" placeholder="ค้นหาชื่อครู">
+    <input type="text" id="searchInput" class="form-control search-bar" onkeyup="searchTeachers()" placeholder="ค้นหาชื่อครูหรือกลุ่มสาระการเรียนรู้">
     
     <div class="subject-header">คณิตศาสตร์</div>
     <div class="teacher-list">
-      <div class="teacher-item"><a href="#table_4" class="btn btn-success">ครูจุไรรัตน์ พันธเสน</a></div>
-      <div class="teacher-item"><a href="#table_11" class="btn btn-success">ครูเพ็ญศรี ซุมทอง</a></div>
-      <div class="teacher-item"><a href="#table_1" class="btn btn-success">ครูระเบียบ วอทอง</a></div>
-      <div class="teacher-item"><a href="#table_19" class="btn btn-success">ครูสมบูรณ์ สุขสวัสดิ</a></div>
+      <div class="teacher-item" data-subject="คณิตศาสตร์"><a href="#table_4" class="btn btn-success">ครูจุไรรัตน์ พันธเสน</a></div>
+      <div class="teacher-item" data-subject="คณิตศาสตร์"><a href="#table_11" class="btn btn-success">ครูเพ็ญศรี ซุมทอง</a></div>
+      <div class="teacher-item" data-subject="คณิตศาสตร์"><a href="#table_1" class="btn btn-success">ครูระเบียบ วอทอง</a></div>
+      <div class="teacher-item" data-subject="คณิตศาสตร์"><a href="#table_19" class="btn btn-success">ครูสมบูรณ์ สุขสวัสดิ</a></div>
     </div>
     
     <div class="subject-header">วิทยาศาสตร์</div>
     <div class="teacher-list">
-      <div class="teacher-item"><a href="#table_2" class="btn btn-success">ครูช่อทิพย์ อาลากุล</a></div>
-      <div class="teacher-item"><a href="#table_6" class="btn btn-success">ครูสุดารัตน์ วรวลัญช์</a></div>
+      <div class="teacher-item" data-subject="วิทยาศาสตร์"><a href="#table_2" class="btn btn-success">ครูช่อทิพย์ อาลากุล</a></div>
+      <div class="teacher-item" data-subject="วิทยาศาสตร์"><a href="#table_6" class="btn btn-success">ครูสุดารัตน์ วรวลัญช์</a></div>
     </div>
         
     
     <div class="subject-header">ภาษาอังกฤษ</div>
     <div class="teacher-list">
-      <div class="teacher-item"><a href="#table_8" class="btn btn-success">ครูทิพปภา ไชยเทพ</a></div>
-      <div class="teacher-item"><a href="#table_5" class="btn btn-success">ครูนิวัช ทองชุม</a></div>
+      <div class="teacher-item" data-subject="ภาษาอังกฤษ"><a href="#table_8" class="btn btn-success">ครูทิพปภา ไชยเทพ</a></div>
+      <div class="teacher-item" data-subject="ภาษาอังกฤษ"><a href="#table_5" class="btn btn-success">ครูนิวัช ทองชุม</a></div>
     </div>
     
     <div class="subject-header">พละศึกษา</div>
     <div class="teacher-list">
-      <div class="teacher-item"><a href="#table_7" class="btn btn-success">ครูสมชาย พูลสวัสดิ์</a></div>
-      <div class="teacher-item"><a href="#table_26" class="btn btn-success">ครูอุไท ดวงดี</a></div>
-      <div class="teacher-item"><a href="#table_12" class="btn btn-success">ครูอรพิณ แสงทอง</a></div>
+      <div class="teacher-item" data-subject="พละศึกษา"><a href="#table_7" class="btn btn-success">ครูสมชาย พูลสวัสดิ์</a></div>
+      <div class="teacher-item" data-subject="พละศึกษา"><a href="#table_26" class="btn btn-success">ครูอุไท ดวงดี</a></div>
+      <div class="teacher-item" data-subject="พละศึกษา"><a href="#table_12" class="btn btn-success">ครูอรพิณ แสงทอง</a></div>
     </div>
     
     <div class="subject-header">ภาษาไทย</div>
     <div class="teacher-list">
-      <div class="teacher-item"><a href="#table_9" class="btn btn-success">ครูเนาวรัตน์ สองห้อง</a></div>
-      <div class="teacher-item"><a href="#table_22" class="btn btn-success">ครูพรเทพ จิตอาสา</a></div>
+      <div class="teacher-item" data-subject="ภาษาไทย"><a href="#table_9" class="btn btn-success">ครูเนาวรัตน์ สองห้อง</a></div>
+      <div class="teacher-item" data-subject="ภาษาไทย"><a href="#table_22" class="btn btn-success">ครูพรเทพ จิตอาสา</a></div>
     </div>
     
     <div class="subject-header">สังคมศึกษา</div>
     <div class="teacher-list">
-      <div class="teacher-item"><a href="#table_10" class="btn btn-success">ครูนิรุต ของดี</a></div>
-      <div class="teacher-item"><a href="#table_17" class="btn btn-success">ครูน้ำทิพย์ สวัสดี</a></div>
-      <div class="teacher-item"><a href="#table_25" class="btn btn-success">ครูบงกช จันทร์เกษม</a></div>
-      <div class="teacher-item"><a href="#table_18" class="btn btn-success">ครูพวงเพ็ญ ศรึสุข</a></div>
-      <div class="teacher-item"><a href="#table_23" class="btn btn-success">ครูมิ่งขวัญ ยั่งยืน</a></div>
-      <div class="teacher-item"><a href="#table_14" class="btn btn-success">ครูเหรีญทอง ประวัติดี</a></div>
+      <div class="teacher-item" data-subject="สังคมศึกษา"><a href="#table_10" class="btn btn-success">ครูนิรุต ของดี</a></div>
+      <div class="teacher-item" data-subject="สังคมศึกษา"><a href="#table_17" class="btn btn-success">ครูน้ำทิพย์ สวัสดี</a></div>
+      <div class="teacher-item" data-subject="สังคมศึกษา"><a href="#table_25" class="btn btn-success">ครูบงกช จันทร์เกษม</a></div>
+      <div class="teacher-item" data-subject="สังคมศึกษา"><a href="#table_18" class="btn btn-success">ครูพวงเพ็ญ ศรึสุข</a></div>
+      <div class="teacher-item" data-subject="สังคมศึกษา"><a href="#table_23" class="btn btn-success">ครูมิ่งขวัญ ยั่งยืน</a></div>
+      <div class="teacher-item" data-subject="สังคมศึกษา"><a href="#table_14" class="btn btn-success">ครูเหรีญทอง ประวัติดี</a></div>
     </div>
 
     <div class="subject-header">ศิลปะ</div>
       <div class="teacher-list">
-        <div class="teacher-item"><a href="#table_27" class="btn btn-success">ครูเขมทัต มหาทัย ณ อยุธยา</a></div>
-        <div class="teacher-item"><a href="#table_15" class="btn btn-success">ครูบรรพต มานะ</a></div>
+        <div class="teacher-item" data-subject="ศิลปะ"><a href="#table_27" class="btn btn-success">ครูเขมทัต มหาทัย ณ อยุธยา</a></div>
+        <div class="teacher-item" data-subject="ศิลปะ"><a href="#table_15" class="btn btn-success">ครูบรรพต มานะ</a></div>
     </div>
 
     <div class="subject-header">การงานอาชีพ</div>
       <div class="teacher-list">
-        <div class="teacher-item"><a href="#table_16" class="btn btn-success">ครูกำไลทิพย์ พจมาน</a></div>
-        <div class="teacher-item"><a href="#table_3" class="btn btn-success">ครูปุณณดา เล็กสราวุธ</a></div>
-        <div class="teacher-item"><a href="#table_21" class="btn btn-success">ครูสมภพ มากมี</a></div>
+        <div class="teacher-item" data-subject="การงานอาชีพ"><a href="#table_16" class="btn btn-success">ครูกำไลทิพย์ พจมาน</a></div>
+        <div class="teacher-item" data-subject="การงานอาชีพ"><a href="#table_3" class="btn btn-success">ครูปุณณดา เล็กสราวุธ</a></div>
+        <div class="teacher-item" data-subject="การงานอาชีพ"><a href="#table_21" class="btn btn-success">ครูสมภพ มากมี</a></div>
     </div>
     
     <div class="subject-header">กิจกรรมพัฒนาผู้เรียน</div>
     <div class="teacher-list">      
-      <div class="teacher-item"><a href="#table_13" class="btn btn-success">ครูดวงพร งามเพ็ญ</a></div>                      
-      <div class="teacher-item"><a href="#table_20" class="btn btn-success">ครูปวิณ ปมปรีดี</a></div>
-      <div class="teacher-item"><a href="#table_24" class="btn btn-success">ครูเอกสิทธิ์ เพิ่มพูล</a></div>
+      <div class="teacher-item" data-subject="กิจกรรมพัฒนาผู้เรียน"><a href="#table_13" class="btn btn-success">ครูดวงพร งามเพ็ญ</a></div>                      
+      <div class="teacher-item" data-subject="กิจกรรมพัฒนาผู้เรียน"><a href="#table_20" class="btn btn-success">ครูปวิณ ปมปรีดี</a></div>
+      <div class="teacher-item" data-subject="กิจกรรมพัฒนาผู้เรียน"><a href="#table_24" class="btn btn-success">ครูเอกสิทธิ์ เพิ่มพูล</a></div>
 
     </div>
 

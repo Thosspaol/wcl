@@ -23,12 +23,12 @@ if ($result->num_rows > 0) {
     $newsCount = $row['count'];
 }
 
-$sql = "SELECT COUNT(*) as count FROM grade";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    $row = $result->fetch_assoc();
-    $gradeCount = $row['count'];
-}
+// $sql = "SELECT COUNT(*) as count FROM grade";
+// $result = $conn->query($sql);
+// if ($result->num_rows > 0) {
+//     $row = $result->fetch_assoc();
+//     $gradeCount = $row['count'];
+// }
 
 $sql = "SELECT role_account, COUNT(*) as count FROM account WHERE role_account = 'student'";
 $result = $conn->query($sql);

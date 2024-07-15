@@ -9,7 +9,7 @@ $open_connect = 1;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>เพิ่มบุคลากร | Senate</title>
+    <title>PDF | Senate</title>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf_viewer.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/senate.png">
@@ -35,11 +35,11 @@ $open_connect = 1;
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h5 class="m-0 text-dark">เพิ่มบุคลากรเจ้าหน้าที่</h5>
+                            <h5 class="m-0 text-dark">PDF</h5>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item active">เจ้าหน้าที่</li>
+                                <li class="breadcrumb-item active">นักเรียน</li>
                             </ol>
                         </div>
                     </div>
@@ -50,7 +50,7 @@ $open_connect = 1;
                     <div class="row">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title" style="line-height:2.1rem;">กรอกข้อมูล</h3>
+                                <h3 class="card-title" style="line-height:2.1rem;">ไฟล์ทั้งหมด</h3>
                                 <a href="../dashboard/home.php" class="btn btn-primary float-right"><i class="fas fa-arrow-left"></i> กลับ</a>
                             </div>
                             <div class="card-body">                               
@@ -127,7 +127,7 @@ $open_connect = 1;
                                 }
 
                                 // แสดงรายการไฟล์ที่อัปโหลดทั้งหมด
-                                echo "<h3 class='mt-4'>ไฟล์ที่อัปโหลด:</h3>";
+                                echo "<h3 class='mt-4'>อัปโหลดไฟล์:</h3>";
                                 echo "<table id='uploadedFilesTable' class='table table-striped'>";
                                 echo "<thead><tr><th>ชื่อไฟล์</th><th>เวลาที่อัปโหลด</th><th>การกระทำ</th></tr></thead>";
                                 echo "<tbody>";
