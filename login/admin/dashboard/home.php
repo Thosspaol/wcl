@@ -93,7 +93,7 @@ $conn->close();
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 col-6">
                             <div class="small-box bg-info">
                                 <div class="inner">
                                     <h3><?php echo $totalCount; ?></h3>
@@ -105,7 +105,7 @@ $conn->close();
                                 <a href="../amount/all_members.php" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 col-6">
                             <div class="small-box bg-success">
                                 <div class="inner">
                                     <h3><?php echo $newsCount; ?></h3>
@@ -117,19 +117,8 @@ $conn->close();
                                 <a href="../amount/news_members.php" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-6">
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3><?php echo $gradeCount; ?></h3>
-                                    <p>ผลการเรียนทุกชั้นปี</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-clipboard"></i>
-                                </div>
-                                <a href="../amount/grade_student.php" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
+                        
+                        <div class="col-lg-4 col-6">
                             <div class="small-box bg-secondary">
                                 <div class="inner">
                                     <h3><?php echo $studentCount; ?></h3>
