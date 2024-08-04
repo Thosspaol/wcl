@@ -4,6 +4,7 @@
 session_start();
 $open_connect = 1;
 require('../../connect.php');
+
 $pre = $_POST["pre"];
 $firstname = $_POST["firstname"];
 $lastname = $_POST["lastname"];
@@ -13,42 +14,38 @@ $role_account = $_POST["role_account"];
 $level = $_POST["level"];
 $id_account = $_POST["id_account"];
 $images_account = $_POST["images_account"];
-$subject =$_POST["subject"];
+$subject = $_POST["subject"];
 
-
-
-
-$sql2="UPDATE account SET pre = '$pre',firstname = '$firstname',lastname = '$lastname',id_card = '$id_card',birthday = '$birthday',role_account = '$role_account',level = '$level' ,images_account = '$images_account', subject = '$subject', WHERE id_account = $id_account ";
+$sql2 = "UPDATE account SET pre = '$pre', firstname = '$firstname', lastname = '$lastname', id_card = '$id_card', birthday = '$birthday', role_account = '$role_account', level = '$level', images_account = '$images_account', subject = '$subject' WHERE id_account = $id_account";
 $result2 = mysqli_query($connect, $sql2);
 
-
 if ($result2) {
-    
     echo "<script>
     $(document).ready(function() {
         Swal.fire({
             title: 'แก้ไขสำเร็จ!!',
-            text: 'SENATE',
+            text: '',
             icon: 'success',
             timer: 5000,
             showConfirmButton: false
         });
     })
 </script>";
-header("refresh:1.5; url=../dashboard/home.php");
+    header("refresh:1.5; url=../dashboard/home.php");
+    exit;
 } else {
-   
     echo "<script>
     $(document).ready(function() {
         Swal.fire({
             title: 'แก้ไขไม่สำเร็จ!!',
-            text: 'SENATE',
-            icon: 'danger',
+            text: '',
+            icon: 'error',
             timer: 5000,
             showConfirmButton: false
         });
     })
 </script>";
-    header("location:../dashboard/home.php");
+    header("refresh:1.5; url=../dashboard/home.php");
+    exit;
 }
 ?>
