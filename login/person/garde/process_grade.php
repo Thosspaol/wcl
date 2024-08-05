@@ -46,7 +46,7 @@ if ($result2) {
     $(document).ready(function() {
         Swal.fire({
             title: 'บันทึกสำเร็จ!!',
-            text: 'SENATE',
+            text: '',
             icon: 'success',
             timer: 5000,
             showConfirmButton: false
@@ -59,7 +59,7 @@ if ($result2) {
     $(document).ready(function() {
         Swal.fire({
             title: 'ออกเกรดคนนี้แล้ว!!',
-            text: 'SENATE',
+            text: '',
             icon: 'error',
             timer: 5000,
             showConfirmButton: false

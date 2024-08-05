@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $(document).ready(function() {
             Swal.fire({
                 title: 'บันทึกสำเร็จ!!',
-                text: 'SENATE',
+                text: '',
                 icon: 'success',
                 timer: 5000,
                 showConfirmButton: false

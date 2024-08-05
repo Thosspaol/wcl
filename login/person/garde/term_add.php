@@ -30,7 +30,7 @@
             $(document).ready(function() {
                 Swal.fire({
                     title: 'บันทึกสำเร็จ!!',
-                    text: 'SENATE',
+                    text: '',
                     icon: 'success',
                     timer: 1000,
                     showConfirmButton: false
