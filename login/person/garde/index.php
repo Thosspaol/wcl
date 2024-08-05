@@ -118,44 +118,49 @@ try {
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
     <script>
-        $(document).ready(function() {
-            var table = $('#Table').DataTable({
-                columnDefs: [{
-                    "defaultContent": "-",
-                    "targets": "_all"
-                }],
-                bLengthChange: true,
-                lengthMenu: [[10, 20, -1], [10, 50, "All"]],
-                bFilter: true,
-                bSort: true,
-                bPaginate: true,
-                language: {
-                    "decimal": "",
-                    "emptyTable": "No data available in table",
-                    "info": "แสดง _START_ - _END_ จาก _TOTAL_ รายการ",
-                    "infoEmpty": "ไม่พบข้อมูลที่ต้องการ",
-                    "infoFiltered": "(filtered from _MAX_ total entries)",
-                    "infoPostFix": "",
-                    "thousands": ",",
-                    "lengthMenu": "แสดง _MENU_ แถว",
-                    "loadingRecords": "Loading...",
-                    "processing": "",
-                    "search": "ค้นหา:",
-                    "zeroRecords": "ไม่พบข้อมูลที่ต้องการ",
-                    "paginate": {
-                        "next": "ถัดไป",
-                        "previous": "ก่อนหน้านี้"
-                    },
-                    "aria": {
-                        "orderable": "Order by this column",
-                        "orderableReverse": "Reverse order this column"
-                    }
+    $(document).ready(function() {
+        var table = $('#Table').DataTable({
+            columnDefs: [{
+                "defaultContent": "-",
+                "targets": "_all"
+            }],
+            bLengthChange: true,
+            lengthMenu: [[10, 20, -1], [10, 50, "All"]],
+            bFilter: true,
+            bSort: true,
+            bPaginate: true,
+            language: {
+                "decimal": "",
+                "emptyTable": "No data available in table",
+                "info": "แสดง _START_ - _END_ จาก _TOTAL_ รายการ",
+                "infoEmpty": "ไม่พบข้อมูลที่ต้องการ",
+                "infoFiltered": "(filtered from _MAX_ total entries)",
+                "infoPostFix": "",
+                "thousands": ",",
+                "lengthMenu": "แสดง _MENU_ แถว",
+                "loadingRecords": "Loading...",
+                "processing": "",
+                "search": "ค้นหา:",
+                "zeroRecords": "ไม่พบข้อมูลที่ต้องการ",
+                "paginate": {
+                    "next": "ถัดไป",
+                    "previous": "ก่อนหน้านี้"
+                },
+                "aria": {
+                    "orderable": "Order by this column",
+                    "orderableReverse": "Reverse order this column"
                 }
-            });
-
-           
+            }
         });
-    </script>
+
+        // ฟังก์ชั่นการกรองตามระดับชั้น
+        $('#levelFilter').on('change', function() {
+            var selectedLevel = $(this).val();
+            table.column(5).search(selectedLevel).draw(); // กรองข้อมูลตามคอลัมน์ที่ 5 (ระดับชั้น)
+        });
+    });
+</script>
+
     <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="../assets/js/adminlte.min.js"></script>
     <script src="../assets/js/login.js"></script>
