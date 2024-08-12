@@ -21,7 +21,7 @@ if($save){
     $(document).ready(function() {
         Swal.fire({
             title: 'บันทึกสำเร็จ!!',
-            text: 'WCL',
+            text: '',
             icon: 'success',
             timer: 5000,
             showConfirmButton: false
