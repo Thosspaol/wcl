@@ -25,9 +25,17 @@ try {
             $message = "ไม่พบข้อมูลเกรดสำหรับนักเรียนนี้";
         } else {
             $grades = [];
+            $total_grade_points = 0;
+            $total_subjects = 0;
+
             while ($row = mysqli_fetch_assoc($result)) {
                 $grades[$row['academic_year']][$row['semester_id']][] = $row;
+                $total_grade_points += $row['grade_point'];
+                $total_subjects++;
             }
+
+            // Calculate GPA
+            $gpa = $total_subjects > 0 ? $total_grade_points / $total_subjects : 0;
         }
 
         mysqli_stmt_close($stmt);
@@ -74,6 +82,7 @@ try {
         table {
             width: 80%;
             border-collapse: collapse;
+            margin-bottom: 20px;
         }
 
         table,
@@ -155,6 +164,7 @@ try {
                                                                     <th>เกรด</th>
                                                                 </tr>
                                                             </thead>
+                                                            <tbody>
                                                             <?php
                                                             foreach ($semester_grades as $row_show) {
                                                                 $subject_name = htmlspecialchars($row_show['subject_name']);
@@ -169,6 +179,7 @@ try {
                                                                 <td><strong>เกรดเฉลี่ยรวม</strong></td>
                                                                 <td><strong><?php echo number_format($average_grade, 2); ?></strong></td>
                                                             </tr>
+                                                            </tbody>
                                                         </table>
                                                     </td>
                                                 </tr>
@@ -177,6 +188,28 @@ try {
                             <?php
                                     }
                                 }
+                            ?>
+                                <div class="table-container">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <table class="inner-table">
+                                                    <thead class="table-secondary">
+                                                        <tr>
+                                                            <th>GPA รวม</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td><strong><?php echo number_format($gpa, 2); ?></strong></td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            <?php
                             }
                             ?>
                         </div>

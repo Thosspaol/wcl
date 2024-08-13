@@ -58,7 +58,7 @@ if(!isset($_SESSION['id_account']) || !isset($_SESSION['role_account'])){//ถ�
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item active">เจ้าหน้าที่</li>
+                            <li class="breadcrumb-item active">นักเรียน</li>
                         </ol>
                     </div>
                 </div>

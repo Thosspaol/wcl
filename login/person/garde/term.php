@@ -76,15 +76,7 @@ $row = mysqli_fetch_assoc($result);
                                                 <option value="ภาคเรียนที่1">ภาคเรียนที่ 1</option>
                                                 <option value="ภาคเรียนที่2">ภาคเรียนที่ 2</option>
                                             </select><br>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <label for="start_date">วันเริ่มต้น:</label>
-                                            <input type="date" id="start_date" name="start_date" class="form-control" required><br>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <label for="end_date">วันสิ้นสุด:</label>
-                                            <input type="date" id="end_date" name="end_date" class="form-control" required><br>
-                                        </div>
+                                        </div>                                       
                                         <div class="col-sm-4">
                                             <label for="academic_year">ปีการศึกษา:</label>
                                             <select id="academic_year" name="academic_year" class="form-control" required>
@@ -102,30 +94,26 @@ $row = mysqli_fetch_assoc($result);
         </div>
     </div>
     <script>
-        dayjs.locale('th');
-        document.getElementById('start_date').addEventListener('input', function (e) {
-            this.value = dayjs(this.value).format('YYYY-MM-DD');
-        });
-        document.getElementById('end_date').addEventListener('input', function (e) {
-            this.value = dayjs(this.value).format('YYYY-MM-DD');
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            dayjs.locale('th');
 
-        // เพิ่มปีการศึกษาให้เป็นปี พ.ศ.
-        const currentYear = dayjs().year();
-        const startYear = currentYear + 543; // ปี พ.ศ. ปัจจุบัน
-        const endYear = startYear + 10; // ปี พ.ศ. ล่วงหน้า 5 ปี
-        const pastYears = 10; // ปี พ.ศ. ย้อนหลัง 10 ปี
-        const select = document.getElementById('academic_year');
+            // เพิ่มปีการศึกษาให้เป็นปี พ.ศ.
+            const currentYear = dayjs().year();
+            const startYear = currentYear + 543; // ปี พ.ศ. ปัจจุบัน
+            const endYear = startYear + 10; // ปี พ.ศ. ล่วงหน้า 10 ปี
+            const pastYears = 10; // ปี พ.ศ. ย้อนหลัง 10 ปี
+            const select = document.getElementById('academic_year');
 
-        for (let year = startYear - pastYears; year <= endYear; year++) {
-            const option = document.createElement('option');
-            option.value = year;
-            option.text = year;
-            if (year === startYear) {
-                option.selected = true;
+            for (let year = startYear - pastYears; year <= endYear; year++) {
+                const option = document.createElement('option');
+                option.value = year;
+                option.text = year;
+                if (year === startYear) {
+                    option.selected = true;
+                }
+                select.appendChild(option);
             }
-            select.appendChild(option);
-        }
+        });
     </script>
 </body>
 

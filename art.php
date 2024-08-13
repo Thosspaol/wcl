@@ -139,7 +139,7 @@ while ($row = $artManagers->fetch_assoc()) {
                 <img src="uploads/<?php echo $row['images']; ?>" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $row['pres'] . ' ' . $row['firsts'] . ' ' . $row['lasts']; ?></h5>
-                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้การงานอาชีพ</p>
+                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้ศิลปะ</p>
                 </div>
               </div>
             </div>
@@ -153,7 +153,7 @@ while ($row = $artManagers->fetch_assoc()) {
                 <img src="uploads/<?php echo $row['images']; ?>" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $row['pres'] . ' ' . $row['firsts'] . ' ' . $row['lasts']; ?></h5>
-                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้การงานอาชีพ</p>
+                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้ศิลปะ</p>
                 </div>
               </div>
             </div>
@@ -167,7 +167,7 @@ while ($row = $artManagers->fetch_assoc()) {
                 <img src="uploads/<?php echo $row['images']; ?>" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $row['pres'] . ' ' . $row['firsts'] . ' ' . $row['lasts']; ?></h5>
-                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้การงานอาชีพ</p>
+                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้ศิลปะ</p>
                 </div>
               </div>
             </div>
