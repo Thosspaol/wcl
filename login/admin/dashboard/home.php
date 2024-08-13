@@ -117,15 +117,26 @@ $conn->close();
                                 <a href="../amount/news_members.php" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
-
+<<<<<<< HEAD
                         
                         <div class="col-lg-4 col-6">
                             <div class="small-box bg-secondary">
-
-                        
+=======
+                        <!-- <div class="col-lg-3 col-6">
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3><?php echo $gradeCount; ?></h3>
+                                    <p>ผลการเรียนทุกชั้นปี</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-clipboard"></i>
+                                </div>
+                                <a href="../amount/grade_student.php" class="small-box-footer">ดูเพิ่มเติม <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div> -->
                         <div class="col-lg-4 col-6">
                             <div class="small-box bg-warning">
-
+>>>>>>> bada05f257e7a5d14572e293f171ad75b8faedc1
                                 <div class="inner">
                                     <h3><?php echo $studentCount; ?></h3>
                                     <p>นักเรียนทั้งหมด</p>
