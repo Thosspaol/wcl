@@ -43,7 +43,7 @@ require('../../connect.php');
                             //  ];
                 
                              $password_account = $password_account1; //นำรหัสผ่านที่ต่อกับค่าเกลือแล้ว เข้ารหัสด้วยวิธี ARGON2ID
-                             $query_create_account = "INSERT INTO account VALUES (NULL, '$pre','$firstname','$lastname','$id_card', '$birthday', '$password_account', '$level', '$role_account', 'default_images_account.jpg',0 , 0, NULL,'$subject')";
+                             $query_create_account = "INSERT INTO account VALUES (NULL, '$pre','$firstname','$lastname','$id_card', '$birthday', '$password_account', '$level', '$role_account', 'default_images_account.jpg',0 , 0, NULL,'$subject',NULL)";
                              $call_back_create_account = mysqli_query($connect, $query_create_account);
                              if($call_back_create_account){
                                 echo "<script>

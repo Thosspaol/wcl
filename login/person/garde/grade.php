@@ -157,7 +157,7 @@ try {
                                                         <table class="inner-table">
                                                             <thead class="table-secondary">
                                                                 <tr>
-                                                                    <th colspan="2">ผลการเรียน ปีการศึกษา <?php echo $academic_year; ?> ภาคเรียน <?php echo $semester_id; ?></th>
+                                                                    <th colspan="2">ผลการเรียน ปีการศึกษา <?php echo $academic_year; ?>  <?php echo $semester_id; ?></th>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>วิชา</th>

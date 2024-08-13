@@ -58,14 +58,14 @@ $finishCount = 0;
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css">
     <!-- Favicons -->
 
-    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/favicons/senate.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicons/senate.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicons/senate.png">
-    <link rel="manifest" href="../../assets/img/favicons/senate.png">
-    <link rel="mask-icon" href="../../assets/img/favicons/senate.png" color="#5bbad5">
-    <link rel="shortcut icon" href="../../assets/img/favicons/senate.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/img/วัดช่องลม.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicons/วัดช่องลม.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/img/favicons/วัดช่องลม.png">
+    <link rel="manifest" href="../../assets/img/favicons/วัดช่องลม.png">
+    <link rel="mask-icon" href="../../assets/img/favicons/วัดช่องลม.png" color="#5bbad5">
+    <link rel="shortcut icon" href="../../assets/img/favicons/วัดช่องลม.png">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="../../assets/img/favicons/senate.png">
+    <meta name="msapplication-config" content="../../assets/img/favicons/วัดช่องลม.png">
     <meta name="theme-color" content="#ffffff">
     <!-- stylesheet -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mali">

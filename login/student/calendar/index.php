@@ -31,12 +31,8 @@ setlocale(LC_TIME, 'th_TH.UTF-8');
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./fullcalendar/lib/main.min.js"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicons/senate.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicons/senate.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicons/senate.png">
-    <link rel="manifest" href="../assets/img/favicons/senate.png">
-    <link rel="mask-icon" href="../assets/img/favicons/senate.png" color="#5bbad5">
-    <link rel="shortcut icon" href="../assets/img/favicons/senate.png">
+    <link href="../assets/img/โลโก้วัดช่องลม.png" rel="icon">
+    <link href="../assets/img/โลโก้วัดช่องลม (1).png" rel="apple-touch-icon">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="../assets/img/favicons/senate.png">
     <meta name="theme-color" content="#ffffff">

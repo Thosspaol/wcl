@@ -4,12 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="admin/assets/img/favicons/senate.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="admin/assets/img/favicons/senate.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="admin/assets/img/favicons/senate.png">
-    <link rel="manifest" href="admin/assets/img/favicons/senate.png">
-    <link rel="mask-icon" href="admin/assets/img/favicons/senate.png" color="#5bbad5">
-    <link rel="shortcut icon" href="admin/assets/img/favicons/senate.png">
+    <link href="../assets/img/โลโก้วัดช่องลม.png" rel="icon">
+    <link href="../assets/img/โลโก้วัดช่องลม (1).png" rel="apple-touch-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#da532c">
