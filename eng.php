@@ -98,7 +98,7 @@ while ($row = $engManagers->fetch_assoc()) {
               <a href="society.php" class="dropdown-item">สังคมศึกษา ศาสนาและวัฒนธรรม</a>
               <a href="eng.php" class="dropdown-item">ภาษาต่างประเทศ</a>
               <a href="art.php" class="dropdown-item">ศิลปะ</a>
-              <a href="health.php" class="dropdown-item">สุขศึกษาและพละศึกษา</a>
+              <a href="health.php" class="dropdown-item">สุขศึกษาและพลศึกษา</a>
               <a href="career.php" class="dropdown-item">การงานอาชีพ</a>
               <a href="activity.php" class="dropdown-item">กิจกรรมพัฒนาผู้เรียน</a>
             </div>

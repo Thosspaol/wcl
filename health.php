@@ -99,7 +99,7 @@ while ($row = $healthManagers->fetch_assoc()) {
               <a href="society.php" class="dropdown-item">สังคมศึกษา ศาสนาและวัฒนธรรม</a>
               <a href="eng.php" class="dropdown-item">ภาษาต่างประเทศ</a>
               <a href="art.php" class="dropdown-item">ศิลปะ</a>
-              <a href="health.php" class="dropdown-item">สุขศึกษาและพละศึกษา</a>
+              <a href="health.php" class="dropdown-item">สุขศึกษาและพลศึกษา</a>
               <a href="career.php" class="dropdown-item">การงานอาชีพ</a>
               <a href="activity.php" class="dropdown-item">กิจกรรมพัฒนาผู้เรียน</a>
             </div>
@@ -123,7 +123,7 @@ while ($row = $healthManagers->fetch_assoc()) {
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
               <h1 class="title-single">กลุ่มสาระการเรียนรู้</h1>
-              <p>สุขศึกษาและพละศึกษา</p>              
+              <p>สุขศึกษาและพลศึกษา</p>              
             </div>
           </div>
         </div>
@@ -140,7 +140,7 @@ while ($row = $healthManagers->fetch_assoc()) {
                 <img src="uploads/<?php echo $row['images']; ?>" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $row['pres'] . ' ' . $row['firsts'] . ' ' . $row['lasts']; ?></h5>
-                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้สุขศึกษาและพละศึกษา</p>
+                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้สุขศึกษาและพลศึกษา</p>
                 </div>
               </div>
             </div>
@@ -154,7 +154,7 @@ while ($row = $healthManagers->fetch_assoc()) {
                 <img src="uploads/<?php echo $row['images']; ?>" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $row['pres'] . ' ' . $row['firsts'] . ' ' . $row['lasts']; ?></h5>
-                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้สุขศึกษาและพละศึกษา</p>
+                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้สุขศึกษาและพลศึกษา</p>
                 </div>
               </div>
             </div>
@@ -168,7 +168,7 @@ while ($row = $healthManagers->fetch_assoc()) {
                 <img src="uploads/<?php echo $row['images']; ?>" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $row['pres'] . ' ' . $row['firsts'] . ' ' . $row['lasts']; ?></h5>
-                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้สุขศึกษาและพละศึกษา</p>
+                  <p class="card-text"><?php echo $row['manager'];?>สาระการเรียนรู้สุขศึกษาและพลศึกษา</p>
                 </div>
               </div>
             </div>
