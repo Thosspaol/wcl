@@ -48,6 +48,7 @@ try {
 ?>
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -112,6 +113,7 @@ try {
         }
     </style>
 </head>
+
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php include_once('../includes/sidebar.php') ?>
@@ -157,38 +159,43 @@ try {
                                                         <table class="inner-table">
                                                             <thead class="table-secondary">
                                                                 <tr>
-                                                                    <th colspan="2">ผลการเรียน ปีการศึกษา <?php echo $academic_year; ?>  <?php echo $semester_id; ?></th>
+                                                                    <th colspan="3" class="table-title">ผลการเรียน ปีการศึกษา <?php echo $academic_year; ?> ภาคเรียนที่ <?php echo $semester_id; ?></th>
                                                                 </tr>
                                                                 <tr>
+                                                                    <th>ลำดับ</th>
                                                                     <th>วิชา</th>
                                                                     <th>เกรด</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                            <?php
-                                                            foreach ($semester_grades as $row_show) {
-                                                                $subject_name = htmlspecialchars($row_show['subject_name']);
-                                                                $grade_point = number_format(htmlspecialchars($row_show['grade_point']), 2);
-                                                                echo "<tr>";
-                                                                echo "<td>$subject_name</td>";
-                                                                echo "<td>$grade_point</td>";
-                                                                echo "</tr>";
-                                                            }
-                                                            ?>
-                                                            <tr>
-                                                                <td><strong>เกรดเฉลี่ยรวม</strong></td>
-                                                                <td><strong><?php echo number_format($average_grade, 2); ?></strong></td>
-                                                            </tr>
+                                                                <?php
+                                                                $counter = 1;
+                                                                foreach ($semester_grades as $row_show) {
+                                                                    $subject_name = htmlspecialchars($row_show['subject_name']);
+                                                                    $grade_point = number_format(htmlspecialchars($row_show['grade_point']), 2);
+                                                                    echo "<tr>";
+                                                                    echo "<td>" . $counter . "</td>";
+                                                                    echo "<td>$subject_name</td>";
+                                                                    echo "<td>$grade_point</td>";
+                                                                    echo "</tr>";
+                                                                    $counter++;
+                                                                }
+                                                                ?>
+                                                                <tr>
+                                                                    <td colspan="2"><strong>เกรดเฉลี่ยรวม</strong></td>
+                                                                    <td><strong><?php echo number_format($average_grade, 2); ?></strong></td>
+                                                                </tr>
                                                             </tbody>
                                                         </table>
+
                                                     </td>
                                                 </tr>
                                             </table>
                                         </div>
-                            <?php
+                                <?php
                                     }
                                 }
-                            ?>
+                                ?>
                                 <div class="table-container">
                                     <table>
                                         <tr>
@@ -200,9 +207,9 @@ try {
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                    <tr>
-                                                        <td><strong><?php echo number_format($gpa, 2); ?></strong></td>
-                                                    </tr>
+                                                        <tr>
+                                                            <td><strong><?php echo number_format($gpa, 2); ?></strong></td>
+                                                        </tr>
                                                     </tbody>
                                                 </table>
                                             </td>
@@ -219,4 +226,5 @@ try {
         </div>
     </div>
 </body>
+
 </html>

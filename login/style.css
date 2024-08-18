@@ -7,7 +7,7 @@ body, html {
     padding: 0;
 }
 .bg {
-  background-image: url('img/โรงเรียน.jpg'); /* แทนที่ 'your-image.jpg' ด้วย URL ของรูปภาพของคุณ */
+  background-image: url('img/กิจกรรม.jpg'); /* แทนที่ 'your-image.jpg' ด้วย URL ของรูปภาพของคุณ */
   background-size: cover;
   background-position: center;
   position: fixed;
